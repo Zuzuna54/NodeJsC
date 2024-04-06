@@ -2,10 +2,11 @@ require('dotenv').config();
 import bcrypt from 'bcrypt';
 import jwt, { Secret } from 'jsonwebtoken';
 import { Request, Response } from 'express';
-import { UserAttributes } from '../../models/User';
-import userService from '../../mongoCalls/userService/userService';
-import logger from '../../logger/Logger';
-import { ACTIVE } from '../../utils/consts';
+import { User } from '../../models/userModel';
+import userService from '../../services/userService';
+import logger from '../../utils/Logger';
+import { Pool } from 'pg';
+import GenericReturn from 'src/utils/genericReturn';
 
 
 //Function to log in a user
@@ -13,12 +14,15 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
 
     try {
 
-        const userServiveHere = new userService();
+        //Get the pool from the request
+        const pool: Pool = req.app.get('pool');
+        const userServiveHere = new userService(pool);
+
         //Log the request
         logger.info(`Request to log in a user\n`);
 
         //Get the user data from the request body
-        const userData: UserAttributes = req.body;
+        const userData: User = req.body;
 
         //Validate that the password and username are not empty
         if (!userData.username || !userData.password) {
@@ -30,8 +34,10 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
 
         //Get the user from the db
         logger.info(`Getting the user from the db\n`);
-        console.log(userData.username);
-        await userServiveHere.getUserByUserName(userData.username, userData.email).then((user: UserAttributes | null) => {
+
+        await userServiveHere.getUserByUserName(userData.username,).then((result: GenericReturn) => {
+
+            const user: User = result.data;
 
             //Check if the user exists
             if (!user) {
@@ -40,16 +46,6 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
                 return;
 
             }
-
-            //Check if the user is active
-            if (user.status !== ACTIVE) {
-
-                res.status(400).send({ message: 'User is not active' });
-                return;
-
-            }
-
-
 
             //Check if the password is correct
             logger.info(`Checking if the password is correct\n`);
@@ -71,13 +67,12 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
 }
 
 
-
 //Function to compare passwords
 const comparePasswords = async (
     password: string,
     hashedPassword: string,
     res: Response,
-    user: UserAttributes,
+    user: User,
     userServiceHere: userService
 ): Promise<void> => {
 
@@ -106,14 +101,12 @@ const comparePasswords = async (
 
                 }
 
-                const lastLogIn: string = new Date().toISOString();
                 //Create and assign acess token
                 logger.info(`Creating and assigning access token\n`);
                 const signature: Record<string, any> = {
                     id: user.id,
                     username: user.username,
                     email: user.email,
-                    userType: user.userType,
                     lastLogIn: Date.now()
                 }
                 const accessToken: string = jwt.sign({ user: signature }, tokenSecret);
@@ -128,7 +121,7 @@ const comparePasswords = async (
                 const refretshToken: string = jwt.sign({ user: refreshSignature }, tokenSecret);
 
                 //Update the lastLogin property of the user and respond with the tokens and user data
-                user.lastLogin = lastLogIn;
+
                 logger.info(`Updating the lastLogin property of the user and responding with the tokens and user data\n`);
                 updateLastLoginAndRespond(res, user, accessToken, refretshToken, userServiceHere);
 
@@ -153,7 +146,7 @@ const comparePasswords = async (
 //Function to update the lastLogin property of a user and respond with the tokens and user data
 const updateLastLoginAndRespond = async (
     res: Response,
-    user: UserAttributes,
+    user: User,
     accessToken: string,
     refreshToken: string,
     userServiceHere: userService
@@ -163,11 +156,9 @@ const updateLastLoginAndRespond = async (
 
         //Update the lastLogin property of the user
         logger.info(`Updating the lastLogin property of the user\n`);
-        await userServiceHere.updateUser(user).then((result: boolean) => {
+        await userServiceHere.updateUser(user).then((result: GenericReturn) => {
 
-            logger.info(`User updated: ${result}`);
-
-            if (result) {
+            if (result.statusCode === 200) {
 
                 //Respond with the tokens and user data
                 logger.info(`Responding with the tokens and user data\n`);
@@ -187,6 +178,8 @@ const updateLastLoginAndRespond = async (
                 return;
 
             }
+
+            logger.info(`User updated: ${result}`);
 
         }).catch((error) => {
 
