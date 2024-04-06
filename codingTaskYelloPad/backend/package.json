@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node dist/app.js",
+    "watch": "tsc -w",
+    "dev": "nodemon dist/app.js"
   },
   "keywords": [],
   "author": "",

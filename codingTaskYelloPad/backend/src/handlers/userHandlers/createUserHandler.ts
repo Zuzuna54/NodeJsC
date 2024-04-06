@@ -1,31 +1,34 @@
 import {
+
     validateEmail,
     validateUsername,
-    validatePassword,
-    validateUserType,
+    validatePassword
+
 } from '../../utils/utils';
-import logger from '../../logger/Logger';
+import logger from '../../utils/Logger';
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
-import userService from '../../mongoCalls/userService/userService';
+import userService from '../../services/userService';
 import { Request, Response } from 'express';
-import { UserAttributes } from '../../models/User';
-import { ACTIVE } from '../../utils/consts';
-
+import { User } from '../../models/userModel';
+import { Pool } from 'pg';
+import GenericReturn from 'src/utils/genericReturn';
 
 //Function to register a user
 export const createUserHandler = async (req: Request, res: Response): Promise<void> => {
 
+    const pool: Pool = req.app.get('pool');
+
     try {
 
-        const userServiceHere = new userService();
+        const userServiceHere = new userService(pool);
 
         //Log the request
         logger.info(`Request to register a user\n`);
 
         //Get the user data from the request body
-        const { username, email, password, userType } = req.body;
-        const userData: UserAttributes = req.body;
+        const { username, email, password } = req.body;
+        const userData: User = req.body;
         logger.info(`email: ${JSON.stringify(email)}`);
 
 
@@ -51,18 +54,11 @@ export const createUserHandler = async (req: Request, res: Response): Promise<vo
             return;
         }
 
-        logger.info(`Validating the userType\n`);
-        const userTypeValidated: boolean = validateUserType(userType);
-        if (!userTypeValidated) {
-            res.status(400).send({ message: 'Invalid userType' });
-            return;
-        }
-
         //Check if the user already exists
         logger.info(`Checking if the user already exists\n`);
-        await userServiceHere.getUserByUserName(username, email).then((result: UserAttributes | null) => {
+        await userServiceHere.getUserByUserName(username).then((result: GenericReturn) => {
 
-            if (result) {
+            if (result.statusCode === 200) {
 
                 logger.info(`User already exists\n`);
                 res.status(400).send({ message: 'User with that email or username already exists' });
@@ -75,16 +71,17 @@ export const createUserHandler = async (req: Request, res: Response): Promise<vo
                 //Create the user
                 logger.info(`Creating the user\n`);
                 createNewUser(res, userData, userServiceHere);
-
                 return result;
+
             }
 
-        }).catch((error) => {
+        }).catch((error: Error) => {
 
             logger.error(`Error checking if the user already exists:, ${error}`);
             throw error;
 
         });
+
     } catch (error) {
 
         logger.error(`Error creating user:, ${error}`);
@@ -95,7 +92,7 @@ export const createUserHandler = async (req: Request, res: Response): Promise<vo
 
 
 //Function to create a new user
-const createNewUser = async (res: Response, userData: UserAttributes, userServiceHere: userService): Promise<void> => {
+const createNewUser = async (res: Response, userData: User, userServiceHere: userService): Promise<void> => {
 
     try {
         //Hash the password
@@ -106,51 +103,56 @@ const createNewUser = async (res: Response, userData: UserAttributes, userServic
 
         //Create the user
         logger.info(`Creating the user\n`);
-        const user: UserAttributes = {
-            ...userData,
+        const user: User = {
+            username: userData.username,
+            email: userData.email,
             id: uuidv4(),
             password: hashedPassword,
-            status: ACTIVE,
-            createdAt: new Date().toISOString(),
-            updatedAt: "NOT UPDATED",
-            lastLogin: "NOT LOGGED IN",
-
         }
 
         logger.info(`user: ${user}`);
 
         //Save the user to the db
         logger.info(`Saving the user to the db\n`);
-        await userServiceHere.createUser(user).then((result: UserAttributes) => {
+        await userServiceHere.createUser(user).then((result: GenericReturn) => {
 
-            //User created
-            logger.info(`User created\n`);
+            if (result.statusCode === 200) {
 
-            //Get the user from the result
-            logger.info(`Getting the user from the result\n`);
-            const newUser: UserAttributes = result;
+                //User created
+                logger.info(`User created\n`);
 
-            //Send the user in the response
-            console.log(`Sending the user in the response\n`);
-            const response: Record<string, any> = {
-                result: "success",
-                user: newUser,
-                message: 'User created',
-                statusCode: 200,
-            };
+                //Get the user from the result
+                logger.info(`Getting the user from the result\n`);
 
-            res.status(200).send({ response });
+                //Send the user in the response
+                logger.info(`Sending the response\n`);
+                const response: Record<string, any> = {
+                    result: "success",
+                    user: user.username,
+                    message: 'User created',
+                    statusCode: 200,
+                };
 
+                res.status(200).send({ response });
+                return result;
 
-        }).catch((error) => {
+            } else {
 
-            console.log(`error: ${error}`);
+                logger.error(`Failed to create user\n`);
+                res.status(500).send({ message: 'Failed to create user' });
+                return result;
+
+            }
+
+        }).catch((error: Error) => {
+
+            logger.error(`Error saving the user to the db:, ${error}`);
             throw error;
 
         });
     } catch (error) {
 
-        console.log(`error: ${error}`);
+        logger.error(`Error saving the user to the db:, ${error}`);
         throw error;
 
     }

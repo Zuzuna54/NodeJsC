@@ -1,3 +1,4 @@
+// Auth Routes
 import express from 'express';
 import { logInUserHandler } from '../handlers/authHandlers/logInUser';
 import { refreshAccessTokenHandler } from '../handlers/authHandlers/refreshAcessToken';

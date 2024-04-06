@@ -2,27 +2,24 @@ require('dotenv').config();
 import { decodeToken, validateRefreshSession } from '../../utils/utils';
 import { Request, Response } from 'express';
 import jwt, { Secret } from 'jsonwebtoken';
-import logger from '../../logger/Logger';
-import userService from '../../mongoCalls/userService/userService';
-import { UserAttributes } from '../../models/User';
-import { ACTIVE } from '../../utils/consts';
+import logger from '../../utils/Logger';
+import userService from '../../services/userService';
+import { Pool } from 'pg';
+import GenericReturn from '../../utils/genericReturn';
 
 //Function to refresh the access token
 export const refreshAccessTokenHandler = async (req: Request, res: Response): Promise<void> => {
 
     try {
 
-        const userServiveHere = new userService();
+        const pool: Pool = req.app.get('pool');
+        const userServiveHere = new userService(pool);
         // Log the request
         logger.info(`Request to refresh the access token\n`);
-
         // Get the token from the request headers
-
-        console.log(JSON.stringify(req.body));
         const body: Record<string, any> | null = req.body;
         const tokenHere: string = body?.refreshToken || '';
         const user: Record<string, any> | null = decodeToken(tokenHere);
-        console.log(JSON.stringify(user));
 
         // Validate the token
         logger.info(`Validating the token\n`);
@@ -59,7 +56,9 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
 
         //Get the user from the db
         logger.info(`Getting the user from the db\n`);
-        await userServiveHere.getUserByUserName(user?.username).then((user: UserAttributes | null) => {
+        await userServiveHere.getUserByUserName(user?.username).then((result: GenericReturn) => {
+
+            const user: Record<string, any> = result.data;
 
             //Check if the user exists
             if (!user) {
@@ -69,13 +68,6 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
 
             }
 
-            //Check if the user is active
-            if (user.status !== ACTIVE) {
-
-                res.status(400).send({ message: 'User is not active' });
-                return;
-
-            }
 
             //Create the access token
             logger.info(`Creating the access token\n`);
