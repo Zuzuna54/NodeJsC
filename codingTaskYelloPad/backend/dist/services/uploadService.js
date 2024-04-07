@@ -121,11 +121,6 @@ class UploadService {
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
         try {
             const bucketName = process.env.S3_BUCKET_NAME;
-            const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-            const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-            console.log(bucketName);
-            console.log(secretAccessKey);
-            console.log(accessKeyId);
             if (!bucketName) {
                 Logger_1.default.error(`S3 bucket name is missing`);
                 returnResult.result = 'Failed';
@@ -133,7 +128,7 @@ class UploadService {
                 returnResult.message = 'S3 bucket name is missing';
                 return returnResult;
             }
-            const s3key = `${fileName}.csv`;
+            const s3key = `${fileName}`;
             const params = {
                 Bucket: bucketName,
                 Key: s3key,
@@ -145,17 +140,12 @@ class UploadService {
                 returnResult.statusCode = 200;
                 returnResult.message = 'File uploaded to S3.';
                 returnResult.data = data.Location;
-                return returnResult;
             }).catch((error) => {
                 Logger_1.default.error(`Error uploading file to S3: ${error}`);
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to upload file to S3.';
-                return returnResult;
             });
-            returnResult.result = 'failed';
-            returnResult.statusCode = 500;
-            returnResult.message = 'Failed to upload file to S3.';
             return returnResult;
         }
         catch (error) {

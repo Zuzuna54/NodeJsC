@@ -164,12 +164,6 @@ class UploadService {
         try {
 
             const bucketName: string | undefined = process.env.S3_BUCKET_NAME;
-            const secretAccessKey: string | undefined = process.env.AWS_SECRET_ACCESS_KEY;
-            const accessKeyId: string | undefined = process.env.AWS_ACCESS_KEY_ID;
-
-            console.log(bucketName);
-            console.log(secretAccessKey);
-            console.log(accessKeyId);
 
             if (!bucketName) {
                 logger.error(`S3 bucket name is missing`);
@@ -179,7 +173,7 @@ class UploadService {
                 return returnResult;
             }
 
-            const s3key: string = `${fileName}.csv`;
+            const s3key: string = `${fileName}`;
 
             const params = {
                 Bucket: bucketName,
@@ -194,7 +188,6 @@ class UploadService {
                 returnResult.statusCode = 200;
                 returnResult.message = 'File uploaded to S3.';
                 returnResult.data = data.Location;
-                return returnResult;
 
             }).catch((error) => {
 
@@ -202,13 +195,9 @@ class UploadService {
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to upload file to S3.';
-                return returnResult;
 
             });
 
-            returnResult.result = 'failed';
-            returnResult.statusCode = 500;
-            returnResult.message = 'Failed to upload file to S3.';
             return returnResult;
 
 
@@ -221,6 +210,37 @@ class UploadService {
             return returnResult;
         }
     }
+
+    // Function to retrieve file content from S3
+    // const getFileFromS3 = async (fileName: string): Promise<string> => {
+
+    //     const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
+
+    //     const bucketName: string | undefined = process.env.S3_BUCKET_NAME;
+    //     if (!bucketName) {
+    //         logger.error(`S3 bucket name is missing`);
+    //         returnResult.result = 'Failed';
+    //         returnResult.statusCode = 500;
+    //         returnResult.message = 'S3 bucket name is missing';
+    //         return returnResult;
+    //     }
+
+    //     const params = {
+    //         Bucket: process.env.S3_BUCKET_NAME,
+    //         Key: fileName
+    //     };
+
+    //     return new Promise<string>((resolve, reject) => {
+    //         s3.getObject(params, (err, data) => {
+    //             if (err) {
+    //                 reject(err);
+    //             } else {
+    //                 resolve(data.Body.toString());
+    //             }
+    //         });
+    //     });
+    // };
+
 }
 
 export default UploadService;
