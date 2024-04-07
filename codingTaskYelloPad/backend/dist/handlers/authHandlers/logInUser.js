@@ -9,10 +9,10 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const userService_1 = __importDefault(require("../../services/userService"));
 const Logger_1 = __importDefault(require("../../utils/Logger"));
+const db_1 = require("../../services/db");
 const logInUserHandler = async (req, res) => {
     try {
-        const pool = req.app.get('pool');
-        const userServiveHere = new userService_1.default(pool);
+        const userServiveHere = new userService_1.default(db_1.pool);
         Logger_1.default.info(`Request to log in a user\n`);
         const userData = req.body;
         if (!userData.username || !userData.password) {

@@ -9,10 +9,10 @@ const Logger_1 = __importDefault(require("../../utils/Logger"));
 const uuid_1 = require("uuid");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const userService_1 = __importDefault(require("../../services/userService"));
+const db_1 = require("../../services/db");
 const createUserHandler = async (req, res) => {
-    const pool = req.app.get('pool');
     try {
-        const userServiceHere = new userService_1.default(pool);
+        const userServiceHere = new userService_1.default(db_1.pool);
         Logger_1.default.info(`Request to register a user\n`);
         const { username, email, password } = req.body;
         const userData = req.body;

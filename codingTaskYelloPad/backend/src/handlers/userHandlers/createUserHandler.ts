@@ -11,13 +11,12 @@ import bcrypt from 'bcrypt';
 import userService from '../../services/userService';
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
-import { Pool } from 'pg';
 import GenericReturn from 'src/utils/genericReturn';
+import { pool } from '../../services/db';
 
 //Function to register a user
 export const createUserHandler = async (req: Request, res: Response): Promise<void> => {
 
-    const pool: Pool = req.app.get('pool');
 
     try {
 
