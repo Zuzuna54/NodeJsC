@@ -17,12 +17,19 @@ const main = async () => {
         const app = (0, express_1.default)();
         app.use((0, cors_1.default)());
         app.use(body_parser_1.default.json());
+        app.get('/', (req, res) => {
+            console.log('Hello World');
+            res.send('Hello World');
+        });
         app.use('/awesome/applicant', userRoutes_1.default);
-        app.use('/awesome/tasks', uploadRoutes_1.default);
+        app.use('/awesome/uploads', uploadRoutes_1.default);
         app.use('/awesome/auth', authRoutes_1.default);
         const port = process.env.PORT || "8002";
         app.set('port', port);
-        Logger_1.default.info(`Server running on port ${app.get('port')}`);
+        app.listen(app.get('port'), () => {
+            Logger_1.default.info(`Server is running at http://localhost:${app.get('port')} in ${app.get('env')} mode`);
+            Logger_1.default.info('Press CTRL-C to stop\n');
+        });
     }
     catch (error) {
         Logger_1.default.error(`Error connecting to MongoDB:, ${error}`);

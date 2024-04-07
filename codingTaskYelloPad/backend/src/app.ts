@@ -19,28 +19,30 @@ const main = async () => {
         app.use(cors());
         // Use the body parser middleware to parse the body of incoming requests
         app.use(bodyParser.json());
+        // test the logger amd server 
+        app.get('/', (req, res) => {
+            console.log('Hello World');
+            res.send('Hello World');
+        })
         // Use the userRoutes router for all user routes
         app.use('/awesome/applicant', userRoutes); // Use the imported router
         // Use the taskRoutes router for all task routes
-        app.use('/awesome/tasks', uploadRoutes); // Use the imported router
+        app.use('/awesome/uploads', uploadRoutes); // Use the imported router
         // Use the authRoutes router for all auth routes
         app.use('/awesome/auth', authRouter); // Use the imported router
-        // Use the errorHandler middleware for handling errors
-
         // Get the port from the environment variables, and store in the Express app
         const port: string | undefined = process.env.PORT || "8002";
         // Set the port
         app.set('port', port);
-        // Get the mongo uri from the environment variables, and store in the Express app
-        // const PostgreSQL: string | undefined = process.env.DB_URI;
+        // Start the server
+        app.listen(app.get('port'), () => {
 
-        // Check that the PostgreSQL environment variable is set
+            logger.info(`Server is running at http://localhost:${app.get('port')} in ${app.get('env')} mode`);
+            logger.info('Press CTRL-C to stop\n');
+
+        });
 
 
-        // Connect to the PostgreSQL database
-
-
-        logger.info(`Server running on port ${app.get('port')}`);
 
     } catch (error) {
 

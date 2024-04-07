@@ -17,6 +17,7 @@ import { pool } from '../../services/db';
 //Function to register a user
 export const createUserHandler = async (req: Request, res: Response): Promise<void> => {
 
+    logger.info(`initiating the createUserHandler\n`);
 
     try {
 
@@ -138,7 +139,7 @@ const createNewUser = async (res: Response, userData: User, userServiceHere: use
             } else {
 
                 logger.error(`Failed to create user\n`);
-                res.status(500).send({ message: 'Failed to create user' });
+                res.status(500).send({ message: 'Failed to create user ' + result.message });
                 return result;
 
             }

@@ -29,6 +29,8 @@ const decodeToken = (token) => {
 };
 exports.decodeToken = decodeToken;
 const validateUsername = (username) => {
+    if (username.length < 3)
+        return false;
     console.log(`initiating validateUsername \n`);
     const usernameRegex = /^[a-zA-Z0-9]+$/;
     console.log(`usernameRegex: ${usernameRegex}`);
@@ -57,6 +59,8 @@ const validatePasswordSpaces = (password) => {
 };
 exports.validatePasswordSpaces = validatePasswordSpaces;
 const validatePassword = (password) => {
+    if (password.length < 8)
+        return false;
     console.log(`initiating validatePassword \n`);
     console.log(`Validating the password\n`);
     const passwordValidated = (0, exports.validatePasswordLength)(password) && !(0, exports.validatePasswordSpaces)(password);
