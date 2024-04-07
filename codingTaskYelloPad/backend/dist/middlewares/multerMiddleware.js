@@ -6,6 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.upload = void 0;
 const multer_1 = __importDefault(require("multer"));
 const storage = multer_1.default.memoryStorage();
-const upload = (0, multer_1.default)({ storage }).single('file');
+const upload = (0, multer_1.default)({ storage });
 exports.upload = upload;
 //# sourceMappingURL=multerMiddleware.js.map

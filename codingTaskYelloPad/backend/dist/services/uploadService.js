@@ -3,17 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FileModel = void 0;
+require('dotenv').config();
 const genericReturn_1 = __importDefault(require("../utils/genericReturn"));
 const aws_sdk_1 = require("aws-sdk");
 const Logger_1 = __importDefault(require("../utils/Logger"));
-class FileModel {
+class UploadService {
     constructor(pool) {
         this.pool = pool;
         this.s3 = new aws_sdk_1.S3();
     }
     async insertFile(userId, fileName, csvFileName) {
-        const query = 'INSERT INTO files (fileName, csvFileName) VALUES ($1, $2)';
+        const query = 'INSERT INTO files (name) VALUES ($1, $2)';
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
         try {
             const result = await this.pool.query(query, [userId, fileName, csvFileName]);
@@ -64,6 +64,32 @@ class FileModel {
             return returnResult;
         }
     }
+    async getFileByName(name) {
+        const query = 'SELECT * FROM files WHERE name = $1';
+        const returnResult = new genericReturn_1.default('', 0, '', '', '');
+        try {
+            const result = await this.pool.query(query, [name]);
+            if (result.rowCount !== 1) {
+                Logger_1.default.error('Failed to fetch file from database.');
+                returnResult.result = 'Failed';
+                returnResult.statusCode = 500;
+                returnResult.message = 'Failed to fetch file from database.';
+                return returnResult;
+            }
+            Logger_1.default.info('File fetched from database.');
+            returnResult.result = 'Success';
+            returnResult.statusCode = 200;
+            returnResult.data = result.rows[0];
+            return returnResult;
+        }
+        catch (error) {
+            Logger_1.default.error(`Error fetching file from database: ${error}`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'Failed to fetch file from database.';
+            return returnResult;
+        }
+    }
     async getAllUserFiles(userId) {
         const query = 'SELECT * FROM files where userId = $1';
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
@@ -91,10 +117,15 @@ class FileModel {
         }
     }
     ;
-    async uploadFileToS3(fileContent) {
+    async uploadFileToS3(fileName, fileContent) {
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
         try {
             const bucketName = process.env.S3_BUCKET_NAME;
+            const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+            const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+            console.log(bucketName);
+            console.log(secretAccessKey);
+            console.log(accessKeyId);
             if (!bucketName) {
                 Logger_1.default.error(`S3 bucket name is missing`);
                 returnResult.result = 'Failed';
@@ -102,14 +133,7 @@ class FileModel {
                 returnResult.message = 'S3 bucket name is missing';
                 return returnResult;
             }
-            const s3key = process.env.S3_KEY;
-            if (!s3key) {
-                Logger_1.default.error(`S3 key is missing`);
-                returnResult.result = 'Failed';
-                returnResult.statusCode = 500;
-                returnResult.message = 'S3 key is missing';
-                return returnResult;
-            }
+            const s3key = `${fileName}.csv`;
             const params = {
                 Bucket: bucketName,
                 Key: s3key,
@@ -143,5 +167,5 @@ class FileModel {
         }
     }
 }
-exports.FileModel = FileModel;
+exports.default = UploadService;
 //# sourceMappingURL=uploadService.js.map

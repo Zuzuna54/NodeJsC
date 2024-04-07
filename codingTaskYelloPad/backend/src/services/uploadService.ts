@@ -1,10 +1,11 @@
 //Upload service postgreSql queries
+require('dotenv').config();
 import { Pool, QueryResult } from 'pg';
 import GenericReturn from '../utils/genericReturn';
 import { S3 } from 'aws-sdk';
 import logger from '../utils/Logger';
 
-export class FileModel {
+class UploadService {
     private pool: Pool;
     private s3: S3;
 
@@ -15,7 +16,7 @@ export class FileModel {
 
     async insertFile(userId: string, fileName: string, csvFileName: string): Promise<GenericReturn> {
 
-        const query: string = 'INSERT INTO files (fileName, csvFileName) VALUES ($1, $2)';
+        const query: string = 'INSERT INTO files (name) VALUES ($1, $2)';
         const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
         try {
@@ -85,6 +86,41 @@ export class FileModel {
         }
     }
 
+    async getFileByName(name: string): Promise<GenericReturn> {
+
+        const query: string = 'SELECT * FROM files WHERE name = $1';
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
+
+        try {
+
+            const result: QueryResult = await this.pool.query(query, [name]);
+
+            if (result.rowCount !== 1) {
+
+                logger.error('Failed to fetch file from database.');
+                returnResult.result = 'Failed';
+                returnResult.statusCode = 500;
+                returnResult.message = 'Failed to fetch file from database.';
+                return returnResult;
+            }
+
+            logger.info('File fetched from database.');
+
+            returnResult.result = 'Success';
+            returnResult.statusCode = 200;
+            returnResult.data = result.rows[0];
+            return returnResult;
+
+        } catch (error) {
+
+            logger.error(`Error fetching file from database: ${error}`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'Failed to fetch file from database.';
+            return returnResult;
+        }
+    }
+
     async getAllUserFiles(userId: string): Promise<GenericReturn> {
 
         const query: string = 'SELECT * FROM files where userId = $1';
@@ -121,13 +157,20 @@ export class FileModel {
 
     };
 
-    async uploadFileToS3(fileContent: Buffer): Promise<GenericReturn> {
+    async uploadFileToS3(fileName: string, fileContent: Buffer): Promise<GenericReturn> {
 
         const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
         try {
 
             const bucketName: string | undefined = process.env.S3_BUCKET_NAME;
+            const secretAccessKey: string | undefined = process.env.AWS_SECRET_ACCESS_KEY;
+            const accessKeyId: string | undefined = process.env.AWS_ACCESS_KEY_ID;
+
+            console.log(bucketName);
+            console.log(secretAccessKey);
+            console.log(accessKeyId);
+
             if (!bucketName) {
                 logger.error(`S3 bucket name is missing`);
                 returnResult.result = 'Failed';
@@ -136,14 +179,7 @@ export class FileModel {
                 return returnResult;
             }
 
-            const s3key: string | undefined = process.env.S3_KEY;
-            if (!s3key) {
-                logger.error(`S3 key is missing`);
-                returnResult.result = 'Failed';
-                returnResult.statusCode = 500;
-                returnResult.message = 'S3 key is missing';
-                return returnResult;
-            }
+            const s3key: string = `${fileName}.csv`;
 
             const params = {
                 Bucket: bucketName,
@@ -186,3 +222,5 @@ export class FileModel {
         }
     }
 }
+
+export default UploadService;

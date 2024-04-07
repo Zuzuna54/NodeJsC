@@ -1,5 +1,4 @@
 //db connection file
-
 require('dotenv').config();
 import { Pool } from 'pg';
 
