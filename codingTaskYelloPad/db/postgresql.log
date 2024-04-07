@@ -6,3 +6,31 @@
 2024-04-07 07:40:16.890 EDT [67714] LOG:  database system is ready to accept connections
 2024-04-07 07:45:16.890 EDT [67715] LOG:  checkpoint starting: time
 2024-04-07 07:46:55.085 EDT [67715] LOG:  checkpoint complete: wrote 980 buffers (6.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=98.177 s, sync=0.017 s, total=98.195 s; sync files=317, longest=0.001 s, average=0.001 s; distance=4603 kB, estimate=4603 kB
+2024-04-07 10:03:57.994 EDT [6265] ERROR:  relation "users" does not exist at character 15
+2024-04-07 10:03:57.994 EDT [6265] STATEMENT:  SELECT * FROM users WHERE username = $1
+2024-04-07 10:03:58.065 EDT [6266] ERROR:  relation "users" does not exist at character 13
+2024-04-07 10:03:58.065 EDT [6266] STATEMENT:  INSERT INTO users (username, email, password) VALUES ($1, $2, $3)
+2024-04-07 10:09:00.895 EDT [6822] ERROR:  relation "users" does not exist at character 15
+2024-04-07 10:09:00.895 EDT [6822] STATEMENT:  SELECT * FROM users WHERE username = $1
+2024-04-07 10:09:00.965 EDT [6823] ERROR:  relation "users" does not exist at character 13
+2024-04-07 10:09:00.965 EDT [6823] STATEMENT:  INSERT INTO users (username, email, password) VALUES ($1, $2, $3)
+2024-04-07 10:14:17.812 EDT [67714] LOG:  received fast shutdown request
+2024-04-07 10:14:17.813 EDT [67714] LOG:  aborting any active transactions
+2024-04-07 10:14:17.814 EDT [67714] LOG:  background worker "logical replication launcher" (PID 67720) exited with exit code 1
+2024-04-07 10:14:17.814 EDT [67715] LOG:  shutting down
+2024-04-07 10:14:17.815 EDT [67715] LOG:  checkpoint starting: shutdown immediate
+2024-04-07 10:14:17.817 EDT [67715] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=4143 kB
+2024-04-07 10:14:17.821 EDT [67714] LOG:  database system is shut down
+2024-04-07 10:14:30.767 EDT [7527] LOG:  starting PostgreSQL 15.5 on aarch64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.102), 64-bit
+2024-04-07 10:14:30.769 EDT [7527] LOG:  listening on IPv6 address "::1", port 5432
+2024-04-07 10:14:30.769 EDT [7527] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-04-07 10:14:30.770 EDT [7527] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-04-07 10:14:30.780 EDT [7530] LOG:  database system was shut down at 2024-04-07 10:14:17 EDT
+2024-04-07 10:14:30.785 EDT [7527] LOG:  database system is ready to accept connections
+2024-04-07 10:14:42.270 EDT [7527] LOG:  received fast shutdown request
+2024-04-07 10:14:42.270 EDT [7527] LOG:  aborting any active transactions
+2024-04-07 10:14:42.272 EDT [7527] LOG:  background worker "logical replication launcher" (PID 7533) exited with exit code 1
+2024-04-07 10:14:42.272 EDT [7528] LOG:  shutting down
+2024-04-07 10:14:42.272 EDT [7528] LOG:  checkpoint starting: shutdown immediate
+2024-04-07 10:14:42.275 EDT [7528] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.004 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB
+2024-04-07 10:14:42.278 EDT [7527] LOG:  database system is shut down

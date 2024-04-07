@@ -11,6 +11,7 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 const userService_1 = __importDefault(require("../../services/userService"));
 const db_1 = require("../../services/db");
 const createUserHandler = async (req, res) => {
+    Logger_1.default.info(`initiating the createUserHandler\n`);
     try {
         const userServiceHere = new userService_1.default(db_1.pool);
         Logger_1.default.info(`Request to register a user\n`);
@@ -90,7 +91,7 @@ const createNewUser = async (res, userData, userServiceHere) => {
             }
             else {
                 Logger_1.default.error(`Failed to create user\n`);
-                res.status(500).send({ message: 'Failed to create user' });
+                res.status(500).send({ message: 'Failed to create user ' + result.message });
                 return result;
             }
         }).catch((error) => {

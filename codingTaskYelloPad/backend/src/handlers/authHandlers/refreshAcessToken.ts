@@ -5,10 +5,12 @@ import jwt, { Secret } from 'jsonwebtoken';
 import logger from '../../utils/Logger';
 import userService from '../../services/userService';
 import GenericReturn from '../../utils/genericReturn';
-import { pool } from 'src/services/db';
+import { pool } from '../../services/db';
 
 //Function to refresh the access token
 export const refreshAccessTokenHandler = async (req: Request, res: Response): Promise<void> => {
+
+    logger.info('Initiating the refreshAccessTokenHandler\n')
 
     try {
 

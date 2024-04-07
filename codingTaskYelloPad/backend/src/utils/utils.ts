@@ -42,6 +42,8 @@ export const decodeToken = (token: string): Record<string, any> | null => {
 //Helper function to validate username not to contain empty spaces and special characters
 export const validateUsername = (username: string): boolean => {
 
+    if (username.length < 3) return false;
+
     console.log(`initiating validateUsername \n`);
 
     //Regex to validate username
@@ -94,6 +96,8 @@ export const validatePasswordSpaces = (password: string): boolean => {
 
 //Helper function to validate password
 export const validatePassword = (password: string): boolean => {
+
+    if (password.length < 8) return false;
 
     console.log(`initiating validatePassword \n`);
 

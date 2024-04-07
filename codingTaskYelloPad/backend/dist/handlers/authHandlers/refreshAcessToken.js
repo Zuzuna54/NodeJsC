@@ -9,8 +9,9 @@ const utils_1 = require("../../utils/utils");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const Logger_1 = __importDefault(require("../../utils/Logger"));
 const userService_1 = __importDefault(require("../../services/userService"));
-const db_1 = require("src/services/db");
+const db_1 = require("../../services/db");
 const refreshAccessTokenHandler = async (req, res) => {
+    Logger_1.default.info('Initiating the refreshAccessTokenHandler\n');
     try {
         const userServiveHere = new userService_1.default(db_1.pool);
         Logger_1.default.info(`Request to refresh the access token\n`);

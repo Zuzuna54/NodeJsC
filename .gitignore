@@ -1,4 +1,5 @@
 # this is a gitingore file
 # it will ignore node_modules folder
 node_modules
+db
 .log
