@@ -5,8 +5,8 @@ import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
 import userService from '../../services/userService';
 import logger from '../../utils/Logger';
-import { Pool } from 'pg';
 import GenericReturn from 'src/utils/genericReturn';
+import { pool } from '../../services/db';
 
 
 //Function to log in a user
@@ -15,7 +15,6 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
     try {
 
         //Get the pool from the request
-        const pool: Pool = req.app.get('pool');
         const userServiveHere = new userService(pool);
 
         //Log the request

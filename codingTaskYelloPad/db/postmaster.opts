@@ -1,0 +1,1 @@
+/Applications/Postgres.app/Contents/Versions/15/bin/postgres "-D" "/Users/giorgobg/Desktop/nodeJSC/NodeJsC/codingTaskYelloPad/db" "-p" "5432"

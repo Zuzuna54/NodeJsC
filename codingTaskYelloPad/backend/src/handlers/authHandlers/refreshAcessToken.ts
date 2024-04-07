@@ -4,15 +4,15 @@ import { Request, Response } from 'express';
 import jwt, { Secret } from 'jsonwebtoken';
 import logger from '../../utils/Logger';
 import userService from '../../services/userService';
-import { Pool } from 'pg';
 import GenericReturn from '../../utils/genericReturn';
+import { pool } from 'src/services/db';
 
 //Function to refresh the access token
 export const refreshAccessTokenHandler = async (req: Request, res: Response): Promise<void> => {
 
     try {
 
-        const pool: Pool = req.app.get('pool');
+
         const userServiveHere = new userService(pool);
         // Log the request
         logger.info(`Request to refresh the access token\n`);

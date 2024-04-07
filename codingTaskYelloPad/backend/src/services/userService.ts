@@ -1,9 +1,8 @@
 // USer Service postgreSQL queries
 import { Pool, QueryResult } from 'pg';
 import { User } from '../models/userModel';
-import GenericReturn from '../utils/genericReturn'
+import GenericReturn from '../utils/genericReturn';
 import logger from '../utils/Logger';
-
 
 class UserService {
 
@@ -15,12 +14,12 @@ class UserService {
 
     async createUser(user: User): Promise<GenericReturn> {
 
-        const returnResult = new GenericReturn('', 0, '', '', '');
-        const query = 'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)';
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
+        const query: string = 'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)';
 
         try {
 
-            const result = await this.pool.query(query, [user.username, user.email, user.password]);
+            const result: QueryResult = await this.pool.query(query, [user.username, user.email, user.password]);
             if (result.rowCount !== 1) {
 
                 logger.error('Failed to create user.');
@@ -51,8 +50,8 @@ class UserService {
 
     async getUserByEmail(email: string): Promise<GenericReturn> {
 
-        const query = 'SELECT * FROM users WHERE email = $1';
-        const returnResult = new GenericReturn('', 0, '', '', '');
+        const query: string = 'SELECT * FROM users WHERE email = $1';
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
         try {
 
@@ -88,8 +87,8 @@ class UserService {
 
     async getUserById(id: number): Promise<GenericReturn> {
 
-        const query = 'SELECT * FROM users WHERE id = $1';
-        const returnResult = new GenericReturn('', 0, '', '', '');
+        const query: string = 'SELECT * FROM users WHERE id = $1';
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
         try {
 
@@ -125,8 +124,8 @@ class UserService {
 
     async getUserByUserName(username: string): Promise<GenericReturn> {
 
-        const query = 'SELECT * FROM users WHERE username = $1';
-        const returnResult = new GenericReturn('', 0, '', '', '');
+        const query: string = 'SELECT * FROM users WHERE username = $1';
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
         try {
 
@@ -162,12 +161,12 @@ class UserService {
 
     async updateUser(user: User): Promise<GenericReturn> {
 
-        const query = 'UPDATE users SET username = $1, email = $2, password = $3 WHERE id = $4';
-        const returnResult = new GenericReturn('', 0, '', '', '');
+        const query: string = 'UPDATE users SET username = $1, email = $2, password = $3 WHERE id = $4';
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
         try {
 
-            const result = await this.pool.query(query, [user.username, user.email, user.password, user.id]);
+            const result: QueryResult = await this.pool.query(query, [user.username, user.email, user.password, user.id]);
 
             if (result.rowCount !== 1) {
 
