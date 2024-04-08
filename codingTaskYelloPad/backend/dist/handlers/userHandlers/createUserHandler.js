@@ -7,7 +7,7 @@ exports.createUserHandler = void 0;
 const utils_1 = require("../../utils/utils");
 const Logger_1 = __importDefault(require("../../utils/Logger"));
 const uuid_1 = require("uuid");
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const userService_1 = __importDefault(require("../../services/userService"));
 const db_1 = require("../../services/db");
 const createUserHandler = async (req, res) => {
@@ -64,7 +64,7 @@ const createNewUser = async (res, userData, userServiceHere) => {
     try {
         Logger_1.default.info(`Hashing the password\n`);
         const saltRounds = 10;
-        const hashedPassword = await bcrypt_1.default.hash(userData.password, saltRounds);
+        const hashedPassword = await bcryptjs_1.default.hash(userData.password, saltRounds);
         Logger_1.default.info(`hashedPassword: ${hashedPassword}`);
         Logger_1.default.info(`Creating the user\n`);
         const user = {

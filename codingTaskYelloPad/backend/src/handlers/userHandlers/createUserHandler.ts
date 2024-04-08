@@ -7,7 +7,7 @@ import {
 } from '../../utils/utils';
 import logger from '../../utils/Logger';
 import { v4 as uuidv4 } from 'uuid';
-import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 import userService from '../../services/userService';
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
@@ -98,7 +98,7 @@ const createNewUser = async (res: Response, userData: User, userServiceHere: use
         //Hash the password
         logger.info(`Hashing the password\n`);
         const saltRounds: number = 10;
-        const hashedPassword: string = await bcrypt.hash(userData.password, saltRounds);
+        const hashedPassword: string = await bcryptjs.hash(userData.password, saltRounds);
         logger.info(`hashedPassword: ${hashedPassword}`);
 
         //Create the user
