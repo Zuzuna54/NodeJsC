@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logInUserHandler = void 0;
 require('dotenv').config();
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const userService_1 = __importDefault(require("../../services/userService"));
 const Logger_1 = __importDefault(require("../../utils/Logger"));
@@ -42,7 +42,7 @@ exports.logInUserHandler = logInUserHandler;
 const comparePasswords = async (password, hashedPassword, res, user, userServiceHere) => {
     try {
         Logger_1.default.info(`Validating the password\n`);
-        await bcrypt_1.default.compare(password, hashedPassword).then((result) => {
+        await bcryptjs_1.default.compare(password, hashedPassword).then((result) => {
             if (!result) {
                 res.status(400).send({ message: 'Invalid password' });
                 return;

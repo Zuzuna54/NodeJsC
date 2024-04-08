@@ -1,5 +1,5 @@
 require('dotenv').config();
-import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 import jwt, { Secret } from 'jsonwebtoken';
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
@@ -78,7 +78,7 @@ const comparePasswords = async (
     try {
         //Validate the password
         logger.info(`Validating the password\n`);
-        await bcrypt.compare(password, hashedPassword).then((result: boolean) => {
+        await bcryptjs.compare(password, hashedPassword).then((result: boolean) => {
 
             if (!result) {
 
