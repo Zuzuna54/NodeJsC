@@ -1,4 +1,5 @@
 //db connection file
+
 require('dotenv').config();
 import { Pool } from 'pg';
 
@@ -16,4 +17,7 @@ export const pool = new Pool({
     database: NAME,
     password: PASSWORD,
     port: Number(PORT),
+    ssl: {
+        rejectUnauthorized: false
+    }
 });

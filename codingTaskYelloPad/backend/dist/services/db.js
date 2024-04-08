@@ -14,5 +14,8 @@ exports.pool = new pg_1.Pool({
     database: NAME,
     password: PASSWORD,
     port: Number(PORT),
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 //# sourceMappingURL=db.js.map
