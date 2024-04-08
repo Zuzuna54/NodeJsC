@@ -12,7 +12,7 @@ export const searchWordHandler = async (req: Request, res: Response): Promise<vo
     try {
 
         // Extract the word to search for from the request body or query parameters
-        const { word } = req.body;
+        const { word, file_name } = req.body;
 
         if (!word) {
             res.status(400).send({ message: 'Word to search for is missing' });
@@ -20,7 +20,7 @@ export const searchWordHandler = async (req: Request, res: Response): Promise<vo
         }
 
         // Retrieve the uploaded file content from S3
-        const fileName = "text1.txt";
+        const fileName = file_name;
         const fileContent = await getFileFromS3(fileName);
 
         // Perform the search for the word
@@ -71,8 +71,9 @@ const getFileFromS3 = async (fileName: string): Promise<string> => {
 };
 
 // Function to count occurrences of a word in a string
+// Function to count occurrences of a word in a string
 const countOccurrences = (text: string, word: string): number => {
-    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    const regex = new RegExp(`${word}`, 'gi');
     const matches = text.match(regex);
     return matches ? matches.length : 0;
 };

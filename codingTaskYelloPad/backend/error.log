@@ -32,3 +32,4 @@ error: Error creating user: error: column "username" of relation "users" does no
 error: Failed to create user
 
 error: Failed to fetch user by username.
+error: Error fetching file from database: error: relation "files" does not exist

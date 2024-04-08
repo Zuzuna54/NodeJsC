@@ -11,12 +11,12 @@ const s3 = new aws_sdk_1.S3();
 const searchWordHandler = async (req, res) => {
     Logger_1.default.info(`Initiating the searchWordHandler\n`);
     try {
-        const { word } = req.body;
+        const { word, file_name } = req.body;
         if (!word) {
             res.status(400).send({ message: 'Word to search for is missing' });
             return;
         }
-        const fileName = "text1.txt";
+        const fileName = file_name;
         const fileContent = await getFileFromS3(fileName);
         const wordCount = countOccurrences(fileContent, word);
         const sentences = findSentences(fileContent, word);
@@ -55,7 +55,7 @@ const getFileFromS3 = async (fileName) => {
     });
 };
 const countOccurrences = (text, word) => {
-    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    const regex = new RegExp(`${word}`, 'gi');
     const matches = text.match(regex);
     return matches ? matches.length : 0;
 };

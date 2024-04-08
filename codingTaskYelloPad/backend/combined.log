@@ -434,3 +434,33 @@ info: Press CTRL-C to stop
 info: Server is running at http://localhost:8000 in development mode
 info: Press CTRL-C to stop
 
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1.txt
+info: Initiating the searchWordHandler
+
+info: Initiating the searchWordHandler
+
+info: Initiating the searchWordHandler
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
