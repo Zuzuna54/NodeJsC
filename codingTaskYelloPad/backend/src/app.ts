@@ -19,11 +19,6 @@ const main = async () => {
         app.use(cors());
         // Use the body parser middleware to parse the body of incoming requests
         app.use(bodyParser.json());
-        // test the logger amd server 
-        app.get('/', (req, res) => {
-            console.log('Hello World');
-            res.send('Hello World');
-        })
         // Use the userRoutes router for all user routes
         app.use('/awesome/applicant', userRoutes); // Use the imported router
         // Use the taskRoutes router for all task routes

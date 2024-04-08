@@ -17,10 +17,6 @@ const main = async () => {
         const app = (0, express_1.default)();
         app.use((0, cors_1.default)());
         app.use(body_parser_1.default.json());
-        app.get('/', (req, res) => {
-            console.log('Hello World');
-            res.send('Hello World');
-        });
         app.use('/awesome/applicant', userRoutes_1.default);
         app.use('/awesome/uploads', uploadRoutes_1.default);
         app.use('/awesome/auth', authRoutes_1.default);

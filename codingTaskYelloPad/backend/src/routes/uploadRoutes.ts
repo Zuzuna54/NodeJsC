@@ -1,12 +1,16 @@
 // Upload Routes
 // Description: Routes for uploading files
 import express from 'express';
-// import { upload } from '../middlewares/multerMiddleware';
+import { uploadHandler } from '../handlers/filesHandlers/uploadHandler';
+import { searchWordHandler } from '../handlers/filesHandlers/searchWordHandler';
+import { historyHandler } from '../handlers/filesHandlers/historyHandler';
+import { upload } from '../middlewares/multerMiddleware';
 
 
 const uploadRouter = express.Router();
 
-// uploadRouter.post('/upload', upload, uploadHandler.uploadFile);
-// uploadRouter.get('/history', historyHandler.getUploadHistory);
+uploadRouter.post('/', upload.single('file'), uploadHandler);
+uploadRouter.get('/search', searchWordHandler);
+uploadRouter.get('/history', historyHandler);
 
 export default uploadRouter;
