@@ -90,6 +90,7 @@ class UserService {
         }
     }
     async getUserByUserName(username) {
+        console.log('username', username);
         const query = 'SELECT * FROM users WHERE username = $1';
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
         try {

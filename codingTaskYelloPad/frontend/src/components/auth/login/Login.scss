@@ -1,0 +1,63 @@
+/* Login.scss */
+
+form {
+    width: 40%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #909090;
+    border-radius: 10px;
+    background-color: #fff;
+
+    div {
+        margin-bottom: 15px;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    }
+
+    button {
+        background-color: #2981da;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            background-color: #45a049;
+        }
+    }
+
+    /* Error log animation */
+    .error-log {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .error-log p {
+        color: red;
+        margin: 0;
+    }
+
+    &.error-visible {
+        .error-log {
+            max-height: 50px;
+            /* Adjust the maximum height as needed */
+            transition: max-height 0.5s ease-in;
+        }
+    }
+}

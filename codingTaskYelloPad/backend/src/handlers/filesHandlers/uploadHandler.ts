@@ -38,7 +38,7 @@ export const uploadHandler = async (req: Request, res: Response): Promise<void> 
         // Upload the file to S3
         logger.info(`Uploading the file\n`);
         const uploadResult: GenericReturn = await fileUploadService.uploadFileToS3(originalname, buffer);
-        res.status(uploadResult.statusCode).send({ message: uploadResult.message });
+        res.status(uploadResult.statusCode).send({ message: uploadResult.message, fileName: originalname });
 
     } catch (error) {
 

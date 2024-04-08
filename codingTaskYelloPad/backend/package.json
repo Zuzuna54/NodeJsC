@@ -29,6 +29,7 @@
     "@types/aws-sdk": "^2.7.0",
     "@types/multer": "^1.4.11",
     "aws-sdk": "^2.1594.0",
+    "aws-serverless-express": "^3.4.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
@@ -39,6 +40,7 @@
     "pg": "^8.11.5",
     "psql": "^0.0.1",
     "reflect-metadata": "^0.1.13",
+    "serverless": "^3.38.0",
     "ts-node": "^10.9.1",
     "uuid": "^9.0.1",
     "winston": "^3.11.0"

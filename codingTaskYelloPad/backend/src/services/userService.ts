@@ -124,6 +124,7 @@ class UserService {
 
     async getUserByUserName(username: string): Promise<GenericReturn> {
 
+        console.log('username', username);
         const query: string = 'SELECT * FROM users WHERE username = $1';
         const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 

@@ -20,7 +20,7 @@ const logInUserHandler = async (req, res) => {
             return;
         }
         Logger_1.default.info(`Getting the user from the db\n`);
-        await userServiveHere.getUserByUserName(userData.username).then((result) => {
+        await userServiveHere.getUserByUserName(userData.username.toLowerCase()).then((result) => {
             const user = result.data;
             if (!user) {
                 res.status(400).send({ message: 'Invalid username or password' });
