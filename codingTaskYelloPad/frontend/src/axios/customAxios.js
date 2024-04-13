@@ -68,3 +68,14 @@ export const searchWord = async (body) => {
         throw error; // Rethrow the error so the caller can handle it
     }
 }
+
+//Get uploads history 
+export const getUploadedFiles = async () => {
+    try {
+        const response = await instance.get('/awesome/uploads/history');
+        return response;
+    } catch (error) {
+        console.error(error);
+        throw error; // Rethrow the error so the caller can handle it
+    }
+}

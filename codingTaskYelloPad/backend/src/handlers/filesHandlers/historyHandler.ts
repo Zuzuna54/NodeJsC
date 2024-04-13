@@ -9,11 +9,15 @@ export const historyHandler = async (req: Request, res: Response): Promise<void>
         // Query the database to retrieve the history of uploaded files and CSVs
         const query = 'SELECT file_name, content FROM csv_files';
         const result = await pool.query(query);
-
+        console.log(result.rows);
         // Extract the data from the result
         const history = result.rows.map(row => ({
             fileName: row.file_name,
-            content: row.content
+            content: row.content,
+            word: row.word,
+            wordCount: row.wordcount,
+            createdAt: row.date
+
         }));
 
         // Return the history as a response

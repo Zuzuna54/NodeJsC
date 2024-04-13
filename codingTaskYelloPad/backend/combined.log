@@ -635,3 +635,243 @@ info: Initiating the searchWordHandler
 
 info: Initiating the searchWordHandler
 
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "word" of relation "csv_files" does not exist
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "word" of relation "csv_files" does not exist
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "file_name" of relation "csv_files" does not exist
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "file_name" of relation "csv_files" does not exist
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "file_name" does not exist
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "file_name" does not exist
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: column "file_name" does not exist
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Initiating the searchWordHandler
+
+info: Initiating the searchWordHandler
+
+info: Initiating the uploadHandler
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1.txt
+info: Initiating the uploadHandler
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1.txt
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the uploadHandler
+
+info: Request to upload a file
+
+info: Initiating the uploadHandler
+
+info: Request to upload a file
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+error: Invalid session
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8002 in development mode
+info: Press CTRL-C to stop
+

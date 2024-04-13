@@ -31,7 +31,7 @@ export const searchWordHandler = async (req: Request, res: Response): Promise<vo
         const csvContent = `${word},${wordCount}\n\nSentences containing the word:\n${sentences.join('\n')}`;
 
         // Store the CSV file in the database
-        const csvFileName = await storeCSVInDatabase(fileName, csvContent);
+        const csvFileName = await storeCSVInDatabase(fileName, csvContent, word, wordCount.toString(), new Date().toISOString());
 
         // Return the CSV file name for download
         res.status(200).send({ csvFileName, wordCount, sentences: formatSentences(sentences) });
@@ -115,9 +115,9 @@ const formatSentences = (sentences: string[]): string[] => {
 };
 
 // Function to store CSV content in the database and return the file name
-const storeCSVInDatabase = async (fileName: string, csvContent: string): Promise<string> => {
-    const query = 'INSERT INTO csv_files (file_name, content) VALUES ($1, $2) RETURNING file_name';
-    const values = [fileName, csvContent];
+const storeCSVInDatabase = async (fileName: string, csvContent: string, word: string, wordcount: string, date: string): Promise<string> => {
+    const query = 'INSERT INTO csv_files (file_name, content, word, wordcount, date) VALUES ($1, $2, $3, $4, $5) RETURNING file_name';
+    const values = [fileName, csvContent, word, wordcount, date];
 
     try {
         const result = await pool.query(query, values);

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/aws-serverless-express": "^3.3.9",
     "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
@@ -26,8 +27,11 @@
     "typescript": "^5.3.2"
   },
   "dependencies": {
+    "@types/aws-lambda": "^8.10.137",
     "@types/aws-sdk": "^2.7.0",
     "@types/multer": "^1.4.11",
+    "@types/serverless": "^3.12.22",
+    "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1594.0",
     "aws-serverless-express": "^3.4.0",
     "bcryptjs": "^2.4.3",
@@ -41,6 +45,7 @@
     "psql": "^0.0.1",
     "reflect-metadata": "^0.1.13",
     "serverless": "^3.38.0",
+    "serverless-plugin-typescript": "^2.1.5",
     "ts-node": "^10.9.1",
     "uuid": "^9.0.1",
     "winston": "^3.11.0"
