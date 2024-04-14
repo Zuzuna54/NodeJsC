@@ -4,11 +4,11 @@ import jwt, { Secret } from 'jsonwebtoken';
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
 import userService from '../../services/userService';
-import logger from '../../utils/Logger';
+import Logger from '../../utils/Logger';
 import GenericReturn from 'src/utils/genericReturn';
 import { pool } from '../../services/db';
 
-
+const logger = new Logger();
 //Function to log in a user
 export const logInUserHandler = async (req: Request, res: Response): Promise<void> => {
 

@@ -2,7 +2,9 @@
 import { Pool, QueryResult } from 'pg';
 import { User } from '../models/userModel';
 import GenericReturn from '../utils/genericReturn';
-import logger from '../utils/Logger';
+import Logger from '../utils/Logger';
+
+const logger = new Logger();
 
 class UserService {
 
@@ -10,7 +12,9 @@ class UserService {
 
     constructor(pool: Pool) {
         this.pool = pool;
+
     }
+
 
     async createUser(user: User): Promise<GenericReturn> {
 

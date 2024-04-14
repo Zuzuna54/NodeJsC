@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.historyHandler = void 0;
 const db_1 = require("../../services/db");
 const Logger_1 = __importDefault(require("../../utils/Logger"));
+const logger = new Logger_1.default();
 const historyHandler = async (req, res) => {
     try {
         const query = 'SELECT file_name, content FROM csv_files';
@@ -17,7 +18,7 @@ const historyHandler = async (req, res) => {
         res.status(200).json({ history });
     }
     catch (error) {
-        Logger_1.default.error(`Error retrieving history: ${error}`);
+        logger.error(`Error retrieving history: ${error}`);
         res.status(500).json({ error: 'Failed to retrieve history' });
     }
 };

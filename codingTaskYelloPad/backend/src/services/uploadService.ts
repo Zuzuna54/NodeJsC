@@ -3,7 +3,9 @@ require('dotenv').config();
 import { Pool, QueryResult } from 'pg';
 import GenericReturn from '../utils/genericReturn';
 import { S3 } from 'aws-sdk';
-import logger from '../utils/Logger';
+import Logger from '../utils/Logger';
+
+const logger = new Logger();
 
 class UploadService {
     private pool: Pool;

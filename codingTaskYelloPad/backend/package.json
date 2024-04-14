@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/app.js",
   "scripts": {
     "test": "jest",
     "start": "node dist/app.js",
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@types/aws-sdk": "^2.7.0",
+    "aws-serverless-express": "^3.4.0",
     "@types/multer": "^1.4.11",
     "aws-sdk": "^2.1594.0",
     "bcryptjs": "^2.4.3",

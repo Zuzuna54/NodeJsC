@@ -3,12 +3,14 @@ import 'reflect-metadata';
 import express, { Express } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import logger from './utils/Logger';
+import Logger from './utils/Logger';
 import userRoutes from './routes/userRoutes'; // No need for relative path
 import uploadRoutes from './routes/uploadRoutes'; // No need for relative path
 import authRouter from './routes/authRoutes';
 
 
+// Create Logger instance
+const logger = new Logger();
 
 // Create the express application
 const app: Express = express();
@@ -16,6 +18,12 @@ const app: Express = express();
 app.use(cors());
 // Use the body parser middleware to parse the body of incoming requests
 app.use(bodyParser.json());
+// Health check endpoint
+app.get('/health', (req, res) => {
+    console.log('Health check');
+    res.status(200).send('Healthy');
+    console.log('Health check done');
+});
 // Use the userRoutes router for all user routes
 app.use('/awesome/applicant', userRoutes); // Use the imported router
 // Use the taskRoutes router for all task routes

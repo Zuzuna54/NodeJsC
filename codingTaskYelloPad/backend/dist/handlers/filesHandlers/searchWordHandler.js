@@ -8,8 +8,9 @@ const Logger_1 = __importDefault(require("../../utils/Logger"));
 const aws_sdk_1 = require("aws-sdk");
 const db_1 = require("../../services/db");
 const s3 = new aws_sdk_1.S3();
+const logger = new Logger_1.default();
 const searchWordHandler = async (req, res) => {
-    Logger_1.default.info(`Initiating the searchWordHandler\n`);
+    logger.info(`Initiating the searchWordHandler\n`);
     try {
         const { word } = req.body;
         if (!word) {
@@ -25,7 +26,7 @@ const searchWordHandler = async (req, res) => {
         res.status(200).send({ csvFileName, wordCount, sentences: formatSentences(sentences) });
     }
     catch (error) {
-        Logger_1.default.error(`Error searching for word: ${error}`);
+        logger.error(`Error searching for word: ${error}`);
         res.status(500).send({ error: 'Failed to search for word' });
     }
 };

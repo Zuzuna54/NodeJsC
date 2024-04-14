@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const genericReturn_1 = __importDefault(require("../utils/genericReturn"));
 const Logger_1 = __importDefault(require("../utils/Logger"));
+const logger = new Logger_1.default();
 class UserService {
     constructor(pool) {
         this.pool = pool;
@@ -15,20 +16,20 @@ class UserService {
         try {
             const result = await this.pool.query(query, [user.username, user.email, user.password]);
             if (result.rowCount !== 1) {
-                Logger_1.default.error('Failed to create user.');
+                logger.error('Failed to create user.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to create user.';
                 return returnResult;
             }
-            Logger_1.default.info('User created.');
+            logger.info('User created.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'User created.';
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error creating user: ${error}`);
+            logger.error(`Error creating user: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to create user.';
@@ -41,13 +42,13 @@ class UserService {
         try {
             const result = await this.pool.query(query, [email]);
             if (result.rows.length == 0) {
-                Logger_1.default.error('Failed to fetch user by email.');
+                logger.error('Failed to fetch user by email.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to fetch user by email.';
                 return returnResult;
             }
-            Logger_1.default.info('User fetched.');
+            logger.info('User fetched.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'User fetched.';
@@ -55,7 +56,7 @@ class UserService {
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error fetching user by email:  ${error}`);
+            logger.error(`Error fetching user by email:  ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to fetch user by email.';
@@ -68,13 +69,13 @@ class UserService {
         try {
             const result = await this.pool.query(query, [id]);
             if (result.rows.length == 0) {
-                Logger_1.default.error('Failed to fetch user by ID.');
+                logger.error('Failed to fetch user by ID.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to fetch user by ID.';
                 return returnResult;
             }
-            Logger_1.default.info('User fetched.');
+            logger.info('User fetched.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'User fetched.';
@@ -82,7 +83,7 @@ class UserService {
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error fetching user by ID: ${error}`);
+            logger.error(`Error fetching user by ID: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to fetch user by ID.';
@@ -95,13 +96,13 @@ class UserService {
         try {
             const result = await this.pool.query(query, [username]);
             if (result.rows.length == 0) {
-                Logger_1.default.error('Failed to fetch user by username.');
+                logger.error('Failed to fetch user by username.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to fetch user by username.';
                 return returnResult;
             }
-            Logger_1.default.info('User fetched.');
+            logger.info('User fetched.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'User fetched.';
@@ -109,7 +110,7 @@ class UserService {
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error fetching user by username: ${error}`);
+            logger.error(`Error fetching user by username: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to fetch user by username.';
@@ -122,20 +123,20 @@ class UserService {
         try {
             const result = await this.pool.query(query, [user.username, user.email, user.password, user.id]);
             if (result.rowCount !== 1) {
-                Logger_1.default.error('Failed to update user.');
+                logger.error('Failed to update user.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to update user.';
                 return returnResult;
             }
-            Logger_1.default.info('User updated.');
+            logger.info('User updated.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'User updated.';
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error updating user: ${error}`);
+            logger.error(`Error updating user: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to update user.';

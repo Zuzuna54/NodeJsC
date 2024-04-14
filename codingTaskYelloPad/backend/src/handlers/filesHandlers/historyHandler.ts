@@ -1,8 +1,9 @@
 // Import necessary modules
 import { Request, Response } from 'express';
 import { pool } from '../../services/db';
-import logger from '../../utils/Logger';
+import Logger from '../../utils/Logger';
 
+const logger = new Logger();
 // Define the route handler
 export const historyHandler = async (req: Request, res: Response): Promise<void> => {
     try {

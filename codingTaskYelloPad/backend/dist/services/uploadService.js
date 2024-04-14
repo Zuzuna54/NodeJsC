@@ -7,6 +7,7 @@ require('dotenv').config();
 const genericReturn_1 = __importDefault(require("../utils/genericReturn"));
 const aws_sdk_1 = require("aws-sdk");
 const Logger_1 = __importDefault(require("../utils/Logger"));
+const logger = new Logger_1.default();
 class UploadService {
     constructor(pool) {
         this.pool = pool;
@@ -18,20 +19,20 @@ class UploadService {
         try {
             const result = await this.pool.query(query, [userId, fileName, csvFileName]);
             if (result.rowCount !== 1) {
-                Logger_1.default.error('Failed to insert file into database.');
+                logger.error('Failed to insert file into database.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to insert file into database.';
                 return returnResult;
             }
-            Logger_1.default.info('File inserted into database.');
+            logger.info('File inserted into database.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'File inserted into database.';
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error inserting file into database: ${error}`);
+            logger.error(`Error inserting file into database: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to insert file into database.';
@@ -44,20 +45,20 @@ class UploadService {
         try {
             const result = await this.pool.query(query, [id]);
             if (result.rowCount !== 1) {
-                Logger_1.default.error('Failed to fetch file from database.');
+                logger.error('Failed to fetch file from database.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to fetch file from database.';
                 return returnResult;
             }
-            Logger_1.default.info('File fetched from database.');
+            logger.info('File fetched from database.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.data = result.rows[0];
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error fetching file from database: ${error}`);
+            logger.error(`Error fetching file from database: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to fetch file from database.';
@@ -70,20 +71,20 @@ class UploadService {
         try {
             const result = await this.pool.query(query, [name]);
             if (result.rowCount !== 1) {
-                Logger_1.default.error('Failed to fetch file from database.');
+                logger.error('Failed to fetch file from database.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to fetch file from database.';
                 return returnResult;
             }
-            Logger_1.default.info('File fetched from database.');
+            logger.info('File fetched from database.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.data = result.rows[0];
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error fetching file from database: ${error}`);
+            logger.error(`Error fetching file from database: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to fetch file from database.';
@@ -96,20 +97,20 @@ class UploadService {
         try {
             const result = await this.pool.query(query, [userId]);
             if (result.rowCount === 0) {
-                Logger_1.default.error('Failed to fetch files from database.');
+                logger.error('Failed to fetch files from database.');
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to fetch files from database.';
                 return returnResult;
             }
-            Logger_1.default.info('Files fetched from database.');
+            logger.info('Files fetched from database.');
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.data = result.rows;
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error fetching files from database: ${error}`);
+            logger.error(`Error fetching files from database: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to fetch files from database.';
@@ -122,7 +123,7 @@ class UploadService {
         try {
             const bucketName = process.env.S3_BUCKET_NAME;
             if (!bucketName) {
-                Logger_1.default.error(`S3 bucket name is missing`);
+                logger.error(`S3 bucket name is missing`);
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'S3 bucket name is missing';
@@ -135,13 +136,13 @@ class UploadService {
                 Body: fileContent
             };
             await this.s3.upload(params).promise().then((data) => {
-                Logger_1.default.info(`File uploaded to S3: ${data.Location}`);
+                logger.info(`File uploaded to S3: ${data.Location}`);
                 returnResult.result = 'Success';
                 returnResult.statusCode = 200;
                 returnResult.message = 'File uploaded to S3.';
                 returnResult.data = data.Location;
             }).catch((error) => {
-                Logger_1.default.error(`Error uploading file to S3: ${error}`);
+                logger.error(`Error uploading file to S3: ${error}`);
                 returnResult.result = 'Failed';
                 returnResult.statusCode = 500;
                 returnResult.message = 'Failed to upload file to S3.';
@@ -149,7 +150,7 @@ class UploadService {
             return returnResult;
         }
         catch (error) {
-            Logger_1.default.error(`Error uploading file to S3: ${error}`);
+            logger.error(`Error uploading file to S3: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
             returnResult.message = 'Failed to upload file to S3.';

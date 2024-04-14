@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
-import logger from "../../utils/Logger";
+import Logger from "../../utils/Logger";
 import { pool } from "../../services/db";
 import uploadService from "../../services/uploadService";
 import GenericReturn from "src/utils/genericReturn";
+
+const logger = new Logger();
 
 export const uploadHandler = async (req: Request, res: Response): Promise<void> => {
 

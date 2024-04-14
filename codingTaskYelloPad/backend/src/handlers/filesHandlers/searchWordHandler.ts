@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
-import logger from "../../utils/Logger";
+import Logger from "../../utils/Logger";
 import { S3 } from "aws-sdk";
 import { pool } from "../../services/db";
 
 const s3 = new S3();
+const logger = new Logger();
 
 export const searchWordHandler = async (req: Request, res: Response): Promise<void> => {
 

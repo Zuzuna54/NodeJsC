@@ -26,5 +26,5 @@ class Logger {
         this.logger.error(message);
     }
 }
-exports.default = new Logger();
+exports.default = Logger;
 //# sourceMappingURL=Logger.js.map

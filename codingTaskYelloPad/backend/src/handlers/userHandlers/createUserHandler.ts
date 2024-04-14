@@ -5,7 +5,7 @@ import {
     validatePassword
 
 } from '../../utils/utils';
-import logger from '../../utils/Logger';
+import Logger from '../../utils/Logger';
 import { v4 as uuidv4 } from 'uuid';
 import bcryptjs from 'bcryptjs';
 import userService from '../../services/userService';
@@ -14,8 +14,12 @@ import { User } from '../../models/userModel';
 import GenericReturn from 'src/utils/genericReturn';
 import { pool } from '../../services/db';
 
+
+const logger = new Logger();
 //Function to register a user
 export const createUserHandler = async (req: Request, res: Response): Promise<void> => {
+
+
 
     logger.info(`initiating the createUserHandler\n`);
 

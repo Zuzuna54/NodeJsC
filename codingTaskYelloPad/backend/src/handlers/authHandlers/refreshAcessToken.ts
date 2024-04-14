@@ -2,11 +2,12 @@ require('dotenv').config();
 import { decodeToken, validateRefreshSession } from '../../utils/utils';
 import { Request, Response } from 'express';
 import jwt, { Secret } from 'jsonwebtoken';
-import logger from '../../utils/Logger';
+import Logger from '../../utils/Logger';
 import userService from '../../services/userService';
 import GenericReturn from '../../utils/genericReturn';
 import { pool } from '../../services/db';
 
+const logger = new Logger();
 //Function to refresh the access token
 export const refreshAccessTokenHandler = async (req: Request, res: Response): Promise<void> => {
 
