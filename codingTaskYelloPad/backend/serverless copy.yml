@@ -1,0 +1,60 @@
+
+service: backend-node
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  memorySize: 2048
+  stage: dev
+  timeout: 15
+  region: us-east-1
+
+#Serverless Functions
+functions:
+  server:
+    handler: handler.app
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
+    environment:
+      PORT: 8000
+      TOKEN_SECRET: mySecretKey
+      SESSION_SECRET: mySecretKey
+      DB_USER: postgres
+      DB_HOST: filler-db.crsimsmo0tl9.us-east-1.rds.amazonaws.com
+      DB_NAME: filler-db
+      DB_PASSWORD: 765765fErari
+      DB_PORT: 5432
+      # AWS_ACCESS_KEY_ID: AKIAQF22GAVIQYENBJTR
+      # AWS_SECRET_ACCESS_KEY: 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
+      S3_BUCKET_NAME: codig-task-upload-s3
+
+resources:
+  Resources:
+    MyBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: codig-task-upload-s3
+        AccessControl: Private
+        CorsConfiguration:
+          CorsRules:
+            - AllowedOrigins:
+                - "*"
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+              AllowedHeaders:
+                - "*"
+              MaxAge: 3000
+    MyDatabase:
+      Type: AWS::RDS::DBInstance
+      Properties:
+        AllocatedStorage: 20
+        DBInstanceClass: db.t2.micro
+        Engine: postgres
+        DBName: filler-db
+        MasterUsername: postgres
+        MasterUserPassword: 765765fErari
+        DBInstanceIdentifier: mydatabase-instance

@@ -878,3 +878,33 @@ info: Press CTRL-C to stop
 info: Server is running at http://localhost:8002 in development mode
 info: Press CTRL-C to stop
 
+<<<<<<< Updated upstream
+=======
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+>>>>>>> Stashed changes
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+

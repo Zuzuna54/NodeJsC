@@ -4,10 +4,3 @@ jspm_packages
 
 # Serverless directories
 .serverless
-
-# IDE files
-.idea
-.vscode
-
-# All of the zip files
-*.zip
