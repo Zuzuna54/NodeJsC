@@ -32,3 +32,16 @@ error: Error creating user: error: column "username" of relation "users" does no
 error: Failed to create user
 
 error: Failed to fetch user by username.
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error searching for word: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+error: Error searching for word: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+error: Error searching for word: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+error: Error storing CSV file in database: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file: Failed to fetch file from database. Error: error: relation "files" does not exist
+error: Failed to fetch user by username.

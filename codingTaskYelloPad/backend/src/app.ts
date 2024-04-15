@@ -20,9 +20,12 @@ app.use(cors());
 app.use(bodyParser.json());
 // Health check endpoint
 app.get('/health', (req, res) => {
-    console.log('Health check');
+    logger.info('Health Started');
+    //logging the request
+    logger.info(`${req.method} request to ${req.url} from ${req.ip}`);
+    // Send a response
     res.status(200).send('Healthy');
-    console.log('Health check done');
+    logger.info('Health check done');
 });
 // Use the userRoutes router for all user routes
 app.use('/awesome/applicant', userRoutes); // Use the imported router

@@ -11,16 +11,16 @@ import bcryptjs from 'bcryptjs';
 import userService from '../../services/userService';
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
-import GenericReturn from 'src/utils/genericReturn';
+import GenericReturn from '../../utils/genericReturn';
 import { pool } from '../../services/db';
 
 
-const logger = new Logger();
+
 //Function to register a user
 export const createUserHandler = async (req: Request, res: Response): Promise<void> => {
 
 
-
+    const logger = new Logger();
     logger.info(`initiating the createUserHandler\n`);
 
     try {
@@ -34,9 +34,13 @@ export const createUserHandler = async (req: Request, res: Response): Promise<vo
         const { username, email, password } = req.body;
         const userData: User = req.body;
         logger.info(`email: ${JSON.stringify(email)}`);
+        //Validate the user data exists
+        if (!username || !email || !password) {
+            res.status(400).send({ message: 'Username, email and password are required' });
+            return;
+        }
 
-
-        //Validate the user data
+        //Validate the user data format
         logger.info(`Validating the email\n`);
         const emailValidated: boolean = validateEmail(email);
         if (!emailValidated) {
@@ -66,7 +70,7 @@ export const createUserHandler = async (req: Request, res: Response): Promise<vo
 
                 logger.info(`User already exists\n`);
                 res.status(400).send({ message: 'User with that email or username already exists' });
-                return result;
+                return;
 
             } else {
 
@@ -74,29 +78,30 @@ export const createUserHandler = async (req: Request, res: Response): Promise<vo
 
                 //Create the user
                 logger.info(`Creating the user\n`);
-                createNewUser(res, userData, userServiceHere);
-                return result;
+                createNewUser(res, userData, userServiceHere, logger);
 
             }
 
         }).catch((error: Error) => {
 
             logger.error(`Error checking if the user already exists:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Failed to check if the user already exists' });
+            return;
 
         });
 
     } catch (error) {
 
         logger.error(`Error creating user:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Failed to create user' });
+        return;
     }
 
 }
 
 
 //Function to create a new user
-const createNewUser = async (res: Response, userData: User, userServiceHere: userService): Promise<void> => {
+const createNewUser = async (res: Response, userData: User, userServiceHere: userService, logger: Logger): Promise<void> => {
 
     try {
         //Hash the password
@@ -138,26 +143,28 @@ const createNewUser = async (res: Response, userData: User, userServiceHere: use
                 };
 
                 res.status(200).send({ response });
-                return result;
+                return;
 
             } else {
 
                 logger.error(`Failed to create user\n`);
                 res.status(500).send({ message: 'Failed to create user ' + result.message });
-                return result;
+                return;
 
             }
 
         }).catch((error: Error) => {
 
             logger.error(`Error saving the user to the db:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Failed to save user to the db' });
+            return;
 
         });
     } catch (error) {
 
         logger.error(`Error saving the user to the db:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Failed to save user to the db' });
+        return;
 
     }
 }

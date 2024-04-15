@@ -21,7 +21,7 @@ export const validateEmail = (email: string): boolean => {
 };
 
 
-//Helper function to decode the JWT token
+//Helper function to decode the JWT token and return the user
 export const decodeToken = (token: string): Record<string, any> | null => {
 
     const tokenSecret: Secret | undefined = process.env.TOKEN_SECRET;
@@ -36,6 +36,24 @@ export const decodeToken = (token: string): Record<string, any> | null => {
     const user: Record<string, any> = decodedTokenRecord.user;
 
     return user
+}
+
+//helper function to decode jwt token and return last login
+export const decodeTokenLastLogin = (token: string): string | null => {
+
+    const tokenSecret: Secret | undefined = process.env.TOKEN_SECRET;
+    if (!tokenSecret) {
+        console.error('Error: TOKEN_SECRET environment variable is not set');
+        return null
+    }
+
+    // Verify the token
+    const decodedToken: string | jwt.JwtPayload = jwt.verify(token, tokenSecret as Secret);
+    const decodedTokenRecord: Record<string, any> = JSON.parse(JSON.stringify(decodedToken));
+    const user: Record<string, any> = decodedTokenRecord.user;
+    const lastLogin: string = user.lastLogIn;
+    return lastLogin
+
 }
 
 
@@ -161,4 +179,47 @@ export const validateRefreshSession = (lastLogin: string): boolean => {
 
     return sessionValidated
 
+};
+
+// Function to count occurrences of a word in a string
+export const countOccurrences = (text: string, word: string): number => {
+    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    const matches = text.match(regex);
+    return matches ? matches.length : 0;
+};
+
+// Function to find sentences containing a word in a string
+export const findSentences = (text: string, word: string): string[] => {
+    const sentences: string[] = [];
+    let currentSentence = '';
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        currentSentence += char;
+
+        // Check if the current character is one of ., !, or ?
+        if (char === '.' || char === '!' || char === '?') {
+            // Check if the next character is a space followed by a lowercase letter
+            if (text[i + 1] === ' ' && /[a-z]/.test(text[i + 2])) {
+                continue; // Not the end of a sentence
+            }
+            // Check if the current sentence contains the word
+            if (currentSentence.toLowerCase().includes(word.toLowerCase())) {
+                sentences.push(currentSentence.trim());
+            }
+            currentSentence = '';
+        }
+    }
+
+    // Add the last sentence if there's anything left and it contains the word
+    if (currentSentence.trim() !== '' && currentSentence.toLowerCase().includes(word.toLowerCase())) {
+        sentences.push(currentSentence.trim());
+    }
+
+    return sentences;
+};
+
+// Function to format sentences for human readability
+export const formatSentences = (sentences: string[]): string[] => {
+    return sentences.map(sentence => `- ${sentence.replace(/\n/g, '').replace(/\s+/g, ' ').trim()}`);
 };

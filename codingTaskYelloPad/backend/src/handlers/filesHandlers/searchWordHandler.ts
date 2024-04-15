@@ -2,127 +2,164 @@ import { Request, Response } from "express";
 import Logger from "../../utils/Logger";
 import { S3 } from "aws-sdk";
 import { pool } from "../../services/db";
+import { decodeTokenLastLogin, validateSession, formatSentences, countOccurrences, findSentences } from "../../utils/utils";
+import uploadService from "../../services/uploadService";
+import GenericReturn from "../../utils/genericReturn";
 
-const s3 = new S3();
-const logger = new Logger();
 
 export const searchWordHandler = async (req: Request, res: Response): Promise<void> => {
 
+    // Import necessary modules
+    console.info('starting s3 and logger instances')
+    const s3 = new S3();
+    const logger = new Logger();
     logger.info(`Initiating the searchWordHandler\n`);
 
     try {
 
-        // Extract the word to search for from the request body or query parameters
-        const { word } = req.body;
+        //Starting file upload class
+        logger.info(`Starting file upload class\n`);
+        const fileUploadService = new uploadService(pool);
 
-        if (!word) {
-            res.status(400).send({ message: 'Word to search for is missing' });
+        //check request fot auth token
+        if (!req.headers.authorization) {
+            res.status(401).json({ error: 'Unauthorized: Auth Header Missing' });
+            return;
+        }
+
+        //check if the token is valid
+        const token = req.headers.authorization.split(' ')[1];
+        const lastLogin = decodeTokenLastLogin(token);
+        if (!lastLogin) {
+            res.status(401).json({ error: 'Last log in missing from token' });
+            return;
+        }
+        //validate the session
+        const sessionValidated: boolean = await validateSession(lastLogin);
+        if (!sessionValidated) {
+            res.status(401).json({ error: 'Invalid session time' });
+            return;
+        }
+
+        // Extract the word to search for from the request body or query parameters
+        const { word, file_name } = req.body;
+
+        if (!word || !file_name) {
+            res.status(400).send({ message: 'Filename or search word missing from the request: ' + req.body });
             return;
         }
 
         // Retrieve the uploaded file content from S3
-        const fileName = "text1.txt";
-        const fileContent = await getFileFromS3(fileName);
+        const fileName = file_name;
+        logger.info(`Retrieving file content from S3: ${fileName}\n`);
+        getFileFromS3(fileName, s3, logger, res, fileUploadService, word);
 
-        // Perform the search for the word
-        const wordCount = countOccurrences(fileContent, word);
-        const sentences = findSentences(fileContent, word);
-
-        // Generate CSV content
-        const csvContent = `${word},${wordCount}\n\nSentences containing the word:\n${sentences.join('\n')}`;
-
-        // Store the CSV file in the database
-        const csvFileName = await storeCSVInDatabase(fileName, csvContent);
-
-        // Return the CSV file name for download
-        res.status(200).send({ csvFileName, wordCount, sentences: formatSentences(sentences) });
     } catch (error) {
         logger.error(`Error searching for word: ${error}`);
         res.status(500).send({ error: 'Failed to search for word' });
+        return;
     }
 }
 
-// Function to retrieve file content from S3
-const getFileFromS3 = async (fileName: string): Promise<string> => {
-
-    const bucketName: string | undefined = process.env.S3_BUCKET_NAME;
-
-    if (!bucketName) {
-        throw new Error('S3 bucket name is missing');
-    }
 
 
-    const params = {
-        Bucket: bucketName,
-        Key: fileName
-    };
-
-    return new Promise<string>((resolve, reject) => {
-        s3.getObject(params, (err, data) => {
-            if (!data || !data.Body) {
-                reject(new Error('File not found'));
-            }
-            if (err) {
-                reject(err);
-            } else {
-                resolve(data.Body?.toString() ?? '');
-            }
-        });
-    });
-};
-
-// Function to count occurrences of a word in a string
-const countOccurrences = (text: string, word: string): number => {
-    const regex = new RegExp(`\\b${word}\\b`, 'gi');
-    const matches = text.match(regex);
-    return matches ? matches.length : 0;
-};
-
-// Function to find sentences containing a word in a string
-const findSentences = (text: string, word: string): string[] => {
-    const sentences: string[] = [];
-    let currentSentence = '';
-
-    for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        currentSentence += char;
-
-        // Check if the current character is one of ., !, or ?
-        if (char === '.' || char === '!' || char === '?') {
-            // Check if the next character is a space followed by a lowercase letter
-            if (text[i + 1] === ' ' && /[a-z]/.test(text[i + 2])) {
-                continue; // Not the end of a sentence
-            }
-            // Check if the current sentence contains the word
-            if (currentSentence.toLowerCase().includes(word.toLowerCase())) {
-                sentences.push(currentSentence.trim());
-            }
-            currentSentence = '';
-        }
-    }
-
-    // Add the last sentence if there's anything left and it contains the word
-    if (currentSentence.trim() !== '' && currentSentence.toLowerCase().includes(word.toLowerCase())) {
-        sentences.push(currentSentence.trim());
-    }
-
-    return sentences;
-};
-
-// Function to format sentences for human readability
-const formatSentences = (sentences: string[]): string[] => {
-    return sentences.map(sentence => `- ${sentence.replace(/\n/g, '').replace(/\s+/g, ' ').trim()}`);
-};
-
-// Function to store CSV content in the database and return the file name
-const storeCSVInDatabase = async (fileName: string, csvContent: string): Promise<string> => {
-    const query = 'INSERT INTO csv_files (file_name, content) VALUES ($1, $2) RETURNING file_name';
-    const values = [fileName, csvContent];
+// Function to fetch the file content from S3
+const getFileFromS3 = async (fileName: string, s3: S3, logger: Logger, res: Response, fileUploadService: uploadService, word: string): Promise<void> => {
 
     try {
-        const result = await pool.query(query, values);
-        return result.rows[0].file_name;
+
+        await fileUploadService.getFileFromS3(fileName, s3).then(async (data) => {
+
+            const response: GenericReturn = data
+            // Check if the file content was retrieved successfully via status code
+            if (response.statusCode !== 200) {
+                logger.error(`Error fetching file content: ${response.data}`);
+                res.status(500).send({ error: 'Failed to fetch file content' });
+                return;
+            }
+            // Check if the file content was retrieved successfully
+            if (!response.data) {
+                logger.error(`Error fetching file content: ${response.data}`);
+                res.status(500).send({ error: 'Failed to fetch file content' });
+                return;
+            }
+
+            logger.info(`response message: ${response.message}\n`);
+            logger.info(`File content retrieved successfully\n`);
+
+            // Perform the search for the word
+            logger.info(`Calculating word count and finding sentences containing the word\n`);
+            const wordCount = countOccurrences(response.data, word);
+            const sentences = findSentences(response.data, word);
+
+            // Generate CSV content
+            logger.info(`Generating CSV content\n`);
+            const csvContent = `${word},${wordCount}\n\nSentences containing the word:\n${sentences.join('\n')}`;
+
+            // Store the CSV file in the database
+            logger.info(`Storing CSV file in the database\n`);
+            storeCSVInDatabase(fileName, csvContent, pool, logger, fileUploadService, res, wordCount, sentences);
+
+
+        }).catch((error) => {
+
+            logger.error(`Error fetching file content:, ${error}`);
+            res.status(500).send({ error: 'Failed to fetch file content' });
+            return;
+
+        })
+
     } catch (error) {
-        throw new Error(`Error storing CSV file in database: ${error}`);
+
+        logger.error(`Error fetching file content from s3:, ${error}`);
+        res.status(500).send({ error: 'Failed to fetch file content from s3' });
+        return;
     }
-};
+
+}
+
+
+
+//Function to store the CSV file in the database
+const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: any, logger: Logger, fileUploadService: uploadService, res: Response, wordCount: number, sentences: string[]): Promise<void> => {
+
+
+    try {
+
+        await fileUploadService.storeCSVInDatabase(fileName, csvContent, pool).then((data) => {
+
+            const response: GenericReturn = data;
+            // Check if the CSV file was stored successfully via status code
+            if (response.statusCode !== 200) {
+                logger.error(`Error storing CSV file in database: ${response.data}`);
+                res.status(500).send({ error: 'Failed to store CSV file in database' });
+                return;
+            }
+            // Check if the CSV file was stored successfully
+            if (!response.data) {
+                logger.error(`Error storing CSV file in database: ${response.data}`);
+                res.status(500).send({ error: 'Failed to store CSV file in database' });
+                return;
+            }
+
+            logger.info(`response message: ${response.message}\n`);
+            logger.info(`CSV file stored in the database: ${data}\n`);
+
+            // Return the CSV file name for download
+            res.status(200).send({ data, wordCount, sentences: formatSentences(sentences) });
+            return;
+
+        }).catch((error) => {
+            logger.error(`Error storing CSV file in database: ${error}`);
+            res.status(500).send({ error: 'Failed to store CSV file in database' });
+            return;
+        });
+
+    } catch (error) {
+
+        logger.error(`Error storing CSV file in database: ${error}`);
+        res.status(500).send({ error: 'Failed to store CSV file in database' });
+        return;
+    }
+
+}

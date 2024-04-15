@@ -5,7 +5,7 @@ import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
 import userService from '../../services/userService';
 import Logger from '../../utils/Logger';
-import GenericReturn from 'src/utils/genericReturn';
+import GenericReturn from '../../utils/genericReturn';
 import { pool } from '../../services/db';
 
 const logger = new Logger();
@@ -34,14 +34,25 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
         //Get the user from the db
         logger.info(`Getting the user from the db\n`);
 
-        await userServiveHere.getUserByUserName(userData.username,).then((result: GenericReturn) => {
+        await userServiveHere.getUserByUserName(userData.username).then((result: GenericReturn) => {
+
+            const response: GenericReturn = result;
+            //Check if the user exists via status code
+            if (response.statusCode !== 200) {
+
+                logger.error(`Error fetching user: ${response.message}`);
+                res.status(400).send({ message: `${response.message}` });
+                return;
+
+            }
 
             const user: User = result.data;
 
             //Check if the user exists
             if (!user) {
 
-                res.status(400).send({ message: 'Invalid username or password' });
+                logger.error(`Invalid username`);
+                res.status(400).send({ message: 'Invalid username' });
                 return;
 
             }
@@ -53,13 +64,15 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
         }).catch((error) => {
 
             logger.error(`Error fetching user:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Error fetching user' });
+            return;
 
         });
     } catch (error) {
 
         logger.error(`Error logging in user:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Error logging in user' });
+        return;
 
     }
 
@@ -94,9 +107,8 @@ const comparePasswords = async (
                 if (!tokenSecret) {
 
                     logger.error('Please define the TOKEN_SECRET environment variable inside .env.local');
-                    throw new Error(
-                        'Please define the TOKEN_SECRET environment variable inside .env.local',
-                    );
+                    res.status(500).send({ message: 'Token secret is missing' });
+                    return;
 
                 }
 
@@ -129,13 +141,15 @@ const comparePasswords = async (
         }).catch((error) => {
 
             logger.error(`Error comparing passwords:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Error comparing passwords' });
+            return;
 
         });
     } catch (error) {
 
         logger.error(`Error comparing passwords:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Error comparing passwords' });
+        return;
 
     }
 
@@ -169,28 +183,31 @@ const updateLastLoginAndRespond = async (
                     statusCode: 200,
                 }
                 res.status(200).send(response);
-
+                return;
 
             } else {
 
+                logger.error(`Error updating the lastLogin property of the user`);
                 res.status(400).send({ message: 'Error updating the lastLogin property of the user' });
                 return;
 
             }
 
-            logger.info(`User updated: ${result}`);
+
 
         }).catch((error) => {
 
             logger.error(`Error updating the lastLogin property of the user:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Error updating the lastLogin property of the user' });
+            return;
 
         });
 
     } catch (error) {
 
         logger.error(`Error updating the lastLogin property of the user:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Error updating the lastLogin property of the user' });
+        return;
 
     }
 

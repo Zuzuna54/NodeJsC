@@ -512,3 +512,586 @@ info: Press CTRL-C to stop
 info: Server is running at http://localhost:8000 in development mode
 info: Press CTRL-C to stop
 
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: User updated: [object Object]
+info: Initiating the uploadHandler
+
+info: Initiating the uploadHandler
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: undefined
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: undefined
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: undefined
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: undefined
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: 1713154909943
+
+info: Request to upload a file
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: 1713154909943
+
+info: Request to upload a file
+
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: 1713154909943
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1.txt
+info: Initiating the uploadHandler
+
+info: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6InRlc3RVc2VyMSIsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJsYXN0TG9nSW4iOjE3MTMxNTQ5MDk5NDN9LCJpYXQiOjE3MTMxNTQ5MDl9.i5tc0x1CFN4VH9UJc9ewIb7ECqR951GJnmFraySicaA
+
+info: Last login: 1713154909943
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Initiating the searchWordHandler
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+info: Initiating the searchWordHandler
+
+info: Initiating the searchWordHandler
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+error: Error searching for word: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Retrieving file content from S3: text1.txt
+
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+error: Error storing CSV file in database: Error: Error storing CSV file in database: error: null value in column "word" of relation "csv_files" violates not-null constraint
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response message: File uploaded to S3.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response message: File uploaded to S3.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+info: Response data: 
+info: Response message: Failed to fetch file from database.
+info: Response status code: 500
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response message: File uploaded to S3.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: relation "files" does not exist
+error: Error fetching file: Failed to fetch file from database. Error: error: relation "files" does not exist
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: initiating the createUserHandler
+
+info: Request to register a user
+
+info: email: "test11@email.com"
+info: Validating the email
+
+info: Validating the username
+
+info: Validating the password
+
+info: Checking if the user already exists
+
+info: User fetched.
+info: User already exists
+
+info: initiating the createUserHandler
+
+info: Request to register a user
+
+info: email: "test11@email.com"
+info: Validating the email
+
+info: Validating the username
+
+info: Validating the password
+
+info: Checking if the user already exists
+
+error: Failed to fetch user by username.
+info: User does not exist
+
+info: Creating the user
+
+info: Hashing the password
+
+info: hashedPassword: $2a$10$IHo4UrY53.aIpLHVXCEnOOPh16egb6QX6GGXYMR0xJG72dezeCSHG
+info: Creating the user
+
+info: user: [object Object]
+info: Saving the user to the db
+
+info: User created.
+info: User created
+
+info: Getting the user from the result
+
+info: Sending the response
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+

@@ -22,21 +22,30 @@ const logInUserHandler = async (req, res) => {
         }
         logger.info(`Getting the user from the db\n`);
         await userServiveHere.getUserByUserName(userData.username).then((result) => {
+            const response = result;
+            if (response.statusCode !== 200) {
+                logger.error(`Error fetching user: ${response.message}`);
+                res.status(400).send({ message: `${response.message}` });
+                return;
+            }
             const user = result.data;
             if (!user) {
-                res.status(400).send({ message: 'Invalid username or password' });
+                logger.error(`Invalid username`);
+                res.status(400).send({ message: 'Invalid username' });
                 return;
             }
             logger.info(`Checking if the password is correct\n`);
             comparePasswords(userData.password, user.password, res, user, userServiveHere);
         }).catch((error) => {
             logger.error(`Error fetching user:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Error fetching user' });
+            return;
         });
     }
     catch (error) {
         logger.error(`Error logging in user:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Error logging in user' });
+        return;
     }
 };
 exports.logInUserHandler = logInUserHandler;
@@ -53,7 +62,8 @@ const comparePasswords = async (password, hashedPassword, res, user, userService
                 const tokenSecret = process.env.TOKEN_SECRET;
                 if (!tokenSecret) {
                     logger.error('Please define the TOKEN_SECRET environment variable inside .env.local');
-                    throw new Error('Please define the TOKEN_SECRET environment variable inside .env.local');
+                    res.status(500).send({ message: 'Token secret is missing' });
+                    return;
                 }
                 logger.info(`Creating and assigning access token\n`);
                 const signature = {
@@ -75,12 +85,14 @@ const comparePasswords = async (password, hashedPassword, res, user, userService
             }
         }).catch((error) => {
             logger.error(`Error comparing passwords:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Error comparing passwords' });
+            return;
         });
     }
     catch (error) {
         logger.error(`Error comparing passwords:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Error comparing passwords' });
+        return;
     }
 };
 const updateLastLoginAndRespond = async (res, user, accessToken, refreshToken, userServiceHere) => {
@@ -97,20 +109,23 @@ const updateLastLoginAndRespond = async (res, user, accessToken, refreshToken, u
                     statusCode: 200,
                 };
                 res.status(200).send(response);
+                return;
             }
             else {
+                logger.error(`Error updating the lastLogin property of the user`);
                 res.status(400).send({ message: 'Error updating the lastLogin property of the user' });
                 return;
             }
-            logger.info(`User updated: ${result}`);
         }).catch((error) => {
             logger.error(`Error updating the lastLogin property of the user:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Error updating the lastLogin property of the user' });
+            return;
         });
     }
     catch (error) {
         logger.error(`Error updating the lastLogin property of the user:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Error updating the lastLogin property of the user' });
+        return;
     }
 };
 //# sourceMappingURL=logInUser.js.map

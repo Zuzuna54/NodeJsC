@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.validateRefreshSession = exports.validateSession = exports.validateUserType = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
+exports.formatSentences = exports.findSentences = exports.countOccurrences = exports.validateRefreshSession = exports.validateSession = exports.validateUserType = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeTokenLastLogin = exports.decodeToken = exports.validateEmail = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const consts_1 = require("./consts");
 const validateEmail = (email) => {
@@ -28,6 +28,19 @@ const decodeToken = (token) => {
     return user;
 };
 exports.decodeToken = decodeToken;
+const decodeTokenLastLogin = (token) => {
+    const tokenSecret = process.env.TOKEN_SECRET;
+    if (!tokenSecret) {
+        console.error('Error: TOKEN_SECRET environment variable is not set');
+        return null;
+    }
+    const decodedToken = jsonwebtoken_1.default.verify(token, tokenSecret);
+    const decodedTokenRecord = JSON.parse(JSON.stringify(decodedToken));
+    const user = decodedTokenRecord.user;
+    const lastLogin = user.lastLogIn;
+    return lastLogin;
+};
+exports.decodeTokenLastLogin = decodeTokenLastLogin;
 const validateUsername = (username) => {
     if (username.length < 3)
         return false;
@@ -100,4 +113,36 @@ const validateRefreshSession = (lastLogin) => {
     return sessionValidated;
 };
 exports.validateRefreshSession = validateRefreshSession;
+const countOccurrences = (text, word) => {
+    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    const matches = text.match(regex);
+    return matches ? matches.length : 0;
+};
+exports.countOccurrences = countOccurrences;
+const findSentences = (text, word) => {
+    const sentences = [];
+    let currentSentence = '';
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        currentSentence += char;
+        if (char === '.' || char === '!' || char === '?') {
+            if (text[i + 1] === ' ' && /[a-z]/.test(text[i + 2])) {
+                continue;
+            }
+            if (currentSentence.toLowerCase().includes(word.toLowerCase())) {
+                sentences.push(currentSentence.trim());
+            }
+            currentSentence = '';
+        }
+    }
+    if (currentSentence.trim() !== '' && currentSentence.toLowerCase().includes(word.toLowerCase())) {
+        sentences.push(currentSentence.trim());
+    }
+    return sentences;
+};
+exports.findSentences = findSentences;
+const formatSentences = (sentences) => {
+    return sentences.map(sentence => `- ${sentence.replace(/\n/g, '').replace(/\s+/g, ' ').trim()}`);
+};
+exports.formatSentences = formatSentences;
 //# sourceMappingURL=utils.js.map

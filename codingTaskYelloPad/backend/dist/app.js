@@ -17,9 +17,10 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
 app.get('/health', (req, res) => {
-    console.log('Health check');
+    logger.info('Health Started');
+    logger.info(`${req.method} request to ${req.url} from ${req.ip}`);
     res.status(200).send('Healthy');
-    console.log('Health check done');
+    logger.info('Health check done');
 });
 app.use('/awesome/applicant', userRoutes_1.default);
 app.use('/awesome/uploads', uploadRoutes_1.default);

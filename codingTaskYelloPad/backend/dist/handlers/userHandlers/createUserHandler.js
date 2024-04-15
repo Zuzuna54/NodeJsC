@@ -10,8 +10,8 @@ const uuid_1 = require("uuid");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const userService_1 = __importDefault(require("../../services/userService"));
 const db_1 = require("../../services/db");
-const logger = new Logger_1.default();
 const createUserHandler = async (req, res) => {
+    const logger = new Logger_1.default();
     logger.info(`initiating the createUserHandler\n`);
     try {
         const userServiceHere = new userService_1.default(db_1.pool);
@@ -19,6 +19,10 @@ const createUserHandler = async (req, res) => {
         const { username, email, password } = req.body;
         const userData = req.body;
         logger.info(`email: ${JSON.stringify(email)}`);
+        if (!username || !email || !password) {
+            res.status(400).send({ message: 'Username, email and password are required' });
+            return;
+        }
         logger.info(`Validating the email\n`);
         const emailValidated = (0, utils_1.validateEmail)(email);
         if (!emailValidated) {
@@ -42,26 +46,27 @@ const createUserHandler = async (req, res) => {
             if (result.statusCode === 200) {
                 logger.info(`User already exists\n`);
                 res.status(400).send({ message: 'User with that email or username already exists' });
-                return result;
+                return;
             }
             else {
                 logger.info(`User does not exist\n`);
                 logger.info(`Creating the user\n`);
-                createNewUser(res, userData, userServiceHere);
-                return result;
+                createNewUser(res, userData, userServiceHere, logger);
             }
         }).catch((error) => {
             logger.error(`Error checking if the user already exists:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Failed to check if the user already exists' });
+            return;
         });
     }
     catch (error) {
         logger.error(`Error creating user:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Failed to create user' });
+        return;
     }
 };
 exports.createUserHandler = createUserHandler;
-const createNewUser = async (res, userData, userServiceHere) => {
+const createNewUser = async (res, userData, userServiceHere, logger) => {
     try {
         logger.info(`Hashing the password\n`);
         const saltRounds = 10;
@@ -88,21 +93,23 @@ const createNewUser = async (res, userData, userServiceHere) => {
                     statusCode: 200,
                 };
                 res.status(200).send({ response });
-                return result;
+                return;
             }
             else {
                 logger.error(`Failed to create user\n`);
                 res.status(500).send({ message: 'Failed to create user ' + result.message });
-                return result;
+                return;
             }
         }).catch((error) => {
             logger.error(`Error saving the user to the db:, ${error}`);
-            throw error;
+            res.status(500).send({ message: 'Failed to save user to the db' });
+            return;
         });
     }
     catch (error) {
         logger.error(`Error saving the user to the db:, ${error}`);
-        throw error;
+        res.status(500).send({ message: 'Failed to save user to the db' });
+        return;
     }
 };
 //# sourceMappingURL=createUserHandler.js.map

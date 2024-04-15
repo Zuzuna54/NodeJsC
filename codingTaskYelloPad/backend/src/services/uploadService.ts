@@ -99,10 +99,10 @@ class UploadService {
 
             if (result.rowCount !== 1) {
 
-                logger.error('Failed to fetch file from database.');
+                logger.error('Failed to fetch file from database. File does not exist.');
                 returnResult.result = 'Failed';
-                returnResult.statusCode = 500;
-                returnResult.message = 'Failed to fetch file from database.';
+                returnResult.statusCode = 400;
+                returnResult.message = 'Failed to fetch file from database. File does not exist.';
                 return returnResult;
             }
 
@@ -118,7 +118,7 @@ class UploadService {
             logger.error(`Error fetching file from database: ${error}`);
             returnResult.result = 'Failed';
             returnResult.statusCode = 500;
-            returnResult.message = 'Failed to fetch file from database.';
+            returnResult.message = 'Failed to fetch file from database. Error: ' + error;
             return returnResult;
         }
     }
@@ -213,35 +213,136 @@ class UploadService {
         }
     }
 
+
     // Function to retrieve file content from S3
-    // const getFileFromS3 = async (fileName: string): Promise<string> => {
+    async getFileFromS3(fileName: string, s3: S3): Promise<GenericReturn> {
 
-    //     const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
+        logger.info(`Retrieving file content from S3 file: ${fileName}`);
+        const bucketName: string | undefined = process.env.S3_BUCKET_NAME;
+        const returnResult: GenericReturn = new GenericReturn('', 0, '', '', '');
 
-    //     const bucketName: string | undefined = process.env.S3_BUCKET_NAME;
-    //     if (!bucketName) {
-    //         logger.error(`S3 bucket name is missing`);
-    //         returnResult.result = 'Failed';
-    //         returnResult.statusCode = 500;
-    //         returnResult.message = 'S3 bucket name is missing';
-    //         return returnResult;
-    //     }
+        if (!bucketName) {
+            logger.error(`S3 bucket name is missing`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'S3 bucket name is missing';
+            throw returnResult;
+        }
 
-    //     const params = {
-    //         Bucket: process.env.S3_BUCKET_NAME,
-    //         Key: fileName
-    //     };
 
-    //     return new Promise<string>((resolve, reject) => {
-    //         s3.getObject(params, (err, data) => {
-    //             if (err) {
-    //                 reject(err);
-    //             } else {
-    //                 resolve(data.Body.toString());
-    //             }
-    //         });
-    //     });
-    // };
+        const params = {
+            Bucket: bucketName,
+            Key: fileName
+        };
+
+        return new Promise<GenericReturn>((resolve, reject) => {
+            s3.getObject(params, (err, data) => {
+                if (!data || !data.Body) {
+
+                    returnResult.result = 'Failed';
+                    returnResult.statusCode = 500;
+                    returnResult.message = 'File not found';
+                    reject(returnResult);
+
+                }
+                if (err) {
+
+                    returnResult.result = 'Failed';
+                    returnResult.statusCode = 500;
+                    returnResult.message = 'Failed to retrieve file from S3 Error: ' + err;
+                    reject(returnResult);
+
+                } else {
+                    returnResult.result = 'Success';
+                    returnResult.statusCode = 200;
+                    returnResult.data = data.Body?.toString() ?? '';
+                    returnResult.message = 'File retrieved from S3.';
+                    resolve(returnResult);
+                }
+            });
+        });
+    };
+
+
+
+    // Function to store CSV content in the database and return the file name
+    async storeCSVInDatabase(fileName: string, csvContent: string, pool: Pool): Promise<GenericReturn> {
+
+
+        logger.info('Storing CSV file in the database');
+        // Create a new GenericReturn object with non default values
+        const returnResult: GenericReturn = new GenericReturn('none', 100, 'intiated', 'initiated', '[]');
+        const query = 'INSERT INTO csv_files (file_name, content) VALUES ($1, $2) RETURNING file_name';
+        const values = [fileName, csvContent];
+
+        try {
+
+            await pool.query(query, values).then((result: QueryResult) => {
+
+                logger.info(`CSV file stored in the database: ${result.rows[0].file_name}`);
+                returnResult.result = 'Success';
+                returnResult.statusCode = 200;
+                returnResult.message = 'CSV file stored in the database.';
+                returnResult.data = result.rows[0].file_name;
+                return returnResult
+
+            }).catch((error) => {
+
+                logger.error(`Error storing CSV file in database: ${error}`);
+                returnResult.result = 'Failed';
+                returnResult.statusCode = 500;
+                returnResult.message = 'Failed to store CSV file in database Error: ' + error;
+                return returnResult;
+
+            });
+
+            return returnResult;
+
+        } catch (error) {
+
+            logger.error(`Error storing CSV file in database: ${error}`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'Failed to store CSV file in database Error: ' + error;
+            return returnResult;
+        }
+
+
+    };
+
+    // Function to get history of uploaded files and CSVs
+    async getHistory(pool: Pool): Promise<GenericReturn> {
+
+        logger.info('Retrieving history from the database');
+        const returnResult: GenericReturn = new GenericReturn('none', 100, 'intiated', 'initiated', '[]');
+        const query = 'SELECT file_name, content FROM csv_files';
+
+        await pool.query(query).then((result: QueryResult) => {
+
+            logger.info('History retrieved from the database');
+
+            returnResult.result = 'Success';
+            returnResult.statusCode = 200;
+            returnResult.message = 'History retrieved from the database.';
+            returnResult.data = result.rows.map(row => ({
+                fileName: row.file_name,
+                content: row.content
+            }));
+
+            return returnResult;
+
+        }).catch((error) => {
+
+            logger.error(`Error retrieving history: ${error}`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'Failed to retrieve history Error: ' + error;
+            return returnResult;
+
+        });
+
+        return returnResult;
+    };
 
 }
 
