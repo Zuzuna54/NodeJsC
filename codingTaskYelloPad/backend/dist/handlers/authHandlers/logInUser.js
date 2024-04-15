@@ -21,7 +21,7 @@ const logInUserHandler = async (req, res) => {
             return;
         }
         logger.info(`Getting the user from the db\n`);
-        await userServiveHere.getUserByUserName(userData.username).then((result) => {
+        await userServiveHere.getUserByUserName(userData.username.toLowerCase()).then((result) => {
             const response = result;
             if (response.statusCode !== 200) {
                 logger.error(`Error fetching user: ${response.message}`);

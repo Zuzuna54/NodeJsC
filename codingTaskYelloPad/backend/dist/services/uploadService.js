@@ -222,6 +222,33 @@ class UploadService {
         return returnResult;
     }
     ;
+    async getAllFileNamesByUsername(pool, username) {
+        logger.info('Retrieving all file names from the database');
+        const returnResult = new genericReturn_1.default('none', 100, 'intiated', 'initiated', '[]');
+        const query = 'SELECT filename FROM csv_files WHERE username = $1';
+        await pool.query(query, [username]).then((result) => {
+            logger.info('File names retrieved from the database');
+            for (let row of result.rows) {
+                logger.info(JSON.stringify(row));
+                for (let value in row) {
+                    logger.info(value);
+                }
+            }
+            returnResult.result = 'Success';
+            returnResult.statusCode = 200;
+            returnResult.message = 'File names retrieved from the database.';
+            returnResult.data = result.rows.map(row => row.filename);
+            return returnResult;
+        }).catch((error) => {
+            logger.error(`Error retrieving file names: ${error}`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'Failed to retrieve file names Error: ' + error;
+            return returnResult;
+        });
+        return returnResult;
+    }
+    ;
 }
 exports.default = UploadService;
 //# sourceMappingURL=uploadService.js.map

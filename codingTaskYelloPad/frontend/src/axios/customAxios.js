@@ -43,12 +43,13 @@ export const refreshToken = async (body) => {
     }
 }
 
-//File upload call to backend
-export const uploadFile = async (formData) => {
+//Upload file call to backend
+export const uploadFile = async (formData, token) => {
     try {
         const response = await instance.post('/awesome/uploads', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${token}` // Include the bearer token in the Authorization header
             },
         });
         return response;
@@ -59,9 +60,14 @@ export const uploadFile = async (formData) => {
 }
 
 //Search word call to backend
-export const searchWord = async (body) => {
+export const searchWord = async (body, token) => {
     try {
-        const response = await instance.post('/awesome/uploads/search', body);
+        const response = await instance.post('/awesome/uploads/search', body, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` // Include the bearer token in the Authorization header
+            },
+        });
         return response;
     } catch (error) {
         console.error(error);
@@ -70,9 +76,30 @@ export const searchWord = async (body) => {
 }
 
 //Get uploads history 
-export const getUploadedFiles = async () => {
+export const getUploadedFilesHistory = async (token) => {
     try {
-        const response = await instance.get('/awesome/uploads/history');
+        const response = await instance.get('/awesome/uploads/history', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` // Include the bearer token in the Authorization header
+            },
+        });
+        return response;
+    } catch (error) {
+        console.error(error);
+        throw error; // Rethrow the error so the caller can handle it
+    }
+}
+
+//Get file names for the user 
+export const getFileNames = async (token) => {
+    try {
+        const response = await instance.get('/awesome/uploads/fileNames', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` // Include the bearer token in the Authorization header
+            },
+        });
         return response;
     } catch (error) {
         console.error(error);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { format } from 'date-fns';
-import { getUploadedFiles } from '../../../axios/customAxios';
+import { getUploadedFilesHistory } from '../../../axios/customAxios';
 import './History.scss';
 
 const History = () => {
@@ -17,11 +17,8 @@ const History = () => {
                 setErrorState(null);
 
                 const accessToken = localStorage.getItem('accessToken');
-                const headers = {
-                    Authorization: `Bearer ${accessToken}`,
-                };
 
-                const response = await getUploadedFiles(headers);
+                const response = await getUploadedFilesHistory(accessToken);
 
                 if (Array.isArray(response?.data.files)) {
                     setUploadedFiles(response.data.files);

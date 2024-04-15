@@ -309,6 +309,45 @@ class UploadService {
         return returnResult;
     };
 
+    // Function to get all file names by username
+    async getAllFileNamesByUsername(pool: Pool, username: string): Promise<GenericReturn> {
+
+        logger.info('Retrieving all file names from the database');
+        const returnResult: GenericReturn = new GenericReturn('none', 100, 'intiated', 'initiated', '[]');
+        const query = 'SELECT filename FROM csv_files WHERE username = $1';
+
+        await pool.query(query, [username]).then((result: QueryResult) => {
+
+            logger.info('File names retrieved from the database');
+
+            // log each row and value
+            for (let row of result.rows) {
+                logger.info(JSON.stringify(row));
+                //log each value
+                for (let value in row) {
+                    logger.info(value);
+                }
+            }
+            returnResult.result = 'Success';
+            returnResult.statusCode = 200;
+            returnResult.message = 'File names retrieved from the database.';
+            returnResult.data = result.rows.map(row => row.filename);
+
+            return returnResult;
+
+        }).catch((error) => {
+
+            logger.error(`Error retrieving file names: ${error}`);
+            returnResult.result = 'Failed';
+            returnResult.statusCode = 500;
+            returnResult.message = 'Failed to retrieve file names Error: ' + error;
+            return returnResult;
+
+        });
+
+        return returnResult;
+    };
+
 }
 
 export default UploadService;

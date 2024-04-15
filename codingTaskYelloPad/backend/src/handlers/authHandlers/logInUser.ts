@@ -33,8 +33,7 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
 
         //Get the user from the db
         logger.info(`Getting the user from the db\n`);
-
-        await userServiveHere.getUserByUserName(userData.username).then((result: GenericReturn) => {
+        await userServiveHere.getUserByUserName(userData.username.toLowerCase()).then((result: GenericReturn) => {
 
             const response: GenericReturn = result;
             //Check if the user exists via status code

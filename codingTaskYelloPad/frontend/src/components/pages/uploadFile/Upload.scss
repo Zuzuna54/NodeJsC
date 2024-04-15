@@ -6,23 +6,26 @@
     width: 100%;
 
     input[type="file"],
-    button {
-        width: 20%;
+    button,
+    select,
+    input[type="text"] {
+        width: 80%;
         margin-bottom: 1rem;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
+        padding: 0.8rem;
+        border: 2px solid transparent;
         border-radius: 0.5rem;
         outline: none;
-        transition: border-color 0.3s ease;
+        background-color: #fff;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+            border-color: #3498db;
+        }
     }
 
     input[type="file"] {
         cursor: pointer;
-    }
-
-    input[type="file"]:hover,
-    button:hover {
-        border-color: #2980b9;
     }
 
     button {
@@ -30,64 +33,85 @@
         color: #fff;
         font-size: 1rem;
         cursor: pointer;
-        transition: background-color 0.3s ease;
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: #2471a3;
+            outline: none;
+        }
+
+        &:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
         }
     }
 
-    .loading-message {
+    .loading-message,
+    .error-message {
         margin-top: 1rem;
+        font-size: 1rem;
     }
 
     .error-message {
-        margin-top: 1rem;
-        color: #f44336;
+        color: #e74c3c;
+    }
+
+    select {
+        cursor: pointer;
     }
 
     .search-input {
         opacity: 0;
-        /* Start with opacity 0 */
-        width: 80%;
-        margin-bottom: 1rem;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 0.5rem;
-        outline: none;
-        transition: opacity 0.3s ease;
-        /* Add transition for opacity */
+        transition: opacity 0.3s ease-out;
+        display: block;
+
+        &:focus {
+            border-color: #3498db;
+        }
     }
 
     .search-result {
         display: none;
         width: 80%;
         margin-top: 1rem;
+        padding: 1rem;
+        background-color: #ecf0f1; // A light grey background for the results
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // A subtle shadow for depth
 
         h2 {
             font-size: 1.5rem;
+            color: #2c3e50; // A darker color for headings
             margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #34495e; // A soft, dark grey for text
         }
 
         ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
+
+            li {
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                color: #7f8c8d; // A neutral, muted color for list items
+            }
         }
 
-        li {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            color: #333;
+        button {
+            margin-top: 1rem;
         }
     }
 }
 
 .search-input--visible {
-    opacity: 1;
-    /* Make visible */
+    opacity: 1; // Make visible when active
 }
 
 .search-result--visible {
-    display: block;
+    display: block; // Show search results when available
 }

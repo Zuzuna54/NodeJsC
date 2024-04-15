@@ -114,3 +114,8 @@ error: Error fetching file content:, [object Object]
 error: Error fetching file content:, [object Object]
 error: Error fetching file content:, [object Object]
 error: Failed to fetch user by username.
+error: Failed to fetch user by username.
+error: Error fetching user: Failed to fetch user by username.
+error: Failed to fetch user by username.
+error: Error fetching user: Failed to fetch user by username.
+error: Error fetching history: TypeError: fileUploadService.getAllFileNamesByUsername is not a function
