@@ -33,6 +33,8 @@
         color: #fff;
         font-size: 1rem;
         cursor: pointer;
+        width: auto; // Ensuring button width is auto to fit content
+        align-self: center; // Aligning button to center relative to its parent
 
         &:hover,
         &:focus {
@@ -50,6 +52,7 @@
     .error-message {
         margin-top: 1rem;
         font-size: 1rem;
+        color: #e74c3c;
     }
 
     .error-message {
@@ -58,12 +61,14 @@
 
     select {
         cursor: pointer;
+        width: 80%; // Consistent width for the select element
     }
 
     .search-input {
         opacity: 0;
         transition: opacity 0.3s ease-out;
         display: block;
+        width: 80%; // Ensuring search input width is consistent
 
         &:focus {
             border-color: #3498db;
@@ -75,19 +80,20 @@
         width: 80%;
         margin-top: 1rem;
         padding: 1rem;
-        background-color: #ecf0f1; // A light grey background for the results
+        background-color: #ecf0f1;
         border-radius: 0.5rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // A subtle shadow for depth
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
         h2 {
             font-size: 1.5rem;
-            color: #2c3e50; // A darker color for headings
+            color: #2c3e50;
             margin-bottom: 1rem;
         }
 
-        p {
+        p,
+        li {
             font-size: 1rem;
-            color: #34495e; // A soft, dark grey for text
+            color: #34495e;
         }
 
         ul {
@@ -97,21 +103,20 @@
 
             li {
                 margin-bottom: 0.5rem;
-                font-size: 1rem;
-                color: #7f8c8d; // A neutral, muted color for list items
             }
         }
 
         button {
             margin-top: 1rem;
+            width: auto; // Ensure buttons in results are auto-sized
         }
     }
 }
 
 .search-input--visible {
-    opacity: 1; // Make visible when active
+    opacity: 1;
 }
 
 .search-result--visible {
-    display: block; // Show search results when available
+    display: block;
 }
