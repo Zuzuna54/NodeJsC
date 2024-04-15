@@ -1095,3 +1095,3008 @@ info: Updating the lastLogin property of the user
 info: User updated.
 info: Responding with the tokens and user data
 
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Error fetching file from database: error: column "name" does not exist
+error: Error fetching file: Failed to fetch file from database. Error: error: column "name" does not exist
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Response status code: 400
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response message: File uploaded to S3.
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+error: Error storing CSV file in database: error: column "file_name" of relation "csv_files" does not exist
+error: Error storing CSV file in database: []
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Response status code: 400
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response message: File uploaded to S3.
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+error: Error storing CSV file in database: error: column "file_name" does not exist
+error: Error storing CSV file in database: []
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: undefined
+error: Error storing CSV file in database: undefined
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: undefined
+error: Error storing CSV file in database: undefined
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: undefined
+error: Error storing CSV file in database: undefined
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: undefined
+error: Error storing CSV file in database: undefined
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: undefined
+error: Error storing CSV file in database: undefined
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: undefined
+info: response message: CSV file stored in the database.
+
+info: status code: 200
+
+info: data: undefined
+
+error: Error storing CSV file in database: undefined
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: status code: 200
+
+info: data: text12233.txt
+
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+error: Invalid session time
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Word to search for: engineer
+
+info: File content: Della Hanson
+(143) 278-5941
+della@hanson.com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions. With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices. My coursework and internships have equipped me with a strong technical skill set, including proficiency in CAD software, data analysis, and project management. Additionally, my experience working on cross-functional teams has honed my ability to collaborate effectively and communicate complex ideas to both technical and non-technical stakeholders.
+
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Word to search for: engineer
+
+info: File content: Della Hanson
+(143) 278-5941
+della@hanson.com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions. With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices. My coursework and internships have equipped me with a strong technical skill set, including proficiency in CAD software, data analysis, and project management. Additionally, my experience working on cross-functional teams has honed my ability to collaborate effectively and communicate complex ideas to both technical and non-technical stakeholders.
+
+
+info: Word count: 0
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Word to search for: engineer
+
+info: File content: Della Hanson
+(143) 278-5941
+della@hanson.com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions. With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices. My coursework and internships have equipped me with a strong technical skill set, including proficiency in CAD software, data analysis, and project management. Additionally, my experience working on cross-functional teams has honed my ability to collaborate effectively and communicate complex ideas to both technical and non-technical stakeholders.
+
+
+info: Word count: 4
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+error: Error retrieving history: error: column "file_name" does not exist
+error: Error fetching history: []
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+error: Error retrieving history: error: relation "files" does not exist
+error: Error fetching history: []
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Retrieving file content from S3 file: text12233.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: File fetched from database.
+info: File already exists
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Response status code: 400
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response message: File uploaded to S3.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233.txt
+info: Storing CSV file in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored in the database: text12233.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: File fetched from database.
+info: File already exists
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text122334.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text122334.txt
+info: Storing CSV file in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored in the database: text122334.txt
+info: response message: CSV file stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+error: Invalid session time
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+error: Invalid session time
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1223345.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text1223345.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text1223345.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+error: Invalid session time
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+error: Invalid session time
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+info: File fetched from database.
+info: Response message: 
+info: Retrieving file content from S3 file: text12233.txt
+info: Response data: [object Object]
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: File does not exist exists
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: File does not exist exists
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text1223345.txt
+
+info: File fetched from database.
+info: Response message: 
+info: Retrieving file content from S3 file: text1223345.txt
+info: Response data: [object Object]
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text1223345.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233454.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233454.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233454.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: undefined
+
+info: Response data: undefined
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: File does not exist exists
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: File does not exist exists
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233454.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233454.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233454.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233454.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Retrieving file content from S3: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 4
+info: Response message: Failed to fetch file from database. File does not exist.
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: number
+info: Response message: Failed to fetch file from database. File does not exist.
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 4
+info: Response message: Failed to fetch file from database. File does not exist.
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 4
+info: Response message: Failed to fetch file from database. File does not exist.
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 4
+info: Response message: Failed to fetch file from database. File does not exist.
+
+error: Failed to fetch file from database. File does not exist.
+info: Response data: 
+
+info: Response status code: 400
+
+info: File does not exist exists
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 4
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Row: [object Object]
+info: Key: id, Value: 21
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:51:00.208Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 22
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T09:51:17.736Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 23
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:31.860Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 24
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:51.174Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object],[object Object],[object Object],[object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Response data: undefined
+
+info: Response data: undefined
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 5
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Row: [object Object]
+info: Key: id, Value: 21
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:51:00.208Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 22
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T09:51:17.736Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 23
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:31.860Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 24
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:51.174Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 25
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:02:20.146Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object],[object Object],[object Object],[object Object],[object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Response data: undefined
+
+info: Response data: undefined
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 6
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Row: [object Object]
+info: Key: id, Value: 21
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:51:00.208Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 22
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T09:51:17.736Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 23
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:31.860Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 24
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:51.174Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 25
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:02:20.146Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 26
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:06:51.986Z
+info: Key: username, Value: devtest1
+info: Data: [object Object]
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Response data: undefined
+
+info: Response data: undefined
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 7
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Row: [object Object]
+info: Key: id, Value: 21
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:51:00.208Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 22
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T09:51:17.736Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 23
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:31.860Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 24
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T09:52:51.174Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 25
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:02:20.146Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 26
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:06:51.986Z
+info: Key: username, Value: devtest1
+info: Row: [object Object]
+info: Key: id, Value: 27
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:07:04.383Z
+info: Key: username, Value: devtest1
+info: Key: id, Value: 27
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:07:04.383Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Response data: undefined
+
+info: Response data: undefined
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 8
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 28
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:07:48.200Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Response data: devtest1
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 9
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 29
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:09:43.122Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text12233454.txt
+
+info: result.rowCount: 10
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 30
+info: Key: filename, Value: text12233454.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:15:47.698Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text12233454.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: updating CSV file data in the database
+
+info: CSV file stored data in the database: text12233454.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: result.rowCount: 0
+info: Response message: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1223345455.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text1223345455.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text1223345455.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+error: Invalid session time
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: 
+info: Key: word, Value: 
+info: Key: wordcount, Value: 0
+info: Key: date, Value: 2024-04-15T10:29:10.933Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: 
+
+info: Response data: 0
+
+info: Response data: 
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:30:05.033Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:30:29.767Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:31:16.064Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:31:16.972Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:31:19.533Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:31:54.901Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: devtest1
+
+info: Response data: engineer
+
+info: Response data: 4
+
+info: Response data: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Key: id, Value: 32
+info: Key: filename, Value: text1223345455.txt
+info: Key: content, Value: engineer,4
+
+Sentences containing the word:
+com
+
+October 20, 2023
+
+Elijah Thomps
+Hiring Manager
+Excel Mastery Solutions
+
+Dear Elijah Thomps,
+
+I am writing to express my strong interest in the Engineering position at Excel Mastery Solutions.
+With my background in engineering and my passion for innovative problem-solving, I am confident that I would be a valuable asset to your team.
+Having graduated with a Bachelor's degree in Mechanical Engineering from a top-tier university, I have developed a solid foundation in engineering principles and practices.
+info: Key: word, Value: engineer
+info: Key: wordcount, Value: 4
+info: Key: date, Value: 2024-04-15T10:33:30.563Z
+info: Key: username, Value: devtest1
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engineer
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engineer
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: text1223345455.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 1
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engineer
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: text1223345455.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 2
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engineer
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: text1223345455.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: result.rowCount: 3
+info: Response message: File fetched from database.
+
+info: File fetched from database.
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engineer
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: text1223345455.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+

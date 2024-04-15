@@ -45,3 +45,49 @@ error: Error fetching file from database: error: relation "files" does not exist
 error: Error fetching file from database: error: relation "files" does not exist
 error: Error fetching file: Failed to fetch file from database. Error: error: relation "files" does not exist
 error: Failed to fetch user by username.
+error: Error fetching file from database: error: column "name" does not exist
+error: Error fetching file: Failed to fetch file from database. Error: error: column "name" does not exist
+error: Failed to fetch file from database. File does not exist.
+error: Error storing CSV file in database: error: column "file_name" of relation "csv_files" does not exist
+error: Error storing CSV file in database: []
+error: Failed to fetch file from database. File does not exist.
+error: Error storing CSV file in database: error: column "file_name" does not exist
+error: Error storing CSV file in database: []
+error: Error storing CSV file in database: undefined
+error: Error storing CSV file in database: undefined
+error: Error storing CSV file in database: undefined
+error: Error storing CSV file in database: undefined
+error: Error storing CSV file in database: undefined
+error: Error storing CSV file in database: undefined
+error: Invalid session time
+error: Error retrieving history: error: column "file_name" does not exist
+error: Error fetching history: []
+error: Error retrieving history: error: relation "files" does not exist
+error: Error fetching history: []
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Invalid session time
+error: Invalid session time
+error: Failed to fetch file from database. File does not exist.
+error: Invalid session time
+error: Invalid session time
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Invalid session time

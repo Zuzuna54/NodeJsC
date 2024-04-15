@@ -18,18 +18,27 @@ const historyHandler = async (req, res) => {
             return;
         }
         const token = req.headers.authorization.split(' ')[1];
-        const lastLogin = (0, utils_1.decodeTokenLastLogin)(token);
+        const user = (0, utils_1.decodeToken)(token);
+        const lastLogin = user === null || user === void 0 ? void 0 : user.lastLogIn;
+        const username = user === null || user === void 0 ? void 0 : user.username;
+        if (!username) {
+            logger.error(`Username missing from token`);
+            res.status(401).json({ error: 'Username missing from token' });
+            return;
+        }
         if (!lastLogin) {
+            logger.error(`Last log in missing from token`);
             res.status(401).json({ error: 'Last log in missing from token' });
             return;
         }
         const sessionValidated = await (0, utils_1.validateSession)(lastLogin);
         if (!sessionValidated) {
+            logger.error(`Invalid session time`);
             res.status(401).json({ error: 'Invalid session time' });
             return;
         }
         logger.info('Retrieving history from the database');
-        await fileUploadService.getHistory(db_1.pool).then((result) => {
+        await fileUploadService.getHistory(db_1.pool, username).then((result) => {
             const response = result;
             if (response.statusCode !== 200) {
                 logger.error(`Error fetching history: ${response.data}`);

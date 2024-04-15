@@ -1,5 +1,5 @@
 import jwt, { Secret } from 'jsonwebtoken';
-import { USER } from './consts';
+
 
 
 //Helper fucntion to check if the email is valid
@@ -38,23 +38,6 @@ export const decodeToken = (token: string): Record<string, any> | null => {
     return user
 }
 
-//helper function to decode jwt token and return last login
-export const decodeTokenLastLogin = (token: string): string | null => {
-
-    const tokenSecret: Secret | undefined = process.env.TOKEN_SECRET;
-    if (!tokenSecret) {
-        console.error('Error: TOKEN_SECRET environment variable is not set');
-        return null
-    }
-
-    // Verify the token
-    const decodedToken: string | jwt.JwtPayload = jwt.verify(token, tokenSecret as Secret);
-    const decodedTokenRecord: Record<string, any> = JSON.parse(JSON.stringify(decodedToken));
-    const user: Record<string, any> = decodedTokenRecord.user;
-    const lastLogin: string = user.lastLogIn;
-    return lastLogin
-
-}
 
 
 //Helper function to validate username not to contain empty spaces and special characters
@@ -129,20 +112,6 @@ export const validatePassword = (password: string): boolean => {
 };
 
 
-//Helper function to validate userType
-export const validateUserType = (userType: string): boolean => {
-
-    console.log(`initiating validateUserType \n`);
-
-    //Validate the userType
-    console.log(`Validating the userType\n`)
-    const userTypeValidated: boolean = userType === USER;
-    console.log(`userTypeValidated: ${userTypeValidated}`);
-
-    return userTypeValidated
-
-};
-
 
 //Helper function that takes in a date and validates that session is still active
 export const validateSession = (lastLogin: string): boolean => {
@@ -183,8 +152,13 @@ export const validateRefreshSession = (lastLogin: string): boolean => {
 
 // Function to count occurrences of a word in a string
 export const countOccurrences = (text: string, word: string): number => {
-    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    // Escape special characters in the searchString to ensure they are treated as literals in regex
+    const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    // Create a regex to find all instances of the searchString, case-insensitively
+    const regex = new RegExp(escapedSearchString, 'gi');
+    // Match the searchString against the text
     const matches = text.match(regex);
+    // Return the number of matches, or 0 if no matches are found
     return matches ? matches.length : 0;
 };
 

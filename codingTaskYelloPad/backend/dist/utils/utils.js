@@ -3,9 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatSentences = exports.findSentences = exports.countOccurrences = exports.validateRefreshSession = exports.validateSession = exports.validateUserType = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeTokenLastLogin = exports.decodeToken = exports.validateEmail = void 0;
+exports.formatSentences = exports.findSentences = exports.countOccurrences = exports.validateRefreshSession = exports.validateSession = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const consts_1 = require("./consts");
 const validateEmail = (email) => {
     console.log(`initiating validateEmail \n`);
     const emailRegex = /\S+@\S+\.\S+/;
@@ -28,19 +27,6 @@ const decodeToken = (token) => {
     return user;
 };
 exports.decodeToken = decodeToken;
-const decodeTokenLastLogin = (token) => {
-    const tokenSecret = process.env.TOKEN_SECRET;
-    if (!tokenSecret) {
-        console.error('Error: TOKEN_SECRET environment variable is not set');
-        return null;
-    }
-    const decodedToken = jsonwebtoken_1.default.verify(token, tokenSecret);
-    const decodedTokenRecord = JSON.parse(JSON.stringify(decodedToken));
-    const user = decodedTokenRecord.user;
-    const lastLogin = user.lastLogIn;
-    return lastLogin;
-};
-exports.decodeTokenLastLogin = decodeTokenLastLogin;
 const validateUsername = (username) => {
     if (username.length < 3)
         return false;
@@ -81,14 +67,6 @@ const validatePassword = (password) => {
     return passwordValidated;
 };
 exports.validatePassword = validatePassword;
-const validateUserType = (userType) => {
-    console.log(`initiating validateUserType \n`);
-    console.log(`Validating the userType\n`);
-    const userTypeValidated = userType === consts_1.USER;
-    console.log(`userTypeValidated: ${userTypeValidated}`);
-    return userTypeValidated;
-};
-exports.validateUserType = validateUserType;
 const validateSession = (lastLogin) => {
     console.log(`initiating validateSession \n`);
     console.log(`Validating the session\n`);
@@ -114,7 +92,8 @@ const validateRefreshSession = (lastLogin) => {
 };
 exports.validateRefreshSession = validateRefreshSession;
 const countOccurrences = (text, word) => {
-    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const regex = new RegExp(escapedSearchString, 'gi');
     const matches = text.match(regex);
     return matches ? matches.length : 0;
 };

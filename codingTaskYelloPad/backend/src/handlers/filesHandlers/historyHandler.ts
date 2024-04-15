@@ -2,7 +2,7 @@
 import { Request, Response } from 'express';
 import { pool } from '../../services/db';
 import Logger from '../../utils/Logger';
-import { decodeTokenLastLogin, validateSession } from '../../utils/utils';
+import { decodeToken, validateSession } from '../../utils/utils';
 import UploadService from '../../services/uploadService';
 import GenericReturn from '../../utils/genericReturn';
 
@@ -23,23 +23,33 @@ export const historyHandler = async (req: Request, res: Response): Promise<void>
 
         //check if the token is valid
         const token = req.headers.authorization.split(' ')[1];
-        const lastLogin = decodeTokenLastLogin(token);
+        const user: Record<string, any> | null = decodeToken(token);
+        const lastLogin = user?.lastLogIn;
+        const username = user?.username;
+
+        //check if username is missing
+        if (!username) {
+            logger.error(`Username missing from token`);
+            res.status(401).json({ error: 'Username missing from token' });
+            return;
+        }
+        //check if last login is missing
         if (!lastLogin) {
+            logger.error(`Last log in missing from token`);
             res.status(401).json({ error: 'Last log in missing from token' });
             return;
         }
         //validate the session
         const sessionValidated: boolean = await validateSession(lastLogin);
         if (!sessionValidated) {
+            logger.error(`Invalid session time`);
             res.status(401).json({ error: 'Invalid session time' });
             return;
         }
 
-
-
         // Query the database to retrieve the history of uploaded files and CSVs
         logger.info('Retrieving history from the database');
-        await fileUploadService.getHistory(pool).then((result) => {
+        await fileUploadService.getHistory(pool, username).then((result) => {
 
             const response: GenericReturn = result
             // Check if the history was retrieved successfully via status code
