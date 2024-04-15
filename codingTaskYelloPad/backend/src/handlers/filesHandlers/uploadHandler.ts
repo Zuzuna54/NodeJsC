@@ -77,7 +77,7 @@ export const uploadHandler = async (req: Request, res: Response): Promise<void> 
 
 
 // Function to getfile by name from the database
-const getFileByName = async (fileName: string, username: string, logger: Logger, fileUploadService: uploadService, res: Response, originalname: string, buffer: Buffer): Promise<void> => {
+const getFileByName = async (fileName: string, username: string, logger: Logger, fileUploadService: uploadService, res: Response, originalname: string, buffer: any): Promise<void> => {
 
     try {
 
@@ -124,7 +124,7 @@ const getFileByName = async (fileName: string, username: string, logger: Logger,
 
 
 //function to upload file to s3
-const uploadFileToS3 = async (originalname: string, buffer: Buffer, fileUploadService: uploadService, res: Response, logger: Logger, username: string): Promise<void> => {
+const uploadFileToS3 = async (originalname: string, buffer: any, fileUploadService: uploadService, res: Response, logger: Logger, username: string): Promise<void> => {
 
     try {
 

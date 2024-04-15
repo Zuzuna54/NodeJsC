@@ -14,12 +14,12 @@ class UploadService {
         this.s3 = new aws_sdk_1.S3();
     }
     async getFileByName(filename, username) {
+        logger.info(`Fetching file from database: ${filename}`);
         const query = 'SELECT * FROM csv_files WHERE filename = $1 AND username = $2';
         const values = [filename, username];
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
         try {
             const result = await this.pool.query(query, values);
-            logger.info(`result.rowCount: ${result.rowCount}`);
             if (!result.rowCount) {
                 logger.error('Failed to fetch file from database. File does not exist.');
                 returnResult.result = 'Failed';
@@ -45,6 +45,7 @@ class UploadService {
     }
     async uploadFileToS3(fileName, fileContent) {
         const returnResult = new genericReturn_1.default('', 0, '', '', '');
+        logger.info(`Uploading file to S3: ${fileName}`);
         try {
             const bucketName = process.env.S3_BUCKET_NAME;
             if (!bucketName) {
@@ -60,27 +61,37 @@ class UploadService {
                 Key: s3key,
                 Body: fileContent
             };
-            await this.s3.upload(params).promise().then((data) => {
-                logger.info(`File uploaded to S3: ${data.Location}`);
-                returnResult.result = 'Success';
-                returnResult.statusCode = 200;
-                returnResult.message = 'File uploaded to S3.';
-                returnResult.data = data.Location;
-            }).catch((error) => {
+            try {
+                await this.s3.upload(params).promise().then((data) => {
+                    logger.info(`File uploaded to S3: ${data.Location}`);
+                    returnResult.result = 'Success';
+                    returnResult.statusCode = 200;
+                    returnResult.message = 'File uploaded to S3.';
+                    return returnResult;
+                }).catch((error) => {
+                    logger.error(`Error uploading file to S3: ${error}`);
+                    returnResult.result = 'Failed';
+                    returnResult.statusCode = 501;
+                    returnResult.message = 'Failed to upload file to S3.';
+                    return returnResult;
+                });
+            }
+            catch (error) {
                 logger.error(`Error uploading file to S3: ${error}`);
                 returnResult.result = 'Failed';
-                returnResult.statusCode = 500;
+                returnResult.statusCode = 501;
                 returnResult.message = 'Failed to upload file to S3.';
-            });
-            return returnResult;
+                return returnResult;
+            }
         }
         catch (error) {
             logger.error(`Error uploading file to S3: ${error}`);
             returnResult.result = 'Failed';
-            returnResult.statusCode = 500;
+            returnResult.statusCode = 502;
             returnResult.message = 'Failed to upload file to S3.';
             return returnResult;
         }
+        return returnResult;
     }
     async getFileFromS3(fileName, s3) {
         logger.info(`Retrieving file content from S3 file: ${fileName}`);

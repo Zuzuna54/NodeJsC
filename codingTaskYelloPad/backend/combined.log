@@ -4100,3 +4100,717 @@ info: response message: CSV file data stored in the database.
 
 info: CSV file stored in the database: [object Object]
 
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: result.rowCount: 0
+info: Response message: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text1223345455.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text1223345455.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text1223345455.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: result.rowCount: 1
+info: File already exists
+
+info: File fetched from database.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: result.rowCount: 0
+info: Response message: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text122334545.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text122334545.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text122334545.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: result.rowCount: 0
+info: Response message: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/text12233454511.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/text12233454511.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: text12233454511.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Creating S3 instance
+info: AWS_ACCESS_KEY_ID: AKIAQF22GAVIQYENBJTR
+info: SECRET_ACCESS_KEY: 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
+info: REGION: us-east-1
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test1.txt
+info: Uploading the file
+
+info: Uploading the file
+
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+info: File uploaded to S3: http://codig-task-upload-s3.s3.amazonaws.com/test1.txt
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Creating S3 instance
+info: AWS_ACCESS_KEY_ID: AKIAQF22GAVIQYENBJTR
+info: SECRET_ACCESS_KEY: 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
+info: REGION: us-east-1
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test1.txt
+info: Uploading the file
+
+info: Uploading the file
+
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/test1.txt
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test1.txt
+info: Uploading the file
+
+info: Uploading the file
+
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/test1.txt
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test1.txt
+info: Uploading the file
+
+info: Uploading the file
+
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/test1.txt
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test1.txt
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/test1.txt
+info: Response data: https://codig-task-upload-s3.s3.amazonaws.com/test1.txt
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: test1.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: File fetched from database.
+info: File already exists
+
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: File fetched from database.
+info: File already exists
+
+info: Fetching file from database: test1.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: File fetched from database.
+info: File already exists
+
+info: Fetching file from database: test11.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test11.txt
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://codig-task-upload-s3.s3.amazonaws.com/test11.txt
+info: Response data: 
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: test11.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Fetching file from database: test111.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test111.txt
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://filler-bucket-dev-latest.s3.amazonaws.com/test111.txt
+info: Response data: 
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: test111.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Fetching file from database: test1111.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+error: Failed to fetch file from database. File does not exist.
+info: Response message: Failed to fetch file from database. File does not exist.
+info: Uploading file to S3: test1111.txt
+info: Uploading the file
+
+info: Uploading the file
+
+info: File uploaded to S3: https://filler-bucket-dev-latest.s3.amazonaws.com/test1111.txt
+info: Response data: 
+info: Storing CSV file data in the database
+info: Response message: File uploaded to S3.
+info: CSV file stored data in the database: test1111.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Fetching file from database: test1111.txt
+info: Initiating the uploadHandler
+
+info: Starting file upload class
+
+info: Request to upload a file
+
+info: Checking if the file already exists
+
+info: File fetched from database.
+info: File already exists
+
+info: Fetching file from database: text1223345455.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+error: Error fetching file content:, [object Object]
+info: Fetching file from database: text1223345455.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+error: Error fetching file content:, [object Object]
+info: Fetching file from database: text1223345455.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: text1223345455.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: text1223345455.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+error: Error fetching file content:, [object Object]
+info: Fetching file from database: diffdata.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: diffdata.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: diffdata.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: 
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: diffdata.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Fetching file from database: diffdata1.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: diffdata1.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: diffdata1.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: 
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: diffdata1.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Fetching file from database: diffdata1.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: diffdata1.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: diffdata1.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Updating CSV file in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: 
+
+info: word, wordcount or content missing in the database
+
+info: updating CSV file data in the database with latest info
+
+info: CSV file updated in the database: diffdata1.txt
+info: response message: CSV file updated in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Fetching file from database: diffdata1.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: diffdata1.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: diffdata1.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: team
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: diffdata1.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Fetching file from database: diffdata1.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: diffdata1.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: diffdata1.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engine
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: diffdata1.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: Fetching file from database: diffdata1.txt
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: diffdata1.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: diffdata1.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: engine
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: diffdata1.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+

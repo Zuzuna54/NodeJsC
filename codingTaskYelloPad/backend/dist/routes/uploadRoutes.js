@@ -10,7 +10,7 @@ const historyHandler_1 = require("../handlers/filesHandlers/historyHandler");
 const multerMiddleware_1 = require("../middlewares/multerMiddleware");
 const uploadRouter = express_1.default.Router();
 uploadRouter.post('/', multerMiddleware_1.upload.single('file'), uploadHandler_1.uploadHandler);
-uploadRouter.get('/search', searchWordHandler_1.searchWordHandler);
+uploadRouter.post('/search', searchWordHandler_1.searchWordHandler);
 uploadRouter.get('/history', historyHandler_1.historyHandler);
 exports.default = uploadRouter;
 //# sourceMappingURL=uploadRoutes.js.map

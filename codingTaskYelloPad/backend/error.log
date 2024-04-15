@@ -91,3 +91,25 @@ error: Failed to fetch file from database. File does not exist.
 error: Failed to fetch file from database. File does not exist.
 error: Failed to fetch file from database. File does not exist.
 error: Invalid session time
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+error: Failed to fetch file from database. File does not exist.
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+error: Failed to fetch file from database. File does not exist.
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+error: Failed to fetch file from database. File does not exist.
+error: Error uploading file: 
+error: Error uploading file: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 0
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Failed to fetch file from database. File does not exist.
+error: Error fetching file content:, [object Object]
+error: Error fetching file content:, [object Object]
+error: Error fetching file content:, [object Object]

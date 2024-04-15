@@ -10,7 +10,7 @@ import { upload } from '../middlewares/multerMiddleware';
 const uploadRouter = express.Router();
 
 uploadRouter.post('/', upload.single('file'), uploadHandler);
-uploadRouter.get('/search', searchWordHandler);
+uploadRouter.post('/search', searchWordHandler);
 uploadRouter.get('/history', historyHandler);
 
 export default uploadRouter;
