@@ -4814,3 +4814,173 @@ info: response message: CSV file data stored in the database.
 
 info: CSV file stored in the database: [object Object]
 
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: initiating the createUserHandler
+
+info: Request to register a user
+
+info: email: "giorgigiorgobiani@hotmail.com"
+info: Validating the email
+
+info: Validating the username
+
+info: Validating the password
+
+info: Checking if the user already exists
+
+error: Failed to fetch user by username.
+info: User does not exist
+
+info: Creating the user
+
+info: Hashing the password
+
+info: hashedPassword: $2a$10$ukPN7dPl7ZSA4WEROvWT.uQ2vEqOX46PMi.2QFvqloCa.QRxtOBpy
+info: Creating the user
+
+info: user: [object Object]
+info: Saving the user to the db
+
+info: User created.
+info: User created
+
+info: Getting the user from the result
+
+info: Sending the response
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+

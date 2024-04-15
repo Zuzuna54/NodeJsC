@@ -113,3 +113,4 @@ error: Failed to fetch file from database. File does not exist.
 error: Error fetching file content:, [object Object]
 error: Error fetching file content:, [object Object]
 error: Error fetching file content:, [object Object]
+error: Failed to fetch user by username.

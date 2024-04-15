@@ -1,0 +1,38 @@
+// NotAuthorized.scss
+.not-authorized-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(62, 62, 62);
+
+    .not-authorized-content {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #ffffff; // White content background
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Light box shadow
+
+        .not-authorized-title {
+            color: #dc3545; // Red color for the title
+            margin-bottom: 10px;
+        }
+
+        .not-authorized-message {
+            color: #6c757d; // Gray color for the message
+            margin-bottom: 20px;
+        }
+
+        .not-authorized-link {
+            color: #007bff; // Blue color for the link
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.4s ease-in-out; // Added hover animation
+
+            &:hover {
+                text-decoration: underline;
+                color: #45a049;
+            }
+        }
+    }
+}

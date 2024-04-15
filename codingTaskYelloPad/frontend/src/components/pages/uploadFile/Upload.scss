@@ -1,0 +1,93 @@
+.file-uploader {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    input[type="file"],
+    button {
+        width: 20%;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="file"] {
+        cursor: pointer;
+    }
+
+    input[type="file"]:hover,
+    button:hover {
+        border-color: #2980b9;
+    }
+
+    button {
+        background-color: #2980b9;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #2471a3;
+        }
+    }
+
+    .loading-message {
+        margin-top: 1rem;
+    }
+
+    .error-message {
+        margin-top: 1rem;
+        color: #f44336;
+    }
+
+    .search-input {
+        opacity: 0;
+        /* Start with opacity 0 */
+        width: 80%;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        outline: none;
+        transition: opacity 0.3s ease;
+        /* Add transition for opacity */
+    }
+
+    .search-result {
+        display: none;
+        width: 80%;
+        margin-top: 1rem;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+    }
+}
+
+.search-input--visible {
+    opacity: 1;
+    /* Make visible */
+}
+
+.search-result--visible {
+    display: block;
+}
