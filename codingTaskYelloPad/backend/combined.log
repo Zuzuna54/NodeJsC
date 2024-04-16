@@ -5201,3 +5201,73 @@ info: Updating the lastLogin property of the user
 info: User updated.
 info: Responding with the tokens and user data
 
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+

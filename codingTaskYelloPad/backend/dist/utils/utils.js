@@ -91,14 +91,14 @@ const validateRefreshSession = (lastLogin) => {
     return sessionValidated;
 };
 exports.validateRefreshSession = validateRefreshSession;
-const countOccurrences = (text, word) => {
+const countOccurrences = (text, word, searchProximityStr, proximity) => {
     const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     const regex = new RegExp(escapedSearchString, 'gi');
     const matches = text.match(regex);
     return matches ? matches.length : 0;
 };
 exports.countOccurrences = countOccurrences;
-const findSentences = (text, word) => {
+const findSentences = (text, word, searchProximityStr, proximity) => {
     const sentences = [];
     let currentSentence = '';
     for (let i = 0; i < text.length; i++) {

@@ -151,7 +151,7 @@ export const validateRefreshSession = (lastLogin: string): boolean => {
 };
 
 // Function to count occurrences of a word in a string
-export const countOccurrences = (text: string, word: string): number => {
+export const countOccurrences = (text: string, word: string, searchProximityStr: string, proximity: number): number => {
     // Escape special characters in the searchString to ensure they are treated as literals in regex
     const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     // Create a regex to find all instances of the searchString, case-insensitively
@@ -163,7 +163,7 @@ export const countOccurrences = (text: string, word: string): number => {
 };
 
 // Function to find sentences containing a word in a string
-export const findSentences = (text: string, word: string): string[] => {
+export const findSentences = (text: string, word: string, searchProximityStr: string, proximity: number): string[] => {
     const sentences: string[] = [];
     let currentSentence = '';
 

@@ -151,9 +151,11 @@ const getFileFromS3 = async (fileName: string, s3: S3, logger: Logger, res: Resp
             logger.info(`File content retrieved successfully\n`);
 
             // Perform the search for the word
+            const searchWordInProximity: string = "libero";
+            const proximity: number = 50;
             logger.info(`Calculating word count and finding sentences containing the word\n`);
-            const wordCount = countOccurrences(response.data, word);
-            const sentences = findSentences(response.data, word);
+            const wordCount = countOccurrences(response.data, word, searchWordInProximity, proximity);
+            const sentences = findSentences(response.data, word, searchWordInProximity, proximity);
 
             // Generate CSV content
             logger.info(`Generating CSV content\n`);

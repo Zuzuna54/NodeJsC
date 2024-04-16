@@ -5,6 +5,10 @@
     align-items: center;
     width: 100%;
 
+    .highlighted {
+        background-color: #e74c3c;
+    }
+
     input[type="file"],
     button,
     select,
@@ -83,6 +87,10 @@
         background-color: #ecf0f1;
         border-radius: 0.5rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .highlighted {
+            background-color: #e74c3c;
+        }
 
         h2 {
             font-size: 1.5rem;

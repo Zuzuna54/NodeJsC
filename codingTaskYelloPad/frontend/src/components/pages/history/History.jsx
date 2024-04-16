@@ -8,6 +8,7 @@ const History = () => {
     const [loading, setLoadingState] = useState(false);
     const [error, setErrorState] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
+    const [sortOrder, setSortOrder] = useState('asc'); // Default sort order
     const itemsPerPage = 8;
 
     useEffect(() => {
@@ -18,7 +19,9 @@ const History = () => {
                 const accessToken = localStorage.getItem('accessToken');
                 const response = await getUploadedFilesHistory(accessToken);
                 if (Array.isArray(response?.data.history)) {
-                    setUploadedFiles(response.data.history);
+                    setUploadedFiles(response.data.history.sort((a, b) =>
+                        sortOrder === 'asc' ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date)
+                    ));
                 } else {
                     console.error('Invalid data structure for uploaded files:', response?.data);
                     setErrorState('Invalid data structure for uploaded files');
@@ -32,7 +35,7 @@ const History = () => {
         };
 
         fetchUploadedFiles();
-    }, []);
+    }, [sortOrder]); // Effect runs on sortOrder change as well
 
     const formatDate = (dateStr) => {
         if (!dateStr) return 'Unknown date';
@@ -79,6 +82,13 @@ const History = () => {
             <h1>Uploaded Files History</h1>
             {loading && <div>Loading...</div>}
             {error && <div className="error-message">{error}</div>}
+            <div>
+                <label>Sort by Date: </label>
+                <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
             <div className="uploaded-files">
                 {currentItems.map((file, index) => (
                     <div className="file" key={index}>
