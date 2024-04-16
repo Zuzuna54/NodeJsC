@@ -228,12 +228,6 @@ class UploadService {
         const query = 'SELECT filename FROM csv_files WHERE username = $1';
         await pool.query(query, [username]).then((result) => {
             logger.info('File names retrieved from the database');
-            for (let row of result.rows) {
-                logger.info(JSON.stringify(row));
-                for (let value in row) {
-                    logger.info(value);
-                }
-            }
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'File names retrieved from the database.';

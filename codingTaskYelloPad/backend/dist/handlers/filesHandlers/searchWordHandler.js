@@ -14,9 +14,9 @@ const searchWordHandler = async (req, res) => {
     const s3 = new aws_sdk_1.S3();
     const logger = new Logger_1.default();
     logger.info(`Initiating the searchWordHandler\n`);
+    const fileUploadService = new uploadService_1.default(db_1.pool);
     try {
         logger.info(`Starting file upload class\n`);
-        const fileUploadService = new uploadService_1.default(db_1.pool);
         if (!req.headers.authorization) {
             logger.error(`Auth Header Missing`);
             res.status(401).json({ error: 'Unauthorized: Auth Header Missing' });
@@ -102,11 +102,8 @@ const getFileFromS3 = async (fileName, s3, logger, res, fileUploadService, word,
             }
             logger.info(`response message: ${response.message}\n`);
             logger.info(`File content retrieved successfully\n`);
-            const searchWordInProximity = "libero";
-            const proximity = 50;
             logger.info(`Calculating word count and finding sentences containing the word\n`);
-            const wordCount = (0, utils_1.countOccurrences)(response.data, word, searchWordInProximity, proximity);
-            const sentences = (0, utils_1.findSentences)(response.data, word, searchWordInProximity, proximity);
+            const { wordCount, sentences } = (0, utils_1.analyzeText)(response.data, word);
             logger.info(`Generating CSV content\n`);
             const csvContent = `${word},${wordCount}\n\nSentences containing the word:\n${sentences.join('\n')}`;
             logger.info(`Storing CSV file in the database\n`);

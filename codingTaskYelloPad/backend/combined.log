@@ -5271,3 +5271,301 @@ info: Responding with the tokens and user data
 info: Server is running at http://localhost:8000 in development mode
 info: Press CTRL-C to stop
 
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"lambda.js"}
+info: filename
+info: {"filename":"ddadiffdata11.11txt.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"search_result.csv"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.11txt.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"newDataSet12.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"ddadiffdata114321.txt"}
+info: filename
+info: {"filename":"rootkey.csv"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.docx"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: reponse message: File names retrieved from the database.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"lambda.js"}
+info: filename
+info: {"filename":"ddadiffdata11.11txt.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"search_result.csv"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"diffdata1.11txt.txt"}
+info: filename
+info: {"filename":"diffdata1.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"newDataSet12.txt"}
+info: filename
+info: {"filename":"newDataSet.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"ddadiffdata114321.txt"}
+info: filename
+info: {"filename":"rootkey.csv"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.docx"}
+info: filename
+info: {"filename":"Copy of test 102 page - word mauris 440 times.txt"}
+info: filename
+info: reponse message: File names retrieved from the database.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: reponse message: File names retrieved from the database.
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+

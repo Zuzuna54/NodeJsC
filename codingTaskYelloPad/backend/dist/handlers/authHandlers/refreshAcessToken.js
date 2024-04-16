@@ -8,10 +8,10 @@ require('dotenv').config();
 const utils_1 = require("../../utils/utils");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const Logger_1 = __importDefault(require("../../utils/Logger"));
-const userService_1 = __importDefault(require("../../services/userService"));
 const db_1 = require("../../services/db");
-const logger = new Logger_1.default();
+const userService_1 = __importDefault(require("../../services/userService"));
 const refreshAccessTokenHandler = async (req, res) => {
+    const logger = new Logger_1.default();
     logger.info('Initiating the refreshAccessTokenHandler\n');
     try {
         const userServiveHere = new userService_1.default(db_1.pool);

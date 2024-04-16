@@ -49,8 +49,10 @@ const getFileNamesByUser = async (req, res) => {
                 res.status(400).send({ message: 'No history found' });
                 return;
             }
-            logger.info(`reponse message: ${response.message}`);
-            res.status(200).send({ message: response.message, data: response.data });
+            logger.info(`Filtering the data to return unique file names`);
+            const uniqueFileNames = new Set(response.data);
+            logger.info(`sending response back to the client`);
+            res.status(200).send({ message: response.message, data: [...uniqueFileNames] });
         }).catch((error) => {
             logger.error(`Error fetching history: ${error}`);
             res.status(500).send({ message: 'Error fetching history' });

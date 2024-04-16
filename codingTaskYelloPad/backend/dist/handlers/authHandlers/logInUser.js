@@ -7,11 +7,11 @@ exports.logInUserHandler = void 0;
 require('dotenv').config();
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const userService_1 = __importDefault(require("../../services/userService"));
 const Logger_1 = __importDefault(require("../../utils/Logger"));
 const db_1 = require("../../services/db");
-const logger = new Logger_1.default();
+const userService_1 = __importDefault(require("../../services/userService"));
 const logInUserHandler = async (req, res) => {
+    const logger = new Logger_1.default();
     try {
         const userServiveHere = new userService_1.default(db_1.pool);
         logger.info(`Request to log in a user\n`);
@@ -35,7 +35,7 @@ const logInUserHandler = async (req, res) => {
                 return;
             }
             logger.info(`Checking if the password is correct\n`);
-            comparePasswords(userData.password, user.password, res, user, userServiveHere);
+            comparePasswords(userData.password, user.password, res, user, userServiveHere, logger);
         }).catch((error) => {
             logger.error(`Error fetching user:, ${error}`);
             res.status(500).send({ message: 'Error fetching user' });
@@ -49,7 +49,7 @@ const logInUserHandler = async (req, res) => {
     }
 };
 exports.logInUserHandler = logInUserHandler;
-const comparePasswords = async (password, hashedPassword, res, user, userServiceHere) => {
+const comparePasswords = async (password, hashedPassword, res, user, userServiceHere, logger) => {
     try {
         logger.info(`Validating the password\n`);
         await bcryptjs_1.default.compare(password, hashedPassword).then((result) => {
@@ -81,7 +81,7 @@ const comparePasswords = async (password, hashedPassword, res, user, userService
                 };
                 const refretshToken = jsonwebtoken_1.default.sign({ user: refreshSignature }, tokenSecret);
                 logger.info(`Updating the lastLogin property of the user and responding with the tokens and user data\n`);
-                updateLastLoginAndRespond(res, user, accessToken, refretshToken, userServiceHere);
+                updateLastLoginAndRespond(res, user, accessToken, refretshToken, userServiceHere, logger);
             }
         }).catch((error) => {
             logger.error(`Error comparing passwords:, ${error}`);
@@ -95,7 +95,7 @@ const comparePasswords = async (password, hashedPassword, res, user, userService
         return;
     }
 };
-const updateLastLoginAndRespond = async (res, user, accessToken, refreshToken, userServiceHere) => {
+const updateLastLoginAndRespond = async (res, user, accessToken, refreshToken, userServiceHere, logger) => {
     try {
         logger.info(`Updating the lastLogin property of the user\n`);
         await userServiceHere.updateUser(user).then((result) => {

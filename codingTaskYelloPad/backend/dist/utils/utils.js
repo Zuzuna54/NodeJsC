@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatSentences = exports.findSentences = exports.countOccurrences = exports.validateRefreshSession = exports.validateSession = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
+exports.formatSentences = exports.analyzeText = exports.validateRefreshSession = exports.validateSession = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const validateEmail = (email) => {
     console.log(`initiating validateEmail \n`);
@@ -58,9 +58,9 @@ const validatePasswordSpaces = (password) => {
 };
 exports.validatePasswordSpaces = validatePasswordSpaces;
 const validatePassword = (password) => {
+    console.log(`initiating validatePassword \n`);
     if (password.length < 8)
         return false;
-    console.log(`initiating validatePassword \n`);
     console.log(`Validating the password\n`);
     const passwordValidated = (0, exports.validatePasswordLength)(password) && !(0, exports.validatePasswordSpaces)(password);
     console.log(`passwordValidated: ${passwordValidated}`);
@@ -91,14 +91,11 @@ const validateRefreshSession = (lastLogin) => {
     return sessionValidated;
 };
 exports.validateRefreshSession = validateRefreshSession;
-const countOccurrences = (text, word, searchProximityStr, proximity) => {
+const analyzeText = (text, word) => {
     const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     const regex = new RegExp(escapedSearchString, 'gi');
     const matches = text.match(regex);
-    return matches ? matches.length : 0;
-};
-exports.countOccurrences = countOccurrences;
-const findSentences = (text, word, searchProximityStr, proximity) => {
+    const wordCount = matches ? matches.length : 0;
     const sentences = [];
     let currentSentence = '';
     for (let i = 0; i < text.length; i++) {
@@ -117,9 +114,9 @@ const findSentences = (text, word, searchProximityStr, proximity) => {
     if (currentSentence.trim() !== '' && currentSentence.toLowerCase().includes(word.toLowerCase())) {
         sentences.push(currentSentence.trim());
     }
-    return sentences;
+    return { wordCount, sentences };
 };
-exports.findSentences = findSentences;
+exports.analyzeText = analyzeText;
 const formatSentences = (sentences) => {
     return sentences.map(sentence => `- ${sentence.replace(/\n/g, '').replace(/\s+/g, ' ').trim()}`);
 };

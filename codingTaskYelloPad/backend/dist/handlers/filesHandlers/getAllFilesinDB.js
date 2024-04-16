@@ -18,9 +18,9 @@ const getAllFilesinDB = async (req, res) => {
         }
         const token = req.headers.authorization.split(' ')[1];
         const user = (0, utils_1.decodeToken)(token);
-        const fileName = req.body.fileName;
         const lastLogin = user === null || user === void 0 ? void 0 : user.lastLogIn;
         const username = user === null || user === void 0 ? void 0 : user.username;
+        const fileName = req.body.fileName;
         if (!username) {
             logger.error(`Username missing from token`);
             res.status(401).json({ error: 'Username missing from token' });

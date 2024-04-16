@@ -10,8 +10,8 @@ import GenericReturn from '../../utils/genericReturn';
 export const historyHandler = async (req: Request, res: Response): Promise<void> => {
 
     console.info('starting logger instance')
-    const logger = new Logger();
-    const fileUploadService = new UploadService(pool);
+    const logger: Logger = new Logger();
+    const fileUploadService: UploadService = new UploadService(pool);
 
     try {
 
@@ -22,10 +22,10 @@ export const historyHandler = async (req: Request, res: Response): Promise<void>
         }
 
         //check if the token is valid
-        const token = req.headers.authorization.split(' ')[1];
+        const token: string = req.headers.authorization.split(' ')[1];
         const user: Record<string, any> | null = decodeToken(token);
-        const lastLogin = user?.lastLogIn;
-        const username = user?.username;
+        const lastLogin: string = user?.lastLogIn;
+        const username: string = user?.username;
 
         //check if username is missing
         if (!username) {

@@ -1,15 +1,17 @@
 import { Request, Response } from "express";
 import Logger from "../../utils/Logger";
 import { pool } from "../../services/db";
-import uploadService from "../../services/uploadService";
 import GenericReturn from '../../utils/genericReturn';
 import { decodeToken, validateSession } from "../../utils/utils";
+import UploadService from "../../services/uploadService";
 
 
 
 export const uploadHandler = async (req: Request, res: Response): Promise<void> => {
 
-    const logger = new Logger();
+
+    const fileUploadService: UploadService = new UploadService(pool);
+    const logger: Logger = new Logger();
     logger.info(`Initiating the uploadHandler\n`);
 
     try {
@@ -21,10 +23,10 @@ export const uploadHandler = async (req: Request, res: Response): Promise<void> 
         }
 
         //check if the token is valid
-        const token = req.headers.authorization.split(' ')[1];
+        const token: string = req.headers.authorization.split(' ')[1];
         const user: Record<string, any> | null = decodeToken(token);
-        const lastLogin = user?.lastLogIn;
-        const username = user?.username;
+        const lastLogin: string = user?.lastLogIn;
+        const username: string = user?.username;
 
         //check if username is missing
         if (!username) {
@@ -46,9 +48,6 @@ export const uploadHandler = async (req: Request, res: Response): Promise<void> 
             return;
         }
 
-        //Starting file upload class
-        logger.info(`Starting file upload class\n`);
-        const fileUploadService = new uploadService(pool);
 
         // Check if the file exists in the request
         logger.info(`Request to upload a file\n`);
@@ -77,7 +76,7 @@ export const uploadHandler = async (req: Request, res: Response): Promise<void> 
 
 
 // Function to getfile by name from the database
-const getFileByName = async (fileName: string, username: string, logger: Logger, fileUploadService: uploadService, res: Response, originalname: string, buffer: any): Promise<void> => {
+const getFileByName = async (fileName: string, username: string, logger: Logger, fileUploadService: UploadService, res: Response, originalname: string, buffer: any): Promise<void> => {
 
     try {
 
@@ -124,7 +123,7 @@ const getFileByName = async (fileName: string, username: string, logger: Logger,
 
 
 //function to upload file to s3
-const uploadFileToS3 = async (originalname: string, buffer: any, fileUploadService: uploadService, res: Response, logger: Logger, username: string): Promise<void> => {
+const uploadFileToS3 = async (originalname: string, buffer: any, fileUploadService: UploadService, res: Response, logger: Logger, username: string): Promise<void> => {
 
     try {
 
@@ -166,7 +165,7 @@ const uploadFileToS3 = async (originalname: string, buffer: any, fileUploadServi
 
 
 //Function to add data to the db for the uploaded file
-const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: any, logger: Logger, fileUploadService: uploadService, res: Response, wordCount: number, username: string, word: string): Promise<void> => {
+const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: any, logger: Logger, fileUploadService: UploadService, res: Response, wordCount: number, username: string, word: string): Promise<void> => {
 
 
     try {

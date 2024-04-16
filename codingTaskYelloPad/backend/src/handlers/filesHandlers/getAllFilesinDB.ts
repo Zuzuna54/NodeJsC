@@ -10,8 +10,8 @@ import GenericReturn from '../../utils/genericReturn';
 const getAllFilesinDB = async (req: Request, res: Response): Promise<void> => {
 
     console.info('starting logger instance')
-    const logger = new Logger();
-    const fileUploadService = new UploadService(pool);
+    const logger: Logger = new Logger();
+    const fileUploadService: UploadService = new UploadService(pool);
 
     try {
 
@@ -22,11 +22,11 @@ const getAllFilesinDB = async (req: Request, res: Response): Promise<void> => {
         }
 
         //check if the token is valid
-        const token = req.headers.authorization.split(' ')[1];
+        const token: string = req.headers.authorization.split(' ')[1];
         const user: Record<string, any> | null = decodeToken(token);
-        const fileName = req.body.fileName;
-        const lastLogin = user?.lastLogIn;
-        const username = user?.username;
+        const lastLogin: string = user?.lastLogIn;
+        const username: string = user?.username;
+        const fileName: string = req.body.fileName;
 
         //check if username is missing
         if (!username) {

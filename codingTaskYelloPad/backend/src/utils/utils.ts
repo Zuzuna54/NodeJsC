@@ -98,9 +98,10 @@ export const validatePasswordSpaces = (password: string): boolean => {
 //Helper function to validate password
 export const validatePassword = (password: string): boolean => {
 
-    if (password.length < 8) return false;
-
     console.log(`initiating validatePassword \n`);
+
+    //Check if the password is less than 8 characters
+    if (password.length < 8) return false;
 
     //Validate the password
     console.log(`Validating the password\n`)
@@ -110,7 +111,6 @@ export const validatePassword = (password: string): boolean => {
     return passwordValidated
 
 };
-
 
 
 //Helper function that takes in a date and validates that session is still active
@@ -150,20 +150,13 @@ export const validateRefreshSession = (lastLogin: string): boolean => {
 
 };
 
-// Function to count occurrences of a word in a string
-export const countOccurrences = (text: string, word: string, searchProximityStr: string, proximity: number): number => {
-    // Escape special characters in the searchString to ensure they are treated as literals in regex
-    const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    // Create a regex to find all instances of the searchString, case-insensitively
-    const regex = new RegExp(escapedSearchString, 'gi');
-    // Match the searchString against the text
-    const matches = text.match(regex);
-    // Return the number of matches, or 0 if no matches are found
-    return matches ? matches.length : 0;
-};
 
-// Function to find sentences containing a word in a string
-export const findSentences = (text: string, word: string, searchProximityStr: string, proximity: number): string[] => {
+export const analyzeText = (text: string, word: string): { wordCount: number, sentences: string[] } => {
+    const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const regex = new RegExp(escapedSearchString, 'gi');
+    const matches = text.match(regex);
+    const wordCount = matches ? matches.length : 0;
+
     const sentences: string[] = [];
     let currentSentence = '';
 
@@ -171,13 +164,10 @@ export const findSentences = (text: string, word: string, searchProximityStr: st
         const char = text[i];
         currentSentence += char;
 
-        // Check if the current character is one of ., !, or ?
         if (char === '.' || char === '!' || char === '?') {
-            // Check if the next character is a space followed by a lowercase letter
             if (text[i + 1] === ' ' && /[a-z]/.test(text[i + 2])) {
-                continue; // Not the end of a sentence
+                continue;
             }
-            // Check if the current sentence contains the word
             if (currentSentence.toLowerCase().includes(word.toLowerCase())) {
                 sentences.push(currentSentence.trim());
             }
@@ -185,12 +175,11 @@ export const findSentences = (text: string, word: string, searchProximityStr: st
         }
     }
 
-    // Add the last sentence if there's anything left and it contains the word
     if (currentSentence.trim() !== '' && currentSentence.toLowerCase().includes(word.toLowerCase())) {
         sentences.push(currentSentence.trim());
     }
 
-    return sentences;
+    return { wordCount, sentences };
 };
 
 // Function to format sentences for human readability

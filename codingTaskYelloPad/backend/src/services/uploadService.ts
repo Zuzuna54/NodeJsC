@@ -320,14 +320,6 @@ class UploadService {
 
             logger.info('File names retrieved from the database');
 
-            // log each row and value
-            for (let row of result.rows) {
-                logger.info(JSON.stringify(row));
-                //log each value
-                for (let value in row) {
-                    logger.info(value);
-                }
-            }
             returnResult.result = 'Success';
             returnResult.statusCode = 200;
             returnResult.message = 'File names retrieved from the database.';

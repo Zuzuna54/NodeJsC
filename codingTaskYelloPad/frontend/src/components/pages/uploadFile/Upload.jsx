@@ -137,7 +137,7 @@ const FileUploader = () => {
 
                 //filter data for only unique values
                 const uniqueFileNames = [...new Set(res.data.data)];
-                setFileNames(uniqueFileNames);
+                setFileNames(res.data.data);
 
             }).catch(err => {
                 setError('Failed to fetch file names: ' + err.message);

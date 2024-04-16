@@ -3,20 +3,20 @@ import { decodeToken, validateRefreshSession } from '../../utils/utils';
 import { Request, Response } from 'express';
 import jwt, { Secret } from 'jsonwebtoken';
 import Logger from '../../utils/Logger';
-import userService from '../../services/userService';
 import GenericReturn from '../../utils/genericReturn';
 import { pool } from '../../services/db';
+import UserService from '../../services/userService';
 
-const logger = new Logger();
 //Function to refresh the access token
 export const refreshAccessTokenHandler = async (req: Request, res: Response): Promise<void> => {
 
+    const logger: Logger = new Logger();
     logger.info('Initiating the refreshAccessTokenHandler\n')
 
     try {
 
 
-        const userServiveHere = new userService(pool);
+        const userServiveHere: UserService = new UserService(pool);
         // Log the request
         logger.info(`Request to refresh the access token\n`);
         // Get the token from the request headers

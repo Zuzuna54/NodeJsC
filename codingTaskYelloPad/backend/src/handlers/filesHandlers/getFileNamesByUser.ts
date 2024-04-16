@@ -10,8 +10,8 @@ import GenericReturn from '../../utils/genericReturn';
 export const getFileNamesByUser = async (req: Request, res: Response): Promise<void> => {
 
     console.info('starting logger instance')
-    const logger = new Logger();
-    const fileUploadService = new UploadService(pool);
+    const logger: Logger = new Logger();
+    const fileUploadService: UploadService = new UploadService(pool);
 
     try {
 
@@ -22,10 +22,10 @@ export const getFileNamesByUser = async (req: Request, res: Response): Promise<v
         }
 
         //check if the token is valid
-        const token = req.headers.authorization.split(' ')[1];
+        const token: string = req.headers.authorization.split(' ')[1];
         const user: Record<string, any> | null = decodeToken(token);
-        const lastLogin = user?.lastLogIn;
-        const username = user?.username;
+        const lastLogin: string = user?.lastLogIn;
+        const username: string = user?.username;
 
         //check if username is missing
         if (!username) {
@@ -64,8 +64,12 @@ export const getFileNamesByUser = async (req: Request, res: Response): Promise<v
                 return;
             }
 
-            logger.info(`reponse message: ${response.message}`);
-            res.status(200).send({ message: response.message, data: response.data });
+            //Filter the data to only return unique file names
+            logger.info(`Filtering the data to return unique file names`);
+            const uniqueFileNames: Set<any> = new Set(response.data);
+
+            logger.info(`sending response back to the client`);
+            res.status(200).send({ message: response.message, data: [...uniqueFileNames] });
 
         }).catch((error) => {
             logger.error(`Error fetching history: ${error}`);

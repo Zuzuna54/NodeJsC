@@ -3,19 +3,20 @@ import bcryptjs from 'bcryptjs';
 import jwt, { Secret } from 'jsonwebtoken';
 import { Request, Response } from 'express';
 import { User } from '../../models/userModel';
-import userService from '../../services/userService';
 import Logger from '../../utils/Logger';
 import GenericReturn from '../../utils/genericReturn';
 import { pool } from '../../services/db';
+import UserService from '../../services/userService';
 
-const logger = new Logger();
 //Function to log in a user
 export const logInUserHandler = async (req: Request, res: Response): Promise<void> => {
+
+    const logger: Logger = new Logger();
 
     try {
 
         //Get the pool from the request
-        const userServiveHere = new userService(pool);
+        const userServiveHere: UserService = new UserService(pool);
 
         //Log the request
         logger.info(`Request to log in a user\n`);
@@ -58,7 +59,7 @@ export const logInUserHandler = async (req: Request, res: Response): Promise<voi
 
             //Check if the password is correct
             logger.info(`Checking if the password is correct\n`);
-            comparePasswords(userData.password, user.password, res, user, userServiveHere);
+            comparePasswords(userData.password, user.password, res, user, userServiveHere, logger);
 
         }).catch((error) => {
 
@@ -84,10 +85,13 @@ const comparePasswords = async (
     hashedPassword: string,
     res: Response,
     user: User,
-    userServiceHere: userService
+    userServiceHere: UserService,
+    logger: Logger
+
 ): Promise<void> => {
 
     try {
+
         //Validate the password
         logger.info(`Validating the password\n`);
         await bcryptjs.compare(password, hashedPassword).then((result: boolean) => {
@@ -133,7 +137,7 @@ const comparePasswords = async (
                 //Update the lastLogin property of the user and respond with the tokens and user data
 
                 logger.info(`Updating the lastLogin property of the user and responding with the tokens and user data\n`);
-                updateLastLoginAndRespond(res, user, accessToken, refretshToken, userServiceHere);
+                updateLastLoginAndRespond(res, user, accessToken, refretshToken, userServiceHere, logger);
 
             }
 
@@ -161,7 +165,8 @@ const updateLastLoginAndRespond = async (
     user: User,
     accessToken: string,
     refreshToken: string,
-    userServiceHere: userService
+    userServiceHere: UserService,
+    logger: Logger
 ): Promise<void> => {
 
     try {

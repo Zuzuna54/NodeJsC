@@ -6,9 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.uploadHandler = void 0;
 const Logger_1 = __importDefault(require("../../utils/Logger"));
 const db_1 = require("../../services/db");
-const uploadService_1 = __importDefault(require("../../services/uploadService"));
 const utils_1 = require("../../utils/utils");
+const uploadService_1 = __importDefault(require("../../services/uploadService"));
 const uploadHandler = async (req, res) => {
+    const fileUploadService = new uploadService_1.default(db_1.pool);
     const logger = new Logger_1.default();
     logger.info(`Initiating the uploadHandler\n`);
     try {
@@ -36,8 +37,6 @@ const uploadHandler = async (req, res) => {
             res.status(401).json({ error: 'Invalid session time' });
             return;
         }
-        logger.info(`Starting file upload class\n`);
-        const fileUploadService = new uploadService_1.default(db_1.pool);
         logger.info(`Request to upload a file\n`);
         if (!req.file) {
             logger.error(`No file uploaded`);
