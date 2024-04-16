@@ -19,7 +19,6 @@ const refreshAccessTokenHandler = async (req, res) => {
         const body = req.body;
         const tokenHere = (body === null || body === void 0 ? void 0 : body.refreshToken) || '';
         const user = (0, utils_1.decodeToken)(tokenHere);
-        logger.info(`user: ${user === null || user === void 0 ? void 0 : user.username}\n`);
         logger.info(`Validating the token\n`);
         if (!tokenHere) {
             logger.error(`Token is required`);
@@ -48,7 +47,6 @@ const refreshAccessTokenHandler = async (req, res) => {
                 res.status(400).send({ message: 'Invalid username' });
                 return;
             }
-            logger.info(`Log token secret: ${tokenSecret}\n`);
             logger.info(`Creating the access token\n`);
             const signature = {
                 username: response.username,

@@ -22,7 +22,7 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
         const body: Record<string, any> | null = req.body;
         const tokenHere: string = body?.refreshToken || '';
         const user: Record<string, any> | null = decodeToken(tokenHere);
-        logger.info(`user: ${user?.username}\n`)
+
 
         // Validate the token
         logger.info(`Validating the token\n`);
@@ -75,7 +75,6 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
 
 
             //Create the access token
-            logger.info(`Log token secret: ${tokenSecret}\n`);
             logger.info(`Creating the access token\n`);
             const signature: Record<string, any> = {
                 username: response.username,

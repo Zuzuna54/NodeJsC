@@ -6409,3 +6409,29 @@ info: signature key: userType, value: undefined
 info: signature key: lastLogIn, value: 1713288596296
 info: Sending the response
 
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713289809188
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
