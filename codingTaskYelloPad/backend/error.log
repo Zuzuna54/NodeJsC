@@ -120,3 +120,9 @@ error: Failed to fetch user by username.
 error: Error fetching user: Failed to fetch user by username.
 error: Error fetching history: TypeError: fileUploadService.getAllFileNamesByUsername is not a function
 error: Error refreshing the access token: JsonWebTokenError: jwt must be provided
+error: Error fetching user:, TypeError: response.now is not a function
+error: Error fetching user:, TypeError: response.now is not a function
+error: Username missing from token
+error: Username missing from token
+error: Username missing from token
+error: Username missing from token

@@ -26,6 +26,12 @@ export const historyHandler = async (req: Request, res: Response): Promise<void>
         const user: Record<string, any> | null = decodeToken(token);
         const lastLogin: string = user?.lastLogIn;
         const username: string = user?.username;
+        //log all of the user details in key
+        logger.info(`test user: ${user}`);
+        for (const key in user) {
+
+            logger.info(`1${key}: ${user[key]}`);
+        }
 
         //check if username is missing
         if (!username) {

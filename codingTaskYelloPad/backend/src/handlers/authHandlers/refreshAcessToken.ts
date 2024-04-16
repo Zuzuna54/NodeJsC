@@ -23,6 +23,7 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
         const body: Record<string, any> | null = req.body;
         const tokenHere: string = body?.refreshToken || '';
         const user: Record<string, any> | null = decodeToken(tokenHere);
+        logger.info(`user: ${user?.username}\n`)
 
         // Validate the token
         logger.info(`Validating the token\n`);
@@ -61,7 +62,9 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
         logger.info(`Getting the user from the db\n`);
         await userServiveHere.getUserByUserName(user?.username).then((result: GenericReturn) => {
 
-            const user: Record<string, any> = result.data;
+            const response: Record<string, any> = result.data;
+            console.log(`response: ${response}`);
+            console.log(`user: ${response.id}`);
 
             //Check if the user exists
             if (!user) {
@@ -73,14 +76,20 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
 
 
             //Create the access token
+            logger.info(`Log token secret: ${tokenSecret}\n`);
             logger.info(`Creating the access token\n`);
             const signature: Record<string, any> = {
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                userType: user.userType,
+                username: response.username,
+                email: response.email,
+                userType: response.userType,
                 lastLogIn: Date.now()
             }
+
+            //log all signature key value pairs
+            for (const key in signature) {
+                logger.info(`signature key: ${key}, value: ${signature[key]}`);
+            }
+
             const accessToken: string = jwt.sign(signature, tokenSecret);
 
 

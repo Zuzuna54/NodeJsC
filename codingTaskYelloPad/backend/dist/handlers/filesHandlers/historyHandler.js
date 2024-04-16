@@ -21,6 +21,10 @@ const historyHandler = async (req, res) => {
         const user = (0, utils_1.decodeToken)(token);
         const lastLogin = user === null || user === void 0 ? void 0 : user.lastLogIn;
         const username = user === null || user === void 0 ? void 0 : user.username;
+        logger.info(`test user: ${user}`);
+        for (const key in user) {
+            logger.info(`1${key}: ${user[key]}`);
+        }
         if (!username) {
             logger.error(`Username missing from token`);
             res.status(401).json({ error: 'Username missing from token' });

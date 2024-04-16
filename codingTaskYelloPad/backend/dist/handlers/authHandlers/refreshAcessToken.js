@@ -19,6 +19,7 @@ const refreshAccessTokenHandler = async (req, res) => {
         const body = req.body;
         const tokenHere = (body === null || body === void 0 ? void 0 : body.refreshToken) || '';
         const user = (0, utils_1.decodeToken)(tokenHere);
+        logger.info(`user: ${user === null || user === void 0 ? void 0 : user.username}\n`);
         logger.info(`Validating the token\n`);
         if (!tokenHere) {
             logger.error(`Token is required`);
@@ -40,19 +41,24 @@ const refreshAccessTokenHandler = async (req, res) => {
         }
         logger.info(`Getting the user from the db\n`);
         await userServiveHere.getUserByUserName(user === null || user === void 0 ? void 0 : user.username).then((result) => {
-            const user = result.data;
+            const response = result.data;
+            console.log(`response: ${response}`);
+            console.log(`user: ${response.id}`);
             if (!user) {
                 res.status(400).send({ message: 'Invalid username' });
                 return;
             }
+            logger.info(`Log token secret: ${tokenSecret}\n`);
             logger.info(`Creating the access token\n`);
             const signature = {
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                userType: user.userType,
+                username: response.username,
+                email: response.email,
+                userType: response.userType,
                 lastLogIn: Date.now()
             };
+            for (const key in signature) {
+                logger.info(`signature key: ${key}, value: ${signature[key]}`);
+            }
             const accessToken = jsonwebtoken_1.default.sign(signature, tokenSecret);
             logger.info(`Sending the response\n`);
             res.status(200).send({ accessToken: accessToken });

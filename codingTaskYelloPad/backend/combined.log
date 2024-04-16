@@ -5569,3 +5569,268 @@ info: Creating the access token
 
 info: Sending the response
 
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: [object Object]
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: id, value: 10
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713259954419
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: id, value: 10
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713260000955
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: user: undefined
+
+info: last login: undefined
+
+error: Username missing from token
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+error: Username missing from token
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+error: Username missing from token
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: test user: undefined
+error: Username missing from token
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: id, value: 10
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713260271985
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Log token secret: mySecretKey
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+

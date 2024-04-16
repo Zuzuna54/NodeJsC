@@ -6,6 +6,7 @@ import { setAuthenticationStatus, setAccessToken } from '../../redux/actions/aut
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshToken } from '../../axios/customAxios';
 import './Layout.scss';
+import { te } from 'date-fns/locale';
 
 function PublicLayout() {
 
@@ -15,10 +16,16 @@ function PublicLayout() {
     const refreshTokenSTR = localStorage.getItem('refreshToken') || '';
 
     useEffect(() => {
+
+        console.log('PublicLayout useEffect');
         // Check if authentication status is not initialized yet
         if (isAuthenticated === null && token) {
+            console.log('Setting authentication status to true');
             dispatch(setAuthenticationStatus(true));
         }
+
+        console.log('Setting up token refresh interval...');
+        console.log('Token:', refreshTokenSTR);
 
         // Set up token refresh every 20 minutes
         const refreshInterval = setInterval(async () => {
@@ -38,13 +45,16 @@ function PublicLayout() {
                         clearInterval(refreshInterval);
                         return;
                     }
-
+                    console.log('newToken:', response.data.accessToken);
+                    console.log('oldToken:', token);
+                    console.log(`before changing token in local storage: ${localStorage.getItem('accessToken')}`);
                     //Dispatch the action to update the authentication status
                     dispatch(setAuthenticationStatus(true));
                     // Save the new access token
                     localStorage.setItem('accessToken', response.data.accessToken);
                     dispatch(setAccessToken(response.data.accessToken));
 
+                    console.log(`after changing token in local storage: ${localStorage.getItem('accessToken')}`);
                 }).catch((error) => {
 
                     console.error('Error refreshing token:', error);
@@ -57,7 +67,7 @@ function PublicLayout() {
                 clearInterval(refreshInterval);
             }
 
-        }, 1000 * 60 * 20)  // 20 minutes in milliseconds
+        }, 10000) //1000 * 60 * 20)  // 20 minutes in milliseconds
 
         // Clear the interval on component unmount
         return () => clearInterval(refreshInterval);
