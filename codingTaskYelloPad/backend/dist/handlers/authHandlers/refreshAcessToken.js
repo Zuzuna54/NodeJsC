@@ -11,10 +11,10 @@ const Logger_1 = __importDefault(require("../../utils/Logger"));
 const db_1 = require("../../services/db");
 const userService_1 = __importDefault(require("../../services/userService"));
 const refreshAccessTokenHandler = async (req, res) => {
+    const userServiveHere = new userService_1.default(db_1.pool);
     const logger = new Logger_1.default();
     logger.info('Initiating the refreshAccessTokenHandler\n');
     try {
-        const userServiveHere = new userService_1.default(db_1.pool);
         logger.info(`Request to refresh the access token\n`);
         const body = req.body;
         const tokenHere = (body === null || body === void 0 ? void 0 : body.refreshToken) || '';
@@ -59,7 +59,7 @@ const refreshAccessTokenHandler = async (req, res) => {
             for (const key in signature) {
                 logger.info(`signature key: ${key}, value: ${signature[key]}`);
             }
-            const accessToken = jsonwebtoken_1.default.sign(signature, tokenSecret);
+            const accessToken = jsonwebtoken_1.default.sign({ user: signature }, tokenSecret);
             logger.info(`Sending the response\n`);
             res.status(200).send({ accessToken: accessToken });
         }).catch((error) => {

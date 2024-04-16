@@ -10,13 +10,12 @@ import UserService from '../../services/userService';
 //Function to refresh the access token
 export const refreshAccessTokenHandler = async (req: Request, res: Response): Promise<void> => {
 
+    const userServiveHere: UserService = new UserService(pool);
     const logger: Logger = new Logger();
     logger.info('Initiating the refreshAccessTokenHandler\n')
 
     try {
 
-
-        const userServiveHere: UserService = new UserService(pool);
         // Log the request
         logger.info(`Request to refresh the access token\n`);
         // Get the token from the request headers
@@ -90,7 +89,7 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
                 logger.info(`signature key: ${key}, value: ${signature[key]}`);
             }
 
-            const accessToken: string = jwt.sign(signature, tokenSecret);
+            const accessToken: string = jwt.sign({ user: signature }, tokenSecret);
 
 
             //Send the response
