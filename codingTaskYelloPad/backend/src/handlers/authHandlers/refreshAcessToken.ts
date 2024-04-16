@@ -83,13 +83,7 @@ export const refreshAccessTokenHandler = async (req: Request, res: Response): Pr
                 lastLogIn: Date.now()
             }
 
-            //log all signature key value pairs
-            for (const key in signature) {
-                logger.info(`signature key: ${key}, value: ${signature[key]}`);
-            }
-
             const accessToken: string = jwt.sign({ user: signature }, tokenSecret);
-
 
             //Send the response
             logger.info(`Sending the response\n`);

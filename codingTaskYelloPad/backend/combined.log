@@ -6435,3 +6435,156 @@ info: Sending the response
 info: Server is running at http://localhost:8000 in development mode
 info: Press CTRL-C to stop
 
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713291009226
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713292209201
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713293409161
+info: Sending the response
+
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: test user: [object Object]
+info: 1username: devtest121
+info: 1email: test11@email.com
+info: 1lastLogIn: 1713286898169
+error: Invalid session time
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713294558071
+info: Sending the response
+
+info: Retrieving history from the database
+info: test user: [object Object]
+info: 1username: devtest121
+info: 1email: test11@email.com
+info: 1lastLogIn: 1713294558071
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713294609639
+info: Sending the response
+
+info: Retrieving history from the database
+info: test user: [object Object]
+info: 1username: devtest121
+info: 1email: test11@email.com
+info: 1lastLogIn: 1713294558071
+info: Retrieving history from the database
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving history from the database
+info: test user: [object Object]
+info: 1username: devtest121
+info: 1email: test11@email.com
+info: 1lastLogIn: 1713294558071
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Retrieving history from the database
+info: test user: [object Object]
+info: 1username: devtest121
+info: 1email: test11@email.com
+info: 1lastLogIn: 1713294558071
+info: Retrieving history from the database
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving history from the database
+info: test user: [object Object]
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: Retrieving history from the database
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully

@@ -54,9 +54,6 @@ const refreshAccessTokenHandler = async (req, res) => {
                 userType: response.userType,
                 lastLogIn: Date.now()
             };
-            for (const key in signature) {
-                logger.info(`signature key: ${key}, value: ${signature[key]}`);
-            }
             const accessToken = jsonwebtoken_1.default.sign({ user: signature }, tokenSecret);
             logger.info(`Sending the response\n`);
             res.status(200).send({ accessToken: accessToken });
