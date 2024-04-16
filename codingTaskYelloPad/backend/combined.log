@@ -5927,3 +5927,485 @@ info: Retrieving history from the database
 info: History retrieved from the database
 info: reponse message: History retrieved from the database.
 info: History retrieved successfully
+info: Server is running at http://localhost:8000 in development mode
+info: Press CTRL-C to stop
+
+info: test user: undefined
+error: Username missing from token
+info: test user: undefined
+error: Username missing from token
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288438300
+info: Sending the response
+
+info: Retrieving history from the database
+info: test user: [object Object]
+info: 1username: devtest121
+info: 1email: test11@email.com
+info: 1lastLogIn: 1713288438300
+info: Retrieving history from the database
+info: History retrieved from the database
+info: reponse message: History retrieved from the database.
+info: History retrieved successfully
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288448353
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288458388
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288468321
+info: Sending the response
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288483271
+info: Sending the response
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288513750
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288523732
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288533742
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288543789
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288553756
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288563749
+info: Sending the response
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288573792
+info: Sending the response
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: Retrieving all file names from the database
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: user: devtest121
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Log token secret: mySecretKey
+
+info: Creating the access token
+
+info: signature key: username, value: devtest121
+info: signature key: email, value: test11@email.com
+info: signature key: userType, value: undefined
+info: signature key: lastLogIn, value: 1713288596296
+info: Sending the response
+

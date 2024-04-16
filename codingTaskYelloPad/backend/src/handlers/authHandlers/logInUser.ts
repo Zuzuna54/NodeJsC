@@ -11,15 +11,12 @@ import UserService from '../../services/userService';
 //Function to log in a user
 export const logInUserHandler = async (req: Request, res: Response): Promise<void> => {
 
+    const userServiveHere: UserService = new UserService(pool);
     const logger: Logger = new Logger();
+    logger.info(`Request to log in a user\n`);
 
     try {
 
-        //Get the pool from the request
-        const userServiveHere: UserService = new UserService(pool);
-
-        //Log the request
-        logger.info(`Request to log in a user\n`);
 
         //Get the user data from the request body
         const userData: User = req.body;

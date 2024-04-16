@@ -11,10 +11,10 @@ const Logger_1 = __importDefault(require("../../utils/Logger"));
 const db_1 = require("../../services/db");
 const userService_1 = __importDefault(require("../../services/userService"));
 const logInUserHandler = async (req, res) => {
+    const userServiveHere = new userService_1.default(db_1.pool);
     const logger = new Logger_1.default();
+    logger.info(`Request to log in a user\n`);
     try {
-        const userServiveHere = new userService_1.default(db_1.pool);
-        logger.info(`Request to log in a user\n`);
         const userData = req.body;
         if (!userData.username || !userData.password) {
             res.status(400).send({ message: 'Username and password are required' });

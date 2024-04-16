@@ -67,7 +67,7 @@ function PublicLayout() {
                 clearInterval(refreshInterval);
             }
 
-        }, 10000) //1000 * 60 * 20)  // 20 minutes in milliseconds
+        }, 1000 * 60 * 20)  // 20 minutes in milliseconds
 
         // Clear the interval on component unmount
         return () => clearInterval(refreshInterval);
