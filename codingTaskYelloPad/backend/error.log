@@ -131,3 +131,9 @@ error: Username missing from token
 error: Username missing from token
 error: Username missing from token
 error: Invalid session time
+error: Invalid session time
+error: Invalid session time
+error: Error fetching file content:, TypeError: Cannot read properties of undefined (reading 'replace')
+error: Error fetching user by username: Error: getaddrinfo ENOTFOUND filler-db.crsimsmo0tl9.us-east-1.rds.amazonaws.com
+error: Invalid session
+error: Username missing from token

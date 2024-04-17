@@ -76,7 +76,15 @@ export const uploadHandler = async (req: Request, res: Response): Promise<void> 
 
 
 // Function to getfile by name from the database
-const getFileByName = async (fileName: string, username: string, logger: Logger, fileUploadService: UploadService, res: Response, originalname: string, buffer: any): Promise<void> => {
+const getFileByName = async (
+    fileName: string,
+    username: string,
+    logger: Logger,
+    fileUploadService: UploadService,
+    res: Response,
+    originalname: string,
+    buffer: any
+): Promise<void> => {
 
     try {
 
@@ -123,7 +131,14 @@ const getFileByName = async (fileName: string, username: string, logger: Logger,
 
 
 //function to upload file to s3
-const uploadFileToS3 = async (originalname: string, buffer: any, fileUploadService: UploadService, res: Response, logger: Logger, username: string): Promise<void> => {
+const uploadFileToS3 = async (
+    originalname: string,
+    buffer: any,
+    fileUploadService: UploadService,
+    res: Response,
+    logger: Logger,
+    username: string
+): Promise<void> => {
 
     try {
 
@@ -165,7 +180,17 @@ const uploadFileToS3 = async (originalname: string, buffer: any, fileUploadServi
 
 
 //Function to add data to the db for the uploaded file
-const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: any, logger: Logger, fileUploadService: UploadService, res: Response, wordCount: number, username: string, word: string): Promise<void> => {
+const storeCSVInDatabase = async (
+    fileName: string,
+    csvContent: string,
+    pool: any,
+    logger: Logger,
+    fileUploadService: UploadService,
+    res: Response,
+    wordCount: number,
+    username: string,
+    word: string
+): Promise<void> => {
 
 
     try {

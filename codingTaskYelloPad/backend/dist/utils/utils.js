@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatSentences = exports.analyzeText = exports.validateRefreshSession = exports.validateSession = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
+exports.formatSentences = exports.analyzeTextWithProximity = exports.analyzeText = exports.validateRefreshSession = exports.validateSession = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const validateEmail = (email) => {
     console.log(`initiating validateEmail \n`);
@@ -117,6 +117,35 @@ const analyzeText = (text, word) => {
     return { wordCount, sentences };
 };
 exports.analyzeText = analyzeText;
+const analyzeTextWithProximity = (text, word) => {
+    const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const typoRegex = new RegExp(`(${escapedSearchString}|${escapedSearchString
+        .split('')
+        .map((char, index) => `(${escapedSearchString.slice(0, index)}[^${char}]?${escapedSearchString.slice(index + 1)})`)
+        .join('|')})`, 'gi');
+    const matches = text.match(typoRegex) || [];
+    const wordCount = matches.length;
+    const sentences = [];
+    let currentSentence = '';
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        currentSentence += char;
+        if (char === '.' || char === '!' || char === '?') {
+            if (text[i + 1] === ' ' && /[a-z]/.test(text[i + 2])) {
+                continue;
+            }
+            if (matches.some(match => currentSentence.toLowerCase().includes(match.toLowerCase()))) {
+                sentences.push(currentSentence.trim());
+            }
+            currentSentence = '';
+        }
+    }
+    if (currentSentence.trim() !== '' && matches.some(match => currentSentence.toLowerCase().includes(match.toLowerCase()))) {
+        sentences.push(currentSentence.trim());
+    }
+    return { wordCount, sentences };
+};
+exports.analyzeTextWithProximity = analyzeTextWithProximity;
 const formatSentences = (sentences) => {
     return sentences.map(sentence => `- ${sentence.replace(/\n/g, '').replace(/\s+/g, ' ').trim()}`);
 };

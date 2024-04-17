@@ -103,7 +103,7 @@ const getFileFromS3 = async (fileName, s3, logger, res, fileUploadService, word,
             logger.info(`response message: ${response.message}\n`);
             logger.info(`File content retrieved successfully\n`);
             logger.info(`Calculating word count and finding sentences containing the word\n`);
-            const { wordCount, sentences } = (0, utils_1.analyzeText)(response.data, word);
+            const { wordCount, sentences } = (0, utils_1.analyzeTextWithProximity)(response.data, word);
             logger.info(`Generating CSV content\n`);
             const csvContent = `${word},${wordCount}\n\nSentences containing the word:\n${sentences.join('\n')}`;
             logger.info(`Storing CSV file in the database\n`);
@@ -147,7 +147,7 @@ const storeCSVInDatabase = async (fileName, csvContent, pool, logger, fileUpload
             }
             logger.info(`response message: ${response.message}\n`);
             logger.info(`CSV file stored in the database: ${data}\n`);
-            res.status(200).send({ data, wordCount, sentences: (0, utils_1.formatSentences)(sentences) });
+            res.status(200).send({ data, wordCount, sentences: (0, utils_1.formatSentences)(sentences), word });
             return;
         }).catch((error) => {
             logger.error(`Error storing CSV file in database: ${error}`);
@@ -178,7 +178,7 @@ const updateCSVInDatabase = async (fileName, csvContent, pool, logger, fileUploa
             }
             logger.info(`response message: ${response.message}\n`);
             logger.info(`CSV file stored in the database: ${data}\n`);
-            res.status(200).send({ data, wordCount, sentences: (0, utils_1.formatSentences)(sentences) });
+            res.status(200).send({ data, wordCount, sentences: (0, utils_1.formatSentences)(sentences), word });
             return;
         }).catch((error) => {
             logger.error(`Error storing CSV file in database: ${error}`);

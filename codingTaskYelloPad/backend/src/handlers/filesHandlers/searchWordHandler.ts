@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Logger from "../../utils/Logger";
 import { S3 } from "aws-sdk";
 import { pool } from "../../services/db";
-import { validateSession, formatSentences, analyzeText, decodeToken } from "../../utils/utils";
+import { validateSession, formatSentences, analyzeTextWithProximity, decodeToken } from "../../utils/utils";
 import GenericReturn from "../../utils/genericReturn";
 import UploadService from "../../services/uploadService";
 
@@ -74,7 +74,15 @@ export const searchWordHandler = async (req: Request, res: Response): Promise<vo
 
 
 // Function to getfile by name from the database
-const getFileByName = async (fileName: string, username: string, logger: Logger, fileUploadService: UploadService, res: Response, s3: S3, word: string): Promise<void> => {
+const getFileByName = async (
+    fileName: string,
+    username: string,
+    logger: Logger,
+    fileUploadService: UploadService,
+    res: Response,
+    s3: S3,
+    word: string
+): Promise<void> => {
 
     try {
 
@@ -128,7 +136,16 @@ const getFileByName = async (fileName: string, username: string, logger: Logger,
 
 
 // Function to fetch the file content from S3
-const getFileFromS3 = async (fileName: string, s3: S3, logger: Logger, res: Response, fileUploadService: UploadService, word: string, username: string, responseData: Record<string, string>): Promise<void> => {
+const getFileFromS3 = async (
+    fileName: string,
+    s3: S3,
+    logger: Logger,
+    res: Response,
+    fileUploadService: UploadService,
+    word: string,
+    username: string,
+    responseData: Record<string, string>
+): Promise<void> => {
 
     try {
 
@@ -154,7 +171,7 @@ const getFileFromS3 = async (fileName: string, s3: S3, logger: Logger, res: Resp
 
             // Perform the search for the word
             logger.info(`Calculating word count and finding sentences containing the word\n`);
-            const { wordCount, sentences } = analyzeText(response.data, word);
+            const { wordCount, sentences } = analyzeTextWithProximity(response.data, word);
 
             // Generate CSV content
             logger.info(`Generating CSV content\n`);
@@ -201,7 +218,18 @@ const getFileFromS3 = async (fileName: string, s3: S3, logger: Logger, res: Resp
 
 
 //Function to store the CSV file in the database
-const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: any, logger: Logger, fileUploadService: UploadService, res: Response, wordCount: number, sentences: string[], username: string, word: string): Promise<void> => {
+const storeCSVInDatabase = async (
+    fileName: string,
+    csvContent: string,
+    pool: any,
+    logger: Logger,
+    fileUploadService: UploadService,
+    res: Response,
+    wordCount: number,
+    sentences: string[],
+    username: string,
+    word: string
+): Promise<void> => {
 
 
     try {
@@ -229,7 +257,7 @@ const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: an
             logger.info(`CSV file stored in the database: ${data}\n`);
 
             // Return the CSV file name for download
-            res.status(200).send({ data, wordCount, sentences: formatSentences(sentences) });
+            res.status(200).send({ data, wordCount, sentences: formatSentences(sentences), word });
             return;
 
         }).catch((error) => {
@@ -250,7 +278,18 @@ const storeCSVInDatabase = async (fileName: string, csvContent: string, pool: an
 
 
 //Function to update the CSV file in the database
-const updateCSVInDatabase = async (fileName: string, csvContent: string, pool: any, logger: Logger, fileUploadService: UploadService, res: Response, wordCount: number, sentences: string[], username: string, word: string): Promise<void> => {
+const updateCSVInDatabase = async (
+    fileName: string,
+    csvContent: string,
+    pool: any,
+    logger: Logger,
+    fileUploadService: UploadService,
+    res: Response,
+    wordCount: number,
+    sentences: string[],
+    username: string,
+    word: string
+): Promise<void> => {
 
     try {
 
@@ -277,7 +316,7 @@ const updateCSVInDatabase = async (fileName: string, csvContent: string, pool: a
             logger.info(`CSV file stored in the database: ${data}\n`);
 
             // Return the CSV file name for download
-            res.status(200).send({ data, wordCount, sentences: formatSentences(sentences) });
+            res.status(200).send({ data, wordCount, sentences: formatSentences(sentences), word });
             return;
 
         }).catch((error) => {

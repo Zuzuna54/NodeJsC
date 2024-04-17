@@ -151,6 +151,7 @@ export const validateRefreshSession = (lastLogin: string): boolean => {
 };
 
 
+//Helper function to analyze text and return the word count and sentences containing the word
 export const analyzeText = (text: string, word: string): { wordCount: number, sentences: string[] } => {
     const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     const regex = new RegExp(escapedSearchString, 'gi');
@@ -181,6 +182,58 @@ export const analyzeText = (text: string, word: string): { wordCount: number, se
 
     return { wordCount, sentences };
 };
+
+
+// Function to analyze text and return the word count and sentences containing the word account for 2 possible typos in the word, and add proximity value as a parameter for a different search word, and only return matches where we have words with posssible typos and proximity value as a parameter with matches diifertent search word
+export const analyzeTextWithProximity = (text: string, word: string): { wordCount: number, sentences: string[] } => {
+    // Escape search string
+    const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+
+    // Construct regular expression for matching the target word with possible typos
+    const typoRegex = new RegExp(
+        `(${escapedSearchString}|${escapedSearchString
+            .split('')
+            .map(
+                (char, index) =>
+                    `(${escapedSearchString.slice(0, index)}[^${char}]?${escapedSearchString.slice(index + 1)})`
+            )
+            .join('|')})`,
+        'gi'
+    );
+
+    // Match the target word with possible typos in the text
+    const matches = text.match(typoRegex) || [];
+    const wordCount = matches.length;
+
+    // Extract sentences containing matches
+    const sentences: string[] = [];
+    let currentSentence = '';
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        currentSentence += char;
+
+        if (char === '.' || char === '!' || char === '?') {
+            if (text[i + 1] === ' ' && /[a-z]/.test(text[i + 2])) {
+                continue;
+            }
+            if (matches.some(match => currentSentence.toLowerCase().includes(match.toLowerCase()))) {
+                sentences.push(currentSentence.trim());
+            }
+            currentSentence = '';
+        }
+    }
+
+    if (currentSentence.trim() !== '' && matches.some(match => currentSentence.toLowerCase().includes(match.toLowerCase()))) {
+        sentences.push(currentSentence.trim());
+    }
+
+    return { wordCount, sentences };
+};
+
+
+
+
 
 // Function to format sentences for human readability
 export const formatSentences = (sentences: string[]): string[] => {

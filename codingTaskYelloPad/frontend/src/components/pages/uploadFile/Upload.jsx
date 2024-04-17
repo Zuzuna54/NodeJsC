@@ -117,10 +117,35 @@ const FileUploader = () => {
     // Highlight the word and generaete the html content 
     const hightlightWord = (sentence, word) => {
 
+        console.log(searchResult.word)
         const words = sentence.split(' ');
         const highlightedWords = words.map(w => {
 
-            return w.toLowerCase() === word.toLowerCase() ? <span className="highlighted" key={w + Math.random()}>{w}</span> : w + ' ';
+            const couunter = [];
+
+
+            for (let i = 0; i < searchResult.word.length; i++) {
+
+                if (w.charAt(i) !== searchResult.word.charAt(i)) {
+
+                    continue;
+
+                } else {
+
+                    couunter.push(i);
+
+                }
+
+            }
+
+
+
+            if (couunter.length > 3) {
+
+                return <span className="highlighted">{w}</span>;
+            } else {
+                return w;
+            }
 
         });
 
@@ -184,7 +209,7 @@ const FileUploader = () => {
                     <h3>Sentences:</h3>
                     <ul>
                         {searchResult.sentences.map((sentence, index) => (
-                            <li key={index}>{hightlightWord(sentence, searchWordInput)}</li>
+                            <li key={index}>{hightlightWord(sentence, searchResult.word)}</li>
                         ))}
                     </ul>
                     <button onClick={generateCSV}>Download CSV</button>
