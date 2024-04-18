@@ -9296,3 +9296,334 @@ info: Validating the token
 info: Validating the session
 
 error: Invalid session
+info: Request to log in a user
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Checking if the password is correct
+
+info: Validating the password
+
+info: Password is valid
+
+info: Creating and assigning access token
+
+info: Creating and assigning refresh token
+
+info: Updating the lastLogin property of the user and responding with the tokens and user data
+
+info: Updating the lastLogin property of the user
+
+info: User updated.
+info: Responding with the tokens and user data
+
+info: initiating validateSession 
+
+info: Retrieving all file names from the database
+info: Validating the session
+
+info: sessionValidated: true
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: initiating validateSession 
+
+info: Fetching file from database: Copy of test 102 page - word mauris 440 times.txt
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the searchWordHandler
+
+info: Starting file upload class
+
+info: Getting the file by name: Copy of test 102 page - word mauris 440 times.txt
+
+info: File fetched from database.
+info: Response message: File fetched from database.
+
+info: Retrieving file content from S3 file: Copy of test 102 page - word mauris 440 times.txt
+info: Response data: [object Object]
+
+info: Response status code: 200
+
+info: Response message: File fetched from database.
+info: Fetching file from S3
+
+info: response message: File retrieved from S3.
+
+info: Storing CSV file data in the database
+info: File content retrieved successfully
+
+info: Calculating word count and finding sentences containing the word
+
+info: Generating CSV content
+
+info: Storing CSV file in the database
+
+info: Response data: mauris
+
+info: word, wordcount or content found in the database
+
+info: storing CSV file data in the database as new Entry
+
+info: CSV file stored data in the database: Copy of test 102 page - word mauris 440 times.txt
+info: response message: CSV file data stored in the database.
+
+info: CSV file stored in the database: [object Object]
+
+info: initiating validateSession 
+
+info: Retrieving all file names from the database
+info: Validating the session
+
+info: sessionValidated: true
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: initiating validateSession 
+
+info: Retrieving all file names from the database
+info: Validating the session
+
+info: sessionValidated: true
+info: Retrieving history from the database
+info: File names retrieved from the database
+info: Filtering the data to return unique file names
+info: sending response back to the client
+info: initiating validateSession 
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Initiating the refreshAccessTokenHandler
+
+info: Validating the session
+
+info: sessionValidated: true
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+info: Getting the user from the db
+
+info: User fetched.
+info: Creating the access token
+
+info: Sending the response
+
+info: initiating validateSession 
+
+info: Validating the session
+
+info: sessionValidated: false
+info: Initiating the refreshAccessTokenHandler
+
+info: Request to refresh the access token
+
+info: Validating the token
+
+info: Validating the session
+
+error: Invalid session

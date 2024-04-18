@@ -49,6 +49,11 @@ app.post('/events', (req, res) => {
     res.send({});
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.send('how is this ');
+});
+
 
 app.listen(4002, async () => {
     console.log('Listening on 4002');

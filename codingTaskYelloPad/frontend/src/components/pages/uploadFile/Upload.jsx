@@ -12,8 +12,8 @@ const FileUploader = () => {
     const [searchResult, setSearchResult] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
     const token = localStorage.getItem('accessToken');
+
 
     // Function to handle file selection by the user
     const handleFileChange = (e) => {
@@ -21,6 +21,7 @@ const FileUploader = () => {
         setFile(e.target.files[0]);
 
     };
+
 
     // Function to handle file upload
     const handleUpload = async () => {
@@ -64,12 +65,14 @@ const FileUploader = () => {
 
     };
 
+
     // Function to handle file selection from dropdown
     const handleFileSelection = (e) => {
 
         setSelectedFileName(e.target.value);
 
     };
+
 
     // Function to handle search for a word in the selected file
     const handleSearch = async () => {
@@ -112,6 +115,7 @@ const FileUploader = () => {
 
     };
 
+
     // Function to generate CSV file for search results
     const generateCSV = () => {
 
@@ -137,12 +141,14 @@ const FileUploader = () => {
             // Calculate the number of mismatches between the word and the search result word
             for (let i = 0; i < Math.min(w.length, word.length); i++) {
                 if (w.charAt(i) !== word.charAt(i)) {
+                    continue
+                } else {
                     mismatches++;
                 }
-            }
 
+            }
             // If the number of mismatches is less than or equal to 3, highlight the word
-            if (mismatches <= 3) {
+            if (mismatches > 3) {
                 return <span className="highlighted">{w}</span>;
             } else {
                 return w;
@@ -174,12 +180,14 @@ const FileUploader = () => {
 
     };
 
+
     // Fetch file names on component mount and when token changes
     useEffect(() => {
 
         fetchFileNames();
 
     }, [token]); // Fetch file names on component mount and when token changes
+
 
     // Render the file uploader component
     return (
