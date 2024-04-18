@@ -5,13 +5,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.formatSentences = exports.analyzeTextWithProximity = exports.analyzeText = exports.validateRefreshSession = exports.validateSession = exports.validatePassword = exports.validatePasswordSpaces = exports.validatePasswordLength = exports.validateUsername = exports.decodeToken = exports.validateEmail = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const Logger_1 = __importDefault(require("./Logger"));
+const logger = new Logger_1.default();
 const validateEmail = (email) => {
-    console.log(`initiating validateEmail \n`);
+    logger.info(`initiating validateEmail \n`);
     const emailRegex = /\S+@\S+\.\S+/;
-    console.log(`emailRegex: ${emailRegex}`);
-    console.log(`Validating the email\n`);
+    logger.info(`emailRegex: ${emailRegex}`);
+    logger.info(`Validating the email\n`);
     const emailValidated = emailRegex.test(email);
-    console.log(`emailValidated: ${emailValidated}`);
+    logger.info(`emailValidated: ${emailValidated}`);
     return emailValidated;
 };
 exports.validateEmail = validateEmail;
@@ -30,64 +32,64 @@ exports.decodeToken = decodeToken;
 const validateUsername = (username) => {
     if (username.length < 3)
         return false;
-    console.log(`initiating validateUsername \n`);
+    logger.info(`initiating validateUsername \n`);
     const usernameRegex = /^[a-zA-Z0-9]+$/;
-    console.log(`usernameRegex: ${usernameRegex}`);
-    console.log(`Validating the username\n`);
+    logger.info(`usernameRegex: ${usernameRegex}`);
+    logger.info(`Validating the username\n`);
     const usernameValidated = usernameRegex.test(username);
-    console.log(`usernameValidated: ${usernameValidated}`);
+    logger.info(`usernameValidated: ${usernameValidated}`);
     return usernameValidated;
 };
 exports.validateUsername = validateUsername;
 const validatePasswordLength = (password) => {
-    console.log(`initiating validatePassword \n`);
-    console.log(`Validating the password\n`);
+    logger.info(`initiating validatePassword \n`);
+    logger.info(`Validating the password\n`);
     const passwordValidated = password.length >= 8;
-    console.log(`passwordValidated: ${passwordValidated}`);
+    logger.info(`passwordValidated: ${passwordValidated}`);
     return passwordValidated;
 };
 exports.validatePasswordLength = validatePasswordLength;
 const validatePasswordSpaces = (password) => {
-    console.log(`initiating validatePassword \n`);
+    logger.info(`initiating validatePassword \n`);
     const passwordRegex = /\s/;
-    console.log(`passwordRegex: ${passwordRegex}`);
-    console.log(`Validating the password\n`);
+    logger.info(`passwordRegex: ${passwordRegex}`);
+    logger.info(`Validating the password\n`);
     const passwordValidated = passwordRegex.test(password);
-    console.log(`passwordValidated: ${passwordValidated}`);
+    logger.info(`passwordValidated: ${passwordValidated}`);
     return passwordValidated;
 };
 exports.validatePasswordSpaces = validatePasswordSpaces;
 const validatePassword = (password) => {
-    console.log(`initiating validatePassword \n`);
+    logger.info(`initiating validatePassword \n`);
     if (password.length < 8)
         return false;
-    console.log(`Validating the password\n`);
+    logger.info(`Validating the password\n`);
     const passwordValidated = (0, exports.validatePasswordLength)(password) && !(0, exports.validatePasswordSpaces)(password);
-    console.log(`passwordValidated: ${passwordValidated}`);
+    logger.info(`passwordValidated: ${passwordValidated}`);
     return passwordValidated;
 };
 exports.validatePassword = validatePassword;
 const validateSession = (lastLogin) => {
-    console.log(`initiating validateSession \n`);
-    console.log(`Validating the session\n`);
+    logger.info(`initiating validateSession \n`);
+    logger.info(`Validating the session\n`);
     const lastLoginDate = new Date(lastLogin);
     const currentDate = new Date();
     const diff = currentDate.getTime() - lastLoginDate.getTime();
     const diffInMinutes = diff / (1000 * 60);
     const sessionValidated = diffInMinutes < 30;
-    console.log(`sessionValidated: ${sessionValidated}`);
+    logger.info(`sessionValidated: ${sessionValidated}`);
     return sessionValidated;
 };
 exports.validateSession = validateSession;
 const validateRefreshSession = (lastLogin) => {
-    console.log(`initiating validateSession \n`);
-    console.log(`Validating the session\n`);
+    logger.info(`initiating validateSession \n`);
+    logger.info(`Validating the session\n`);
     const lastLoginDate = new Date(lastLogin);
     const currentDate = new Date();
     const diff = currentDate.getTime() - lastLoginDate.getTime();
     const diffInMinutes = diff / (1000 * 60);
     const sessionValidated = diffInMinutes < 240;
-    console.log(`sessionValidated: ${sessionValidated}`);
+    logger.info(`sessionValidated: ${sessionValidated}`);
     return sessionValidated;
 };
 exports.validateRefreshSession = validateRefreshSession;

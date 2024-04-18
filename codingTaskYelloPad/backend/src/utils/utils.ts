@@ -1,20 +1,21 @@
 import jwt, { Secret } from 'jsonwebtoken';
+import Logger from './Logger';
 
 
-
+const logger: Logger = new Logger();
 //Helper fucntion to check if the email is valid
 export const validateEmail = (email: string): boolean => {
 
-    console.log(`initiating validateEmail \n`);
+    logger.info(`initiating validateEmail \n`);
 
     //Regex to validate email
     const emailRegex: RegExp = /\S+@\S+\.\S+/;
-    console.log(`emailRegex: ${emailRegex}`);
+    logger.info(`emailRegex: ${emailRegex}`);
 
     //Validate the email
-    console.log(`Validating the email\n`)
+    logger.info(`Validating the email\n`)
     const emailValidated: boolean = emailRegex.test(email);
-    console.log(`emailValidated: ${emailValidated}`);
+    logger.info(`emailValidated: ${emailValidated}`);
 
     return emailValidated
 
@@ -45,16 +46,16 @@ export const validateUsername = (username: string): boolean => {
 
     if (username.length < 3) return false;
 
-    console.log(`initiating validateUsername \n`);
+    logger.info(`initiating validateUsername \n`);
 
     //Regex to validate username
     const usernameRegex: RegExp = /^[a-zA-Z0-9]+$/;
-    console.log(`usernameRegex: ${usernameRegex}`);
+    logger.info(`usernameRegex: ${usernameRegex}`);
 
     //Validate the username
-    console.log(`Validating the username\n`)
+    logger.info(`Validating the username\n`)
     const usernameValidated: boolean = usernameRegex.test(username);
-    console.log(`usernameValidated: ${usernameValidated}`);
+    logger.info(`usernameValidated: ${usernameValidated}`);
 
     return usernameValidated
 
@@ -64,12 +65,12 @@ export const validateUsername = (username: string): boolean => {
 //Helper function to validate password to be longer than 8 characters
 export const validatePasswordLength = (password: string): boolean => {
 
-    console.log(`initiating validatePassword \n`);
+    logger.info(`initiating validatePassword \n`);
 
     //Validate the password
-    console.log(`Validating the password\n`)
+    logger.info(`Validating the password\n`)
     const passwordValidated: boolean = password.length >= 8;
-    console.log(`passwordValidated: ${passwordValidated}`);
+    logger.info(`passwordValidated: ${passwordValidated}`);
 
     return passwordValidated
 
@@ -79,16 +80,16 @@ export const validatePasswordLength = (password: string): boolean => {
 //Helper function to validate password not to contain empty spaces
 export const validatePasswordSpaces = (password: string): boolean => {
 
-    console.log(`initiating validatePassword \n`);
+    logger.info(`initiating validatePassword \n`);
 
     //Regex to validate password
     const passwordRegex: RegExp = /\s/;
-    console.log(`passwordRegex: ${passwordRegex}`);
+    logger.info(`passwordRegex: ${passwordRegex}`);
 
     //Validate the password
-    console.log(`Validating the password\n`)
+    logger.info(`Validating the password\n`)
     const passwordValidated: boolean = passwordRegex.test(password);
-    console.log(`passwordValidated: ${passwordValidated}`);
+    logger.info(`passwordValidated: ${passwordValidated}`);
 
     return passwordValidated
 
@@ -98,15 +99,15 @@ export const validatePasswordSpaces = (password: string): boolean => {
 //Helper function to validate password
 export const validatePassword = (password: string): boolean => {
 
-    console.log(`initiating validatePassword \n`);
+    logger.info(`initiating validatePassword \n`);
 
     //Check if the password is less than 8 characters
     if (password.length < 8) return false;
 
     //Validate the password
-    console.log(`Validating the password\n`)
+    logger.info(`Validating the password\n`)
     const passwordValidated: boolean = validatePasswordLength(password) && !validatePasswordSpaces(password);
-    console.log(`passwordValidated: ${passwordValidated}`);
+    logger.info(`passwordValidated: ${passwordValidated}`);
 
     return passwordValidated
 
@@ -116,16 +117,16 @@ export const validatePassword = (password: string): boolean => {
 //Helper function that takes in a date and validates that session is still active
 export const validateSession = (lastLogin: string): boolean => {
 
-    console.log(`initiating validateSession \n`);
+    logger.info(`initiating validateSession \n`);
 
     //Validate the session
-    console.log(`Validating the session\n`)
+    logger.info(`Validating the session\n`)
     const lastLoginDate: Date = new Date(lastLogin);
     const currentDate: Date = new Date();
     const diff: number = currentDate.getTime() - lastLoginDate.getTime();
     const diffInMinutes: number = diff / (1000 * 60);
     const sessionValidated: boolean = diffInMinutes < 30;
-    console.log(`sessionValidated: ${sessionValidated}`);
+    logger.info(`sessionValidated: ${sessionValidated}`);
 
     return sessionValidated
 
@@ -135,16 +136,16 @@ export const validateSession = (lastLogin: string): boolean => {
 //Helper function that validates refresh token is still valid
 export const validateRefreshSession = (lastLogin: string): boolean => {
 
-    console.log(`initiating validateSession \n`);
+    logger.info(`initiating validateSession \n`);
 
     //Validate the session
-    console.log(`Validating the session\n`)
+    logger.info(`Validating the session\n`)
     const lastLoginDate: Date = new Date(lastLogin);
     const currentDate: Date = new Date();
     const diff: number = currentDate.getTime() - lastLoginDate.getTime();
-    const diffInMinutes: number = diff / (1000 * 60);
-    const sessionValidated: boolean = diffInMinutes < 240;
-    console.log(`sessionValidated: ${sessionValidated}`);
+    const diffInMinutes: number = diff / (1000 * 60); // convert to minutes
+    const sessionValidated: boolean = diffInMinutes < 240; // 4 hours
+    logger.info(`sessionValidated: ${sessionValidated}`);
 
     return sessionValidated
 
@@ -153,6 +154,7 @@ export const validateRefreshSession = (lastLogin: string): boolean => {
 
 //Helper function to analyze text and return the word count and sentences containing the word
 export const analyzeText = (text: string, word: string): { wordCount: number, sentences: string[] } => {
+
     const escapedSearchString = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     const regex = new RegExp(escapedSearchString, 'gi');
     const matches = text.match(regex);

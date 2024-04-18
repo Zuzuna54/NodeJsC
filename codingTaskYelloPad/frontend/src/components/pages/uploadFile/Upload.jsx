@@ -79,16 +79,29 @@ const FileUploader = () => {
 
         try {
 
-            const response = await searchWord({ word: searchWordInput, file_name: selectedFileName }, token);
-            setSearchResult(response.data);
-            if (!response.data || response.data.wordCount === 0) {
+            await searchWord({ word: searchWordInput, file_name: selectedFileName }, token).then(res => {
 
-                setError("No results found for your search.");
+                setSearchResult(res.data);
 
-            }
+                if (!res.data || res.data.wordCount === 0) {
+
+                    console.log('No results found for your search.');
+                    setError("No results found for your search.");
+
+                }
+
+            }).catch(err => {
+
+                // Handle error and display error message in the UI
+                console.error('Failed to search for word: ' + err.message);
+                setError('Failed to search for word: ' + err.message);
+
+
+            });
 
         } catch (err) {
 
+            console.error('Failed to search for word: ' + err.message);
             setError('Failed to search for word: ' + err.message);
 
         } finally {
@@ -114,44 +127,31 @@ const FileUploader = () => {
 
     };
 
-    // Highlight the word and generaete the html content 
-    const hightlightWord = (sentence, word) => {
 
-        console.log(searchResult.word)
+    // Highlight the word and generate the HTML content
+    const hightlightWord = (sentence, word) => {
         const words = sentence.split(' ');
         const highlightedWords = words.map(w => {
+            let mismatches = 0;
 
-            const couunter = [];
-
-
-            for (let i = 0; i < searchResult.word.length; i++) {
-
-                if (w.charAt(i) !== searchResult.word.charAt(i)) {
-
-                    continue;
-
-                } else {
-
-                    couunter.push(i);
-
+            // Calculate the number of mismatches between the word and the search result word
+            for (let i = 0; i < Math.min(w.length, word.length); i++) {
+                if (w.charAt(i) !== word.charAt(i)) {
+                    mismatches++;
                 }
-
             }
 
-
-
-            if (couunter.length > 3) {
-
+            // If the number of mismatches is less than or equal to 3, highlight the word
+            if (mismatches <= 3) {
                 return <span className="highlighted">{w}</span>;
             } else {
                 return w;
             }
-
         });
 
-        return highlightedWords;
+        return highlightedWords
+    };
 
-    }
 
     // Function to fetch file names
     const fetchFileNames = async () => {

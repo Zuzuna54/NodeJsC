@@ -57,8 +57,14 @@ function PublicLayout() {
                     console.log(`after changing token in local storage: ${localStorage.getItem('accessToken')}`);
                 }).catch((error) => {
 
+                    if (error.response.status === 440) {
+                        console.log('Token expired. Logging out...');
+                        dispatch(setAuthenticationStatus(false));
+                        localStorage.removeItem('accessToken');
+                        localStorage.removeItem('refreshToken');
+                    }
+
                     console.error('Error refreshing token:', error);
-                    clearInterval(refreshInterval);
                 });
 
             } catch (error) {
