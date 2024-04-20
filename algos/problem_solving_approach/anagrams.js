@@ -1,26 +1,21 @@
-const isAnagram = (str1: string, str2: string): boolean => {
-
+var isAnagram = function (str1, str2) {
     if (str1.length === 0 && str2.length === 0) {
         return true;
     }
-
     if (str1.length !== str2.length) {
         return false;
     }
-
-
-    let frequencyCounter1: Record<string, number> = {};
-    let frequencyCounter2: Record<string, number> = {};
-
-    for (let char of str1) {
+    var frequencyCounter1 = {};
+    var frequencyCounter2 = {};
+    for (var _i = 0, str1_1 = str1; _i < str1_1.length; _i++) {
+        var char = str1_1[_i];
         frequencyCounter1[char] = (frequencyCounter1[char] || 0) + 1;
     }
-
-    for (let char of str2) {
+    for (var _a = 0, str2_1 = str2; _a < str2_1.length; _a++) {
+        var char = str2_1[_a];
         frequencyCounter2[char] = (frequencyCounter2[char] || 0) + 1;
     }
-
-    for (let key in frequencyCounter1) {
+    for (var key in frequencyCounter1) {
         if (!(key in frequencyCounter2)) {
             return false;
         }
@@ -28,11 +23,6 @@ const isAnagram = (str1: string, str2: string): boolean => {
             return false;
         }
     }
-
     return true;
-
-}
-
-
-
+};
 console.log(isAnagram('anagram', 'nararam')); //true
