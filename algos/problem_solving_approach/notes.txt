@@ -62,6 +62,18 @@ How have other people solved this problem?
 
 
 
+SOME PATTERNS...
+
+Frequency Counter
+Multiple Pointers
+Sliding Window
+Divide and Conquer
+Dynamic Programming
+Greedy Algorithms
+Backtracking
+
+
+
 FREQUENCY COUNTERS
 
 This pattern uses objects or sets to collect values/frequencies of values
